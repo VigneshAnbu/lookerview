@@ -1,0 +1,194 @@
+<style>
+  .table-responsive{ max-height:400px; overflow:auto; }
+</style>
+
+<div class="hed_sty1">Community Triaging <i class="bi bi-heart"></i></div>
+
+<div class="scroll_sec">
+  <div class="container">
+    <div class="hed_sty1 text-center m_tb_50">Risk Score</div>
+    <div class="row pan_box_sec">
+      <div class="col-sm-3">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+          <div class="num">{{distobj.high}}</div>
+          <div class="txt">High</div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+          <div class="num">{{distobj.medium}}</div>
+          <div class="txt">Medium</div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+          <div class="num">{{distobj.low}}</div>
+          <div class="txt">Low</div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+          <div class="num">{{distobj.normal}}</div>
+          <div class="txt">Normal</div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="pan_box">
+
+          <canvas #pieCanvas style="height:20vh; width:40vw"></canvas>
+          <hr color="red">
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="table_box">
+          <div class="hed">District Wise</div>
+
+          <div class="table-responsive">
+
+
+
+            <table class="table hedbg" *ngIf="distobj.districtWise">
+              <thead>
+                <tr>
+                  <th>Community District</th>
+                  <th>Community District GID</th>
+                  <th>Normal</th>
+                  <th>Low Risk</th>
+                  <th>Medium Risk</th>
+                  <th>High Risk</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let Com of distobj.districtWise">
+                  <td>{{Com.district_name}}</td>
+                  <td>{{Com.district_gid}}</td>
+                  <td>{{Com.normalRisk}}</td>
+                  <td>{{Com.lowRisk}}</td>
+                  <td>{{Com.mediumRisk}}</td>
+                  <td>{{Com.highRisk}}</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="table_box">
+          <div class="hed">Block</div>
+          <div class="table-responsive">
+            <table class="table hedbg">
+              <thead>
+                <tr>
+                  <th>Community Block</th>
+                  <th>Community Block GID</th>
+                  <th>Normal</th>
+                  <th>Low Risk</th>
+                  <th>Medium Risk</th>
+                  <th>High Risk</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let Com of distobj.blockWise">
+                  <td>{{Com.block_name}}</td>
+                  <td>{{Com.block_gid}}</td>
+                  <td>{{Com.normalRisk}}</td>
+                  <td>{{Com.lowRisk}}</td>
+                  <td>{{Com.mediumRisk}}</td>
+                  <td>{{Com.highRisk}}</td>
+                </tr>
+
+
+
+              </tbody>
+            </table>
+          </div>
+          
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="table_box">
+          <div class="hed">HUD Wise</div>
+
+          <div class="table-responsive">
+
+            <table class="table hedbg">
+              <thead>
+                <tr>
+                  <th>Community HUD</th>
+                  <th>Community HUD GID</th>
+                  <th>Normal</th>
+                  <th>Low Risk</th>
+                  <th>Medium Risk</th>
+                  <th>High Risk</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let Com of distobj.hudWise">
+                  <td>{{Com.hud_name}}</td>
+                  <td>{{Com.hud_gid}}</td>
+                  <td>{{Com.normalRisk}}</td>
+                  <td>{{Com.lowRisk}}</td>
+                  <td>{{Com.mediumRisk}}</td>
+                  <td>{{Com.highRisk}}</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="table_box">
+          <div class="hed">Village</div>
+
+
+
+          <div class="table-responsive">
+            <table class="table hedbg">
+              <thead>
+                <tr>
+                  <th>Community Village</th>
+                  <th>Community Village GID</th>
+                  <th>Normal</th>
+                  <th>Low Risk</th>
+                  <th>Medium Risk</th>
+                  <th>High Risk</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let Com of distobj.villageWise">
+                  <td>{{Com.village_name}}</td>
+                  <td>{{Com.village_gid}}</td>
+                  <td>{{Com.normalRisk}}</td>
+                  <td>{{Com.lowRisk}}</td>
+                  <td>{{Com.mediumRisk}}</td>
+                  <td>{{Com.highRisk}}</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+<router-outlet></router-outlet>

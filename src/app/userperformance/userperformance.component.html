@@ -1,0 +1,159 @@
+<div class="row pan_box_sec">
+  <div class="col-sm-12">
+    <div class="table_box">
+      <div class="hed">Role Based Screenings</div>
+      <div class="table-responsive">
+        <table class="table hedbg">
+          <thead>
+            <tr>
+              <th>Sl No</th>
+              <th>Role Name</th>
+              <th>Total Screenings</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let Com of rolebaseddata; let i = index">
+              <td>{{i+1}}</td>
+              <td>{{Com.roleName}}</td>
+              <td>
+                <div style="width:80%;float:left">
+                  <div style="background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); height: 22px;" [style.width.%]="Com.countPer"></div>
+                </div>
+                <div style="width: 20%; float: left">{{Com.roleCount}}</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+<div class="row pan_box_sec">
+
+  <div class="col-sm-12 d_flex flex_wrap row_gap_15">
+    <div class="row w_100_per">
+      <div class="col-sm-3">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg1 h_100">
+          <div class="num clr1">{{Districtwiseobj.t_SyncedScreenings24}}</div>
+          <div class="txt">
+          <!--<span class="text-success"><i class="bi bi-caret-up-fill"></i> 598</span>-->
+          Last 24 hours</div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg1 h_100">
+          <div class="num clr1">{{Districtwiseobj.t_SyncedScreenings48}}</div>
+          <div class="txt">
+          <!--<span class="text-success"><i class="bi bi-caret-up-fill"></i> 598</span>-->
+          Last 30 Days</div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg1 h_100">
+          <div class="num clr1">{{Districtwiseobj.t_SyncedScreenings30}}</div>
+          <div class="txt">
+          <!--<span class="text-danger"><i class="bi bi-caret-down-fill"></i> 598</span>-->
+          Average Syned per Day</div>
+        </div>
+      </div>
+      <div class="col-sm-2 d_flex flex_align_center">
+        <div class="txt_ov1">User Synced</div>
+      </div>
+    </div>
+    <div class="row w_100_per">
+      <div class="col-sm-3">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg2 h_100">
+          <div class="num clr1">{{Districtwiseobj.t_IndividualScreenings24}}</div>
+          <div class="txt">
+          <!--<span class="text-danger"><i class="bi bi-caret-down-fill"></i> -1</span>-->
+          Last 24 hours</div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg2 h_100">
+          <div class="num clr1">{{Districtwiseobj.t_IndividualScreenings30}}</div>
+          <div class="txt">
+          <!--<span class="text-danger"><i class="bi bi-caret-down-fill"></i> -2</span>-->
+          Last 30 days</div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg2 h_100">
+          <div class="num clr1">{{Districtwiseobj.individualscreeningsaverage}}</div>
+          <div class="txt">
+          <!--<span class="text-success"><i class="bi bi-caret-up-fill"></i> 0.13</span>-->
+          Average Screenings per day</div>
+        </div>
+      </div>
+      <div class="col-sm-2 d_flex flex_align_center">
+        <div class="txt_ov1">Individual Screening</div>
+      </div>
+    </div>
+    <div class="row w_100_per">
+      <div class="col-sm-3">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg3 h_100">
+          <div class="num clr1">{{Districtwiseobj.t_FamilyScreenings24}}</div>
+          <div class="txt">
+          <!--<span class="text-danger"><i class="bi bi-caret-down-fill"></i> -1</span>-->
+          Last 24 hours</div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg3 h_100">
+          <div class="num clr1">{{Districtwiseobj.t_FamilyScreenings30}}</div>
+          <div class="txt">
+          <!--<span class="text-danger"><i class="bi bi-caret-down-fill"></i> -2</span>-->
+          Last 30 days</div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg3 h_100">
+          <div class="num clr1">{{Districtwiseobj.familyscreeningsaverage}}</div>
+          <div class="txt">
+          <!--<span class="text-success"><i class="bi bi-caret-up-fill"></i> 0.13</span>-->
+          Average Screenings</div>
+        </div>
+      </div>
+      <div class="col-sm-2 d_flex flex_align_center">
+        <div class="txt_ov1">Family Screening</div>
+      </div>
+    </div>
+
+    <div class="row w_100_per">
+      <div class="col-sm-3">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg3 h_100">
+          <div class="num clr1">{{Districtwiseobj.t_DrugIssued24}}</div>
+          <div class="txt">
+          <!--<span class="text-danger"><i class="bi bi-caret-down-fill"></i> -1</span>-->
+          Last 24 hours</div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg3 h_100">
+          <div class="num clr1">{{Districtwiseobj.t_DrugIssued30}}</div>
+          <div class="txt">
+          <!--<span class="text-danger"><i class="bi bi-caret-down-fill"></i> -2</span>-->
+          Last 30 days</div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg3 h_100">
+          <div class="num clr1">{{Districtwiseobj.drugissuedaverage}}</div>
+          <div class="txt">
+          <!--<span class="text-success"><i class="bi bi-caret-up-fill"></i> 0.13</span>-->
+          Average Screenings per day</div>
+        </div>
+      </div>
+      <div class="col-sm-2 d_flex flex_align_center">
+        <div class="txt_ov1">Drug Delivered</div>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>

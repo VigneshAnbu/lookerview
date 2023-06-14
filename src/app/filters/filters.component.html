@@ -1,0 +1,122 @@
+
+<style>
+  .filter_sec > div{ width:calc(100% / 6); }
+  .filter_sec .inp_w_select{ width:calc(100% / 2.5); }
+  .inp_w_select .wrap{ display:flex; column-gap:15px; }
+  .inp_w_select .wrap > * { flex:1; }
+
+  .inp_list_sty1{ display:flex; column-gap:15px; border:#a3a3a3 solid 1px; border-radius:4px; padding:3px; }
+  .inp_list_sty1 input{ display:none; }
+  .inp_list_sty1 span{display:inline-block; padding:3px; border-radius:3px; }
+  .inp_list_sty1 input:checked + span{ background-color:#4800ff; color:#fff; }
+</style>
+
+<div class="pan_box">
+
+  <form [formGroup]="form"  class="filter_sec">
+    <div>
+      <label>Community District</label>
+
+      <ng-multiselect-dropdown [settings]="districtsettings"
+                               [data]="districtlist"
+                               formControlName="districtmyItems">
+      </ng-multiselect-dropdown>
+
+    </div>
+    <div>
+      <label>Community HUD</label>
+      <ng-multiselect-dropdown [settings]="hudsettings"
+                               [data]="hudlist"
+                               formControlName="hudmyItems">
+      </ng-multiselect-dropdown>
+    </div>
+    <div>
+      <label>Community Block</label>
+      <ng-multiselect-dropdown [settings]="blocksettings"
+                               [data]="blocklist"
+                               formControlName="blockmyItems">
+      </ng-multiselect-dropdown>
+    </div>
+    <div class="inp_w_select">
+      <label>Community Village</label>
+      <div class="wrap">
+        <input type="text" (keyup)="onSearch($event)" formControlName="searchvillage" placeholder="Search Village Name" class="form-control">
+        <ng-multiselect-dropdown [settings]="villagesettings"
+                                 [data]="villagelist"
+                                 formControlName="villagemyItems">
+        </ng-multiselect-dropdown>
+      </div>
+    </div>
+
+    <div class="inp_w_select">
+      <label>Community Facility</label>
+      <div class="wrap">
+        <input type="text" (keyup)="onSearchFacility($event)" formControlName="searchfacility" placeholder="Search Facility Name" class="form-control">
+        <ng-multiselect-dropdown [settings]="facilitysettings"
+                                 [data]="facilitylist"
+                                 formControlName="facilitymyItems">
+        </ng-multiselect-dropdown>
+      </div>
+    </div>
+
+      <div>
+        <label>Institution Owner</label>
+        <div class="inp_list_sty1">
+          <label><input type="checkbox"><span>Both</span></label>
+          <label><input type="checkbox"><span>Govt</span></label>
+          <label><input type="checkbox"><span>Private</span></label>
+        </div>
+      </div>
+      <div>
+        <label>Institution Directorate</label>
+        <ng-multiselect-dropdown [settings]="directoratesettings"
+                                 [data]="directoratelist"
+                                 formControlName="directoratemyItems">
+        </ng-multiselect-dropdown>
+      </div>
+      <div class="inp_w_select">
+        <label>Institution Facility</label>
+        <div class="wrap">
+          <input type="text" (keyup)="onSearchInstitutionFacility($event)" formControlName="searchinstitutionfacility" placeholder="Search Facility Name" class="form-control">
+          <ng-multiselect-dropdown [settings]="institutionfacilitysettings"
+                                   [data]="Institutionfacilitylist"
+                                   formControlName="institutionfacilitymyItems">
+          </ng-multiselect-dropdown>
+        </div>
+      </div>
+        <div>
+          <label>Institution Role</label>
+          <ng-multiselect-dropdown [settings]="rolesettings"
+                                   [data]="rolelist"
+                                   formControlName="rolemyItems">
+          </ng-multiselect-dropdown>
+        </div>
+        <div>
+          <label>Institution District</label>
+          <ng-multiselect-dropdown [settings]="institutiondistrictsettings"
+                                   [data]="institutiondistrictlist"
+                                   formControlName="institutiondistrictmyItems">
+          </ng-multiselect-dropdown>
+        </div>
+        <div>
+          <label>Institution HUD</label>
+          <ng-multiselect-dropdown [settings]="institutionhudsettings"
+                                   [data]="institutionhudlist"
+                                   formControlName="institutionhudmyItems">
+          </ng-multiselect-dropdown>
+        </div>
+        <div>
+          <label>Institution Block</label>
+          <ng-multiselect-dropdown [settings]="institutionblocksettings"
+                                   [data]="institutionblocklist"
+                                   formControlName="institutionblockmyItems">
+          </ng-multiselect-dropdown>
+        </div>
+        <div>
+          <label>Date</label>
+          <input type="date" placeholder="is any value" class="form-control">
+        </div>
+
+</form>
+
+</div>

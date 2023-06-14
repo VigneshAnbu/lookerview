@@ -1,0 +1,105 @@
+<div class="hed_sty1">MTM Beneficiaries <i class="bi bi-heart"></i></div>
+
+
+<app-filters #child></app-filters>
+
+<input type="button" value="Search" class="btn btn-success pul-right" (click)="SearchFilter()" />
+
+<!--<p>MTM Beneficiaries Kpi v2.1.0</p>-->
+
+<div class="scroll_sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="table_box">
+          <div class="hed">District Wise MTM Beneficiaries</div>
+          <div class="table-responsive">
+            <table class="table hedbg" *ngIf="districtlist">
+              <thead>
+                <tr>
+                  <th>District Name</th>
+                  <th>District Gid</th>
+                  <th>Diabetes Mellitus</th>
+                  <th>Hypertension</th>
+                  <th>Diabetes and Hypertension Both</th>
+                  <th>Physiotheraphy</th>
+                  <th>Pallative Care</th>
+                  <th>CAPD Bags</th>
+                  <th>Unique Screenings</th>
+                  <th>Total Screenings</th>
+                  <th>Total Drug Received</th>
+                  <th>Total MTM Beneficiaries</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let Com of districtlist">
+                  <td>{{Com.district_name}}</td>
+                  <td>{{Com.district_gid}}</td>
+                  <td>{{Com.dt}}</td>
+                  <td>{{Com.ht}}</td>
+                  <td>{{Com.htdt}}</td>
+                  <td>{{Com.pallative}}</td>
+                  <td>{{Com.physio}}</td>
+                  <td>{{Com.capd}}</td>
+                  <td>{{Com.uniquescreening}}</td>
+                  <td>{{Com.totalscreening}}</td>
+                  <td>{{Com.drugreceived}}</td>
+                  <td>{{Com.mtmcount}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="table_box">
+          <div class="hed">Block Wise Wise MTM Beneficiaries</div>
+          <div class="table-responsive">
+            <table class="table hedbg" *ngIf="blocklist">
+              <thead>
+                <tr>
+                  <th>District Name</th>
+                  <th>District Gid</th>
+                  <th>HUD Name</th>
+                  <th>HUD Gid</th>
+                  <th>Block Name</th>
+                  <th>Block Gid</th>
+                  <th>Diabetes Mellitus</th>
+                  <th>Hypertension</th>
+                  <th>Diabetes and Hypertension Both</th>
+                  <th>Physiotheraphy</th>
+                  <th>Pallative Care</th>
+                  <th>CAPD Bags</th>
+                  <th>Unique Screenings</th>
+                  <th>Total Screenings</th>
+                  <th>Total Drug Received</th>
+                  <th>Total MTM Beneficiaries</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let Com of blocklist">
+                  <td>{{Com.district_name}}</td>
+                  <td>{{Com.district_gid}}</td>
+                  <td>{{Com.hud_name}}</td>
+                  <td>{{Com.hud_gid}}</td>
+                  <td>{{Com.block_name}}</td>
+                  <td>{{Com.block_gid}}</td>
+                  <td>{{Com.dt}}</td>
+                  <td>{{Com.ht}}</td>
+                  <td>{{Com.htdt}}</td>
+                  <td>{{Com.pallative}}</td>
+                  <td>{{Com.physio}}</td>
+                  <td>{{Com.capd}}</td>
+                  <td>{{Com.uniquescreening}}</td>
+                  <td>{{Com.totalscreening}}</td>
+                  <td>{{Com.drugreceived}}</td>
+                  <td>{{Com.mtmcount}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

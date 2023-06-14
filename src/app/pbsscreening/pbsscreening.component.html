@@ -1,0 +1,193 @@
+<div class="hed_sty1">Pbs Screening <i class="bi bi-heart"></i></div>
+
+<app-filters #child></app-filters>
+
+<input type="button" value="Search" class="btn btn-success pul-right" (click)="SearchFilter()" />
+
+
+
+<div class="row pan_box_sec">
+  <div class="col-sm-12">
+    <div class="table_box">
+      <div class="hed">Role Based Screenings</div>
+      <div class="table-responsive">
+        <table class="table hedbg">
+          <thead>
+            <tr>
+              <th>Sl No</th>
+              <th>Role Name</th>
+              <th>Total Screenings</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let Com of rolebaseddata; let i = index">
+              <td>{{i+1}}</td>
+              <td>{{Com.roleName}}</td>
+              <td>
+                <div style="width:80%;float:left">
+                  <div style="background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); height: 22px;" [style.width.%]="Com.countPer"></div>
+                </div>
+                <div style="width: 20%; float: left">{{Com.roleCount}}</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="row pan_box_sec">
+
+  <div class="col-sm-6">
+    <div class="table_box">
+      <div class="hed">District Wise</div>
+      <div class="table-responsive">
+        <table class="table hedbg" *ngIf="objdistrictpbs.districtWise">
+          <thead>
+            <tr>
+              <th>Sl No</th>
+              <th>Community District</th>
+              <th>Community District GID</th>
+              <th>Total Screenings</th>
+              <th>Unique Screenings</th>
+              <th>Number of Individuals Referred</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let Com of objdistrictpbs.districtWise; let i = index">
+              <td>{{i+1}}</td>
+              <td>{{Com.district_name}}</td>
+              <td>{{Com.district_gid}}</td>
+              <td>{{Com.screeningCount}}</td>
+              <td>{{Com.uniqueCount}}</td>
+              <td>{{Com.referredscreening}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-sm-6">
+    <div class="table_box">
+      <div class="hed">HUD Wise</div>
+      <div class="table-responsive">
+        <table class="table hedbg" *ngIf="objhudpbs.districtWise">
+          <thead>
+            <tr>
+              <th>Sl No</th>
+              <th>Community District</th>
+              <th>Community District GID</th>
+              <th>Community HUD</th>
+              <th>Community HUD GID</th>
+              <th>Total Screenings</th>
+              <th>Unique Screenings</th>
+              <th>Number of Individuals Referred</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let Com of objhudpbs.districtWise; let i = index">
+              <td>{{i+1}}</td>
+              <td>{{Com.district_name}}</td>
+              <td>{{Com.district_gid}}</td>
+              <td>{{Com.hud_name}}</td>
+              <td>{{Com.hud_gid}}</td>
+              <td>{{Com.screeningCount}}</td>
+              <td>{{Com.uniqueCount}}</td>
+              <td>{{Com.referredscreening}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-sm-6">
+    <div class="table_box">
+      <div class="hed">Block Wise</div>
+      <div class="table-responsive">
+        <table class="table hedbg" *ngIf="objblockpbs.districtWise">
+          <thead>
+            <tr>
+              <th>Sl No</th>
+              <th>Community District</th>
+              <th>Community District GID</th>
+              <th>Community HUD</th>
+              <th>Community HUD GID</th>
+              <th>Community Block</th>
+              <th>Community Block GID</th>
+              <th>Total Screenings</th>
+              <th>Unique Screenings</th>
+              <th>Number of Individuals Referred</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let Com of objblockpbs.districtWise; let i = index">
+              <td>{{i+1}}</td>
+              <td>{{Com.district_name}}</td>
+              <td>{{Com.district_gid}}</td>
+              <td>{{Com.hud_name}}</td>
+              <td>{{Com.hud_gid}}</td>
+              <td>{{Com.block_name}}</td>
+              <td>{{Com.block_gid}}</td>
+              <td>{{Com.screeningCount}}</td>
+              <td>{{Com.uniqueCount}}</td>
+              <td>{{Com.referredscreening}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-sm-6">
+    <div class="table_box">
+      <div class="hed">Village Wise</div>
+      <div class="table-responsive">
+        <table class="table hedbg" *ngIf="objvillagepbs.districtWise">
+          <thead>
+            <tr>
+              <th>Sl No</th>
+              <th>Community District</th>
+              <th>Community District GID</th>
+              <th>Community HUD</th>
+              <th>Community HUD GID</th>
+              <th>Community Block</th>
+              <th>Community Block GID</th>
+
+              <th>Community Village</th>
+              <th>Community Village GID</th>
+              <th>Total Screenings</th>
+              <th>Unique Screenings</th>
+              <th>Number of Individuals Referred</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let Com of objvillagepbs.districtWise; let i = index">
+              <td>{{i+1}}</td>
+              <td>{{Com.district_name}}</td>
+              <td>{{Com.district_gid}}</td>
+              <td>{{Com.hud_name}}</td>
+              <td>{{Com.hud_gid}}</td>
+              <td>{{Com.block_name}}</td>
+              <td>{{Com.block_gid}}</td>
+              <td>{{Com.village_name}}</td>
+              <td>{{Com.village_gid}}</td>
+              <td>{{Com.screeningCount}}</td>
+              <td>{{Com.uniqueCount}}</td>
+              <td>{{Com.referredscreening}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,488 @@
+
+<div class="hed_sty1">MTM Performance <i class="bi bi-heart"></i></div>
+
+<app-filters #child></app-filters>
+
+<input type="button"value="Search" class="btn btn-success pul-right" (click)="SearchFilter()" />
+
+
+
+<div class="scroll_sec">
+  <div class="container">
+    <div class="row pan_box_sec">
+      <div class="col-sm-6 d_flex flex_wrap row_gap_30">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center">
+          <div class="num">{{dashtot[0].totalpopulation}}</div>
+          <div class="txt">Total Population</div>
+        </div>
+      </div>
+      <div class="col-sm-6 d_flex flex_wrap row_gap_30">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center" style=" background-color: #f9ab00; color: black;">
+          <div class="num">{{dashdrug.totalPopulation | number}}</div>
+          <div class="txt" style="color: black;">Total Drug Issued</div>
+        </div>
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center" style=" background-color: #f9ab00; color: black;">
+          <div class="num">{{dashdrugind.totalPopulation | number}}</div>
+          <div class="txt" style="color: black;">Individual Drug Issued</div>
+        </div>
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center" style=" background-color: #f9ab00; color: black;">
+          <div class="num">{{dashmtmdrug.totalPopulation | number}}</div>
+          <div class="txt" style="color: black;">No Of MTM Beneficiaries Received Drug</div>
+        </div>
+      </div>
+    </div>
+    <div class="row pan_box_sec">
+      <div class="col-sm-6 d_flex flex_wrap row_gap_30">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center" style="background-color: #1a73e8; color: white; ">
+          <div class="num">{{dashscreening.totalPopulation | number}}</div>
+          <div class="txt" style="color: #f8f9fa;">Total Screening</div>
+        </div>
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center" style="background-color: #1a73e8; color: white; ">
+          <div class="num">{{dashscreeningind.totalPopulation | number}}</div>
+          <div class="txt" style="color: #f8f9fa;">Individual Screening</div>
+        </div>
+      </div>
+      <div class="col-sm-6 d_flex flex_wrap row_gap_30">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center" style="background-color: #7cb342; color: white;">
+          <div class="num">{{dashmtm.totalPopulation | number}}</div>
+          <div class="txt" style="color: black;">Total Confirmed Beneficiary</div>
+        </div>
+      </div>
+    </div>
+    <div class="row pan_box_sec">
+      <div class="col-sm-12">
+        <div class="table_box">
+          <div class="hed">Role Based Screenings</div>
+          <div class="table-responsive">
+            <table class="table hedbg">
+              <thead>
+                <tr>
+                  <th>Sl No</th>
+                  <th>Role Name</th>
+                  <th>Total Screenings</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let Com of rolebaseddata; let i = index">
+                  <td>{{i+1}}</td>
+                  <td>{{Com.roleName}}</td>
+                  <td>
+                    <div style="width:80%;float:left">
+                      <div style="background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); height: 22px;" [style.width.%]="Com.countPer"></div>
+                    </div>
+                    <div style="width: 20%; float: left">{{Com.roleCount}}</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row row_gap_15 pan_box_sec">
+
+        <div class="col-sm-6">
+          <div class="pan_box">
+            <canvas #barCanvas></canvas>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="pan_box">
+            <canvas #barCanvas1></canvas>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="pan_box">
+            <canvas #pieCanvas></canvas>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="pan_box">
+            <canvas #lineCanvas></canvas>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="pan_box">
+            <canvas #lineCanvas1></canvas>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="pan_box">
+            <canvas #barCanvasmtm></canvas>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="pan_box">
+            <canvas #lineCanvasdrug></canvas>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="pan_box">
+            <canvas #barCanvasdrug></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="row pan_box_sec">
+        <div class="col-sm-6">
+          <div class="table_box">
+            <div class="hed">District Wise Drugs Issued</div>
+            <div class="table-responsive">
+              <table class="table hedbg" *ngIf="districtdrug.districtWise">
+                <thead>
+                  <tr>
+                    <th>Sl No</th>
+                    <th>Community District</th>
+                    <th>Community District GID</th>
+                    <!--<th>Total Drug Issued</th>-->
+                    <th>Individual with Drugs Issued</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let Com of districtdrug.districtWise; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{Com.district_name}}</td>
+                    <td>{{Com.district_gid}}</td>
+                    <td>{{Com.totalCount}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-6">
+          <div class="table_box">
+            <div class="hed">District Wise MTM Beneficiary</div>
+            <div class="table-responsive">
+              <table class="table hedbg" *ngIf="districtmtm.districtWise">
+                <thead>
+                  <tr>
+                    <th>Sl No</th>
+                    <th>Community District</th>
+                    <th>Community District GID</th>
+                    <th>Total Confirmed MTM Beneficiary</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let Com of districtmtm.districtWise; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{Com.district_name}}</td>
+                    <td>{{Com.district_gid}}</td>
+                    <td>{{Com.totalCount}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12">
+          <div class="table_box">
+            <div class="hed">District Wise Screening Count</div>
+            <div class="table-responsive">
+              <table class="table hedbg" *ngIf="districtagewise.districtWise">
+                <thead>
+                  <tr>
+                    <th>Sl No</th>
+                    <th>Community District</th>
+                    <th>Community District GID</th>
+                    <th>Total Population</th>
+                    <th>Unique Screenings</th>
+                    <th>Total Screenings</th>
+                    <th>Unique Screened(Below 18)</th>
+                    <th>Unique Screened( 18 to 30)</th>
+                    <th>Unique Screened(30 and above)</th>
+                    <th>Screened Only Once</th>
+                    <th>Multiple Screened</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let Com of districtagewise.districtWise; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{Com.district_name}}</td>
+                    <td>{{Com.district_gid}}</td>
+                    <td>{{Com.totalCount}}</td>
+                    <td>{{Com.uniqueCount}}</td>
+                    <td>{{Com.screeningCount}}</td>
+                    <td>{{Com.below18}}</td>
+                    <td>{{Com.age_18_30}}</td>
+                    <td>{{Com.above30}}</td>
+                    <td>{{Com.onescreening}}</td>
+                    <td>{{Com.multiscreening}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="table_box">
+            <div class="hed">HUD Wise Drugs Issued</div>
+            <div class="table-responsive">
+              <table class="table hedbg" *ngIf="huddrug">
+                <thead>
+                  <tr>
+                    <th>Sl No</th>
+                    <th>District</th>
+                    <th>District GID</th>
+                    <th>HUD</th>
+                    <th>HUD GID</th>
+                    <th>Individual with Drugs Issued</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let Com of huddrug; let i = index">
+                    <td>
+                      {{
+i+1
+                      }}
+                    </td>
+                    <td>{{Com.district_name}}</td>
+                    <td>{{Com.district_gid}}</td>
+                    <td>{{Com.hud_name}}</td>
+                    <td>{{Com.hud_gid}}</td>
+                    <td>{{Com.totalCount}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="table_box">
+            <div class="hed">HUD Wise MTM Beneficiaries</div>
+            <div class="table-responsive">
+              <table class="table hedbg" *ngIf="hudmtm">
+                <thead>
+                  <tr>
+                    <th>Sl No</th>
+                    <th>District</th>
+                    <th>District GID</th>
+                    <th>HUD</th>
+                    <th>HUD GID</th>
+                    <th>Total Confirmed MTM Beneficiaries</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let Com of hudmtm; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{Com.district_name}}</td>
+                    <td>{{Com.district_gid}}</td>
+                    <td>{{Com.hud_name}}</td>
+                    <td>{{Com.hud_gid}}</td>
+                    <td>{{Com.totalCount}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="table_box">
+            <div class="hed">HUD Wise Screening Count</div>
+            <div class="table-responsive">
+              <table class="table hedbg" *ngIf="hudtotpop.hudWise">
+                <thead>
+                  <tr>
+                    <th>Sl No</th>
+                    <th>District</th>
+                    <th>District GID</th>
+                    <th>HUD</th>
+                    <th>HUD GID</th>
+                    <th>Total Population</th>
+                    <th>Unique Screening</th>
+                    <th>Total Screening</th>
+                    <th>Unique Screened(Below 18)</th>
+                    <th>Unique Screened( 18 to 30)</th>
+                    <th>Unique Screened(30 and above)</th>
+                    <th>Screened Only Once</th>
+                    <th>Multiple Screened</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let Com of hudtotpop.hudWise; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{Com.district_name}}</td>
+                    <td>{{Com.district_gid}}</td>
+                    <td>{{Com.hud_name}}</td>
+                    <td>{{Com.hud_gid}}</td>
+                    <td>{{Com.totalCount}}</td>
+                    <td>{{Com.uniqueCount}}</td>
+                    <td>{{Com.screeningCount}}</td>
+                    <td>{{Com.below18}}</td>
+                    <td>{{Com.age_18_30}}</td>
+                    <td>{{Com.above30}}</td>
+                    <td>{{Com.onescreening}}</td>
+                    <td>{{Com.multiscreening}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="table_box">
+            <div class="hed">Block Wise Drugs Issued</div>
+            <div class="table-responsive">
+              <table class="table hedbg" *ngIf="blockdrug">
+                <thead>
+                  <tr>
+                    <th>Sl No</th>
+                    <th>Community Block</th>
+                    <th>Community Block GID</th>
+                    <th>Community HUD</th>
+                    <th>Community HUD GID</th>
+                    <th>Individual with Drugs Issued</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let Com of blockdrug; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{Com.block_name}}</td>
+                    <td>{{Com.block_gid}}</td>
+                    <td>{{Com.hud_name}}</td>
+                    <td>{{Com.hud_gid}}</td>
+                    <td>{{Com.totalCount}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="table_box">
+            <div class="hed">Block Wise MTM Beneficiaries</div>
+            <div class="table-responsive">
+              <table class="table hedbg" *ngIf="blockdrug">
+                <thead>
+                  <tr>
+                    <th>Sl No</th>
+                    <th>Community Block</th>
+                    <th>Community Block GID</th>
+                    <th>Community HUD</th>
+                    <th>Community HUD GID</th>
+                    <th>Total Confirmed MTM Beneficiaries</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let Com of blockmtm; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{Com.block_name}}</td>
+                    <td>{{Com.block_gid}}</td>
+                    <td>{{Com.hud_name}}</td>
+                    <td>{{Com.hud_gid}}</td>
+                    <td>{{Com.totalCount}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="table_box">
+            <div class="hed">Village Wise Drug Issued</div>
+            <div class="table-responsive" style="height:400px;overflow:scroll">
+              <table class="table hedbg" *ngIf="villagedrug">
+                <thead>
+                  <tr>
+                    <th>Sl No</th>
+                    <th>Community District</th>
+                    <th>Community District GID</th>
+                    <th>Community Hud</th>
+                    <th>Community Hud GID</th>
+                    <th>Community Block</th>
+                    <th>Community Block GID</th>
+                    <th>Community Vilage</th>
+                    <th>Community Village GID</th>
+                    <th>Total Drug Issued</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let Com of villagedrug; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{Com.district_name}}</td>
+                    <td>{{Com.district_gid}}</td>
+
+                    <td>{{Com.hud_name}}</td>
+                    <td>{{Com.hud_gid}}</td>
+
+                    <td>{{Com.block_name}}</td>
+                    <td>{{Com.block_gid}}</td>
+
+                    <td>{{Com.village_name}}</td>
+                    <td>{{Com.village_gid}}</td>
+
+                    <td>{{Com.totalCount}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="table_box">
+            <div class="hed">Village Wise MTM Beneficiaries</div>
+            <div class="table-responsive" style="height:400px;overflow:scroll">
+              <table class="table hedbg" *ngIf="villagedrug">
+                <thead>
+                  <tr>
+                    <th>Sl No</th>
+                    <th>Community District</th>
+                    <th>Community District GID</th>
+                    <th>Community Hud</th>
+                    <th>Community Hud GID</th>
+                    <th>Community Block</th>
+                    <th>Community Block GID</th>
+                    <th>Community Vilage</th>
+                    <th>Community Village GID</th>
+                    <th>Total Confirmed MTM Beneficiaries</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let Com of villagedrug; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{Com.district_name}}</td>
+                    <td>{{Com.district_gid}}</td>
+
+                    <td>{{Com.hud_name}}</td>
+                    <td>{{Com.hud_gid}}</td>
+
+                    <td>{{Com.block_name}}</td>
+                    <td>{{Com.block_gid}}</td>
+
+                    <td>{{Com.village_name}}</td>
+                    <td>{{Com.village_gid}}</td>
+
+                    <td>{{Com.totalCount}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+      <div class="row pan_box_sec">
+        <div class="col-sm-6">
+          <div class="pan_box">
+            <canvas #barCanvasreferred></canvas>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="pan_box">
+            <canvas #barCanvasScreened></canvas>
+          </div>
+        </div>
+      </div>
+
+        
+      </div>
+    </div>
+  </div>

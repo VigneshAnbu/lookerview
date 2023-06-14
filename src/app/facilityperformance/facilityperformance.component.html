@@ -1,0 +1,255 @@
+<div class="hed_sty1">Facility Performance <i class="bi bi-heart"></i></div>
+
+
+<div class="row pan_box_sec">
+  <div class="col-sm-12">
+    <div class="pan_box">
+      <canvas #barCanvasdrug></canvas>
+    </div>
+  </div>
+
+</div>
+
+
+  <div class="row pan_box_sec">
+    
+    <div class="col-sm-12 d_flex flex_wrap row_gap_15">
+      <div class="row w_100_per">
+        <div class="col-sm-3">
+          <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg1 h_100">
+            <div class="num clr1">{{facilityobjdistrictwise.t_SyncedScreenings24}}</div>
+            <div class="txt"><span class="text-success"><i class="bi bi-caret-up-fill"></i> 598</span> Last 24 hours</div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg1 h_100">
+            <div class="num clr1">{{facilityobjdistrictwise.t_SyncedScreenings30}}</div>
+            <div class="txt"><span class="text-success"><i class="bi bi-caret-up-fill"></i> 598</span> Last 30 Days</div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg1 h_100">
+            <div class="num clr1">{{facilityobjdistrictwise.syncedAverage}}</div>
+            <div class="txt"><span class="text-danger"><i class="bi bi-caret-down-fill"></i> 598</span> Average Syned per Day</div>
+          </div>
+        </div>
+        <div class="col-sm-2 d_flex flex_align_center">
+          <div class="txt_ov1">Facility Synced</div>
+        </div>
+      </div>
+      <div class="row w_100_per">
+        <div class="col-sm-3">
+          <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg2 h_100">
+            <div class="num clr1">{{facilityobjdistrictwise.t_IndividualScreenings24}}</div>
+            <div class="txt"><span class="text-danger"><i class="bi bi-caret-down-fill"></i> -1</span> Last 24 hours</div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg2 h_100">
+            <div class="num clr1">{{facilityobjdistrictwise.t_IndividualScreenings30}}</div>
+            <div class="txt"><span class="text-danger"><i class="bi bi-caret-down-fill"></i> -2</span> Last 30 days</div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg2 h_100">
+            <div class="num clr1">{{facilityobjdistrictwise.individualscreeningsaverage}}</div>
+            <div class="txt"><span class="text-success"><i class="bi bi-caret-up-fill"></i> 0.13</span> Average Screenings per day</div>
+          </div>
+        </div>
+        <div class="col-sm-2 d_flex flex_align_center">
+          <div class="txt_ov1">Individual Facility</div>
+        </div>
+      </div>
+      <div class="row w_100_per">
+        <div class="col-sm-3">
+          <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg3 h_100">
+            <div class="num clr1">{{facilityobjdistrictwise.t_FamilyScreenings24}}</div>
+            <div class="txt"><span class="text-danger"><i class="bi bi-caret-down-fill"></i> -1</span> Last 24 hours</div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg3 h_100">
+            <div class="num clr1">{{facilityobjdistrictwise.t_FamilyScreenings30}}</div>
+            <div class="txt"><span class="text-danger"><i class="bi bi-caret-down-fill"></i> -2</span> Last 30 days</div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg3 h_100">
+            <div class="num clr1">{{facilityobjdistrictwise.familyscreeningsaverage}}</div>
+            <div class="txt"><span class="text-success"><i class="bi bi-caret-up-fill"></i> 0.13</span> Average Screenings</div>
+          </div>
+        </div>
+        <div class="col-sm-2 d_flex flex_align_center">
+          <div class="txt_ov1">Family Facility</div>
+        </div>
+      </div>
+
+      <div class="row w_100_per">
+        <div class="col-sm-3">
+          <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg3 h_100">
+            <div class="num clr1">{{facilityobjdistrictwise.t_DrugIssued24}}</div>
+            <div class="txt"><span class="text-danger"><i class="bi bi-caret-down-fill"></i> -1</span> Last 24 hours</div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg3 h_100">
+            <div class="num clr1">{{facilityobjdistrictwise.t_DrugIssued30}}</div>
+            <div class="txt"><span class="text-danger"><i class="bi bi-caret-down-fill"></i> -2</span> Last 30 days</div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="pan_box num_sec d_flex flex_d_c flex_justify_center box_bg3 h_100">
+            <div class="num clr1">{{facilityobjdistrictwise.drugissuedaverage}}</div>
+            <div class="txt"><span class="text-success"><i class="bi bi-caret-up-fill"></i> 0.13</span> Average Screenings per day</div>
+          </div>
+        </div>
+        <div class="col-sm-2 d_flex flex_align_center">
+          <div class="txt_ov1">Drug Delivered</div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <div class="pan_box">
+    <div class="row">
+      <div class="col-sm-8">District Wise</div>
+      <!--<div class="col-sm-4">
+        <div class="inp_sec">
+          <div class="form-group">
+            <label>Filter</label>
+            <input type="text" class="form-control" />
+          </div>
+        </div>
+      </div>-->
+    </div>
+    <table class="table sty3 table-bordered">
+      <thead>
+        <tr>
+          <th>Community District</th>
+          <th>Community District ID</th>
+          <th>Facility Synced in last 24Hrs</th>
+          <th>Facility Synced in last 30Days</th>
+          <th>Average Facilities Synced</th>
+          <th>Facility Individual Screenings  last 24 Hrs</th>
+          <th>Facility Individual Screenings  last 30 Days</th>
+          <th>Facility Individual Average Screenings</th>
+          <th>Facility Family Screenings last 24 Hrs</th>
+          <th>Facility Family Screenings last 30 Days</th>
+          <th>Facility Family Average Screenings</th>
+          <th>Facility Drugs Issued last 24 Days</th>
+          <th>Facility Drugs Issued last last 30 Days</th>
+          <th>No of Individual received drugs</th>
+          <th>Confirmed MTM Beneficiaries</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Com of facilityobjdistrictwise.userList">
+          <td>{{Com.district_name}}</td>
+          <td>{{Com.district_id}}</td>
+          <td>{{Com.syncedscreening24}}</td>
+          <td>{{Com.syncedscreening30}}</td>
+
+          <td>{{Com.syncedAverage}}</td>
+
+          <td>{{Com.individualscreenings24}}</td>
+          <td>{{Com.individualscreenings30}}</td>
+          <td>{{Com.individualAverage}}</td>
+
+
+          <td>{{Com.familyscreenings24}}</td>
+          <td>{{Com.familyscreenings30}}</td>
+          <td>{{Com.familyscreeningsAverage}}</td>
+
+          <td>{{Com.drugissued24}}</td>
+          <td>{{Com.drugissued30}}</td>
+          <td>{{Com.drugissuedAverage}}</td>
+
+
+          <td>{{Com.drugcount}}</td>
+          <td>{{Com.mtmcount}}</td>
+
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+
+
+  <div class="pan_box">
+    <div class="row">
+      <div class="col-sm-8">Block Wise</div>
+      <!--<div class="col-sm-4">
+        <div class="inp_sec">
+          <div class="form-group">
+            <label>Filter</label>
+            <input type="text" class="form-control" />
+          </div>
+        </div>
+      </div>-->
+    </div>
+    <table class="table sty3 table-bordered">
+      <thead>
+        <tr>
+          <th>Community District</th>
+          <th>Community District ID</th>
+          <th>Community HUD</th>
+          <th>Community HUD GID</th>
+          <th>Community Block</th>
+          <th>Community Block GID</th>
+          <th>Facility Synced in last 24Hrs</th>
+          <th>Facility Synced in last 30Days</th>
+          <th>Average Facilities Synced</th>
+          <th>Facility Individual Screenings  last 24 Hrs</th>
+          <th>Facility Individual Screenings  last 30 Days</th>
+          <th>Facility Individual Average Screenings</th>
+          <th>Facility Family Screenings last 24 Hrs</th>
+          <th>Facility Family Screenings last 30 Days</th>
+          <th>Facility Family Average Screenings</th>
+          <th>Facility Drugs Issued last 24 Days</th>
+          <th>Facility Drugs Issued last last 30 Days</th>
+          <th>No of Individual received drugs</th>
+          <th>Confirmed MTM Beneficiaries</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Com of facilityobjblockwise.userList">
+          <td>{{Com.district_name}}</td>
+          <td>{{Com.district_id}}</td>
+
+          <td>{{Com.hud_name}}</td>
+          <td>{{Com.hud_gid}}</td>
+
+          <td>{{Com.block_name}}</td>
+          <td>{{Com.block_gid}}</td>
+
+          <td>{{Com.syncedscreening24}}</td>
+          <td>{{Com.syncedscreening30}}</td>
+
+          <td>{{Com.syncedAverage}}</td>
+
+          <td>{{Com.individualscreenings24}}</td>
+          <td>{{Com.individualscreenings30}}</td>
+          <td>{{Com.individualAverage}}</td>
+
+
+          <td>{{Com.familyscreenings24}}</td>
+          <td>{{Com.familyscreenings30}}</td>
+          <td>{{Com.familyscreeningsAverage}}</td>
+
+          <td>{{Com.drugissued24}}</td>
+          <td>{{Com.drugissued30}}</td>
+          <td>{{Com.drugissuedAverage}}</td>
+
+
+          <td>{{Com.drugcount}}</td>
+          <td>{{Com.mtmcount}}</td>
+
+        </tr>
+      </tbody>
+
+    </table>
+  </div>

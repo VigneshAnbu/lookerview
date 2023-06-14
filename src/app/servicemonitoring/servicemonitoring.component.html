@@ -1,0 +1,257 @@
+
+
+
+<div class="hed_sty1">Service Monitoring <i class="bi bi-heart"></i></div>
+
+<div class="scroll_sec">
+  <div class="container">
+    <div class="hed_sty1 text-center m_tb_50">Services Monitoring - Use to understand the number of drugs issued, lab tests conducted, streets with delivered and undelivered services in TN</div>
+    <div class="row pan_box_sec">
+      <div class="col-sm-3">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+          <div class="num">{{objDrugQuantity[0].count}}</div>
+          <div class="txt">
+            Drug Quantity issued in last 30 day
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+          <div class="num">{{objLabTestsinlast[0].count}}</div>
+          <div class="txt">
+            Lab Tests in last 30 days
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+          <div class="num">{{objServiceMon_ScreeningPeruser[0].count}}</div>
+          <div class="txt">
+            Screening Per user (Last 30 days)
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+          <div class="num">{{objStreetswithundelivered[0].count}}</div>
+          <div class="txt">
+            Streets with undelivered services
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+          <div class="num">{{objServiceMon_Noofstreetswithservicesdelivered[0].count}}</div>
+          <div class="txt">
+            No of streets with services delivered
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+          <div class="num">{{objservicemon_streetswithundelivered90[0].count}}</div>
+          <div class="txt">
+            Streets with no screenings in last 90 days
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="table_box">
+          <div class="hed">Street names with Screening count</div>
+
+          <div class="table-responsive">
+
+
+
+            <table class="table hedbg" *ngIf="objServiceMon_StreetwithScreeningcount">
+              <thead>
+                <tr>
+                  <th>Citizen Street Name</th>
+                  <th>Citizen Street Gid</th>
+                  <th>Total Screenings</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let Com of objServiceMon_StreetwithScreeningcount">
+                  <td>{{Com.street_name}}</td>
+                  <td>{{Com.street_gid}}</td>
+                  <td>{{Com.count}}</td>
+
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="table_box">
+          <div class="hed">
+            District Wise
+          </div>
+
+          <div class="table-responsive">
+
+
+
+            <table class="table hedbg" *ngIf="objServicesMonitoringDistrictWise">
+              <thead>
+                <tr>
+                  <th>Community District</th>
+                  <th>Community District Gid</th>
+                  <th>Total Screenings</th>
+                  <th>Total Lab Tests</th>
+                  <th>Lab Tests in last 30 days</th>
+                  <th>Screenings per User</th>
+                  <th>Streets with undelivered services</th>
+                  <th>Streets with undelivered services in last 90 days</th>
+                  <th>Streets with services delivered</th>
+                  <th>Streets with no screenings in last 90 days</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let Com of objServicesMonitoringDistrictWise">
+                  <td>{{Com.district_name}}</td>
+                  <td>{{Com.district_gid}}</td>
+                  <td>{{Com.totalscreening}}</td>
+                  <td>{{Com.totallabtest}}</td>
+                  <td>{{Com.labtest30}}</td>
+                  <td>{{Com.screeningperuser}}</td>
+                  <td>{{Com.streetswithundelivered}}</td>
+                  <td>{{Com.streetswithundelivered90}}</td>
+                  <td>{{Com.streetswithservicesdelivered}}</td>
+                  <td>{{Com.streetswithnoscreenings90}}</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="table_box">
+          <div class="hed">
+            HUD Wise
+          </div>
+
+          <div class="table-responsive">
+
+
+
+            <table class="table hedbg" *ngIf="objServicesMonitoringHUDWise">
+              <thead>
+                <tr>
+                  <th>Community District</th>
+                  <th>Community District Gid</th>
+                  <th>Community HUD</th>
+                  <th>Total Screenings</th>
+                  <th>Total Lab Tests</th>
+                  <th>Lab Tests in last 30 days</th>
+                  <th>Screenings per User</th>
+                  <th>Streets with undelivered services</th>
+                  <th>Streets with undelivered services in last 90 days</th>
+                  <th>Streets with services delivered</th>
+                  <th>Streets with no screenings in last 90 days</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let Com of objServicesMonitoringHUDWise">
+                  <td>{{Com.district_name}}</td>
+                  <td>{{Com.district_gid}}</td>
+                  <td>{{Com.hud_name}}</td>
+                  <td>{{Com.totalscreening}}</td>
+                  <td>{{Com.totallabtest}}</td>
+                  <td>{{Com.labtest30}}</td>
+                  <td>{{Com.screeningperuser}}</td>
+                  <td>{{Com.streetswithundelivered}}</td>
+                  <td>{{Com.streetswithundelivered90}}</td>
+                  <td>{{Com.streetswithservicesdelivered}}</td>
+                  <td>{{Com.streetswithnoscreenings90}}</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-sm-6">
+        <div class="table_box">
+          <div class="hed">
+            Block Wise
+          </div>
+
+          <div class="table-responsive">
+
+
+
+            <table class="table hedbg" *ngIf="objServicesMonitoringBlockWise">
+              <thead>
+                <tr>
+                  <th>Community District</th>
+                  <th>Community District Gid</th>
+                  <th>Community HUD</th>
+                  <th>Community HUD GID</th>
+                  <th>Community Block</th>
+                  <th>Total Screenings</th>
+                  <th>Total Lab Tests</th>
+                  <th>Lab Tests in last 30 days</th>
+                  <th>Screenings per User</th>
+                  <th>Streets with undelivered services</th>
+                  <th>Streets with undelivered services in last 90 days</th>
+                  <th>Streets with services delivered</th>
+                  <th>Streets with no screenings in last 90 days</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let Com of objServicesMonitoringBlockWise">
+                  <td>{{Com.district_name}}</td>
+                  <td>{{Com.district_gid}}</td>
+                  <td>{{Com.hud_name}}</td>
+                  <td>{{Com.hud_gid}}</td>
+                  <td>{{Com.block_name}}</td>
+                  <td>{{Com.totalscreening}}</td>
+                  <td>{{Com.totallabtest}}</td>
+                  <td>{{Com.labtest30}}</td>
+                  <td>{{Com.screeningperuser}}</td>
+                  <td>{{Com.streetswithundelivered}}</td>
+                  <td>{{Com.streetswithundelivered90}}</td>
+                  <td>{{Com.streetswithservicesdelivered}}</td>
+                  <td>{{Com.streetswithnoscreenings90}}</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    
+
+
+    
+
+
+    
+
+  </div>
+</div>

@@ -1,0 +1,124 @@
+<div class="hed_sty1">Population Dashboard <i class="bi bi-heart"></i></div>
+
+<div class="scroll_sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="table_box">
+          <div class="hed">Facility Wise</div>
+          <div class="table-responsive">
+            <table class="table hedbg">
+              <thead>
+                <tr>
+                  <th>Institution District</th>
+                  <th>Institution District Gid</th>
+                  <th>Institution HUD</th>
+                  <th>Institution HUD Gid</th>
+                  <th>Institution Directorate</th>
+                  <th>Institution Block</th>
+                  <th>Institution Block Gid</th>
+                  <th>Institution Facility</th>
+                  <th>Institution Facility Type</th>
+                  <th>is_Institution_Hwc</th>
+                  <th>Total OP</th>
+                  <th>Adult OP Male</th>
+                  <th>Adult OP Female</th>
+                  <th>Adult Op Transgender</th>
+                  <th>Adult[Total]</th>
+                  <th>Children OP Male</th>
+                  <th>Children OP Female</th>
+                  <th>Children Op Transgender</th>
+                  <th>Children[Total]</th>
+                  <th>Total OP Male</th>
+                  <th>Total OP Female</th>
+                  <th>Total OP Transgender</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let Com of facilitylist">
+                  <td>{{Com.district_name}}</td>
+                  <td>{{Com.district_gid}}</td>
+                  <td>{{Com.hud_name}}</td>
+                  <td>{{Com.hud_gid}}</td>
+                  <td>{{Com.directorate_name}}</td>
+                  <td>{{Com.block_name}}</td>
+                  <td>{{Com.block_gid}}</td>
+                  <td>{{Com.facility_name}}</td>
+                  <td>{{Com.facility_type_name}}</td>
+                  <td>{{Com.is_hwc}}</td>
+                  <td>{{Com.totalOP}}</td>
+                  <td>{{Com.adultOPMale}}</td>
+                  <td>{{Com.adultOPFemale}}</td>
+                  <td>{{Com.adultOPtransgender}}</td>
+                  <td>{{Com.adultTotal}}</td>
+                  <td>{{Com.childrenOPMale}}</td>
+                  <td>{{Com.ChildrenOPFemale}}</td>
+                  <td>{{Com.childrenOPtransgender}}</td>
+                  <td>{{Com.childrenTotal}}</td>
+                  <td>{{Com.totalOPMale}}</td>
+                  <td>{{Com.totalOPFemale}}</td>
+                  <td>{{Com.totalOPtransgender}}</td>
+
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="scroll_sec">
+  <div class="container">    
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="table_box">
+          <div class="hed">Diagnosis Wise Morbidity Report</div>
+          <div class="table-responsive">
+            <table class="table hedbg">
+              <thead>
+                <tr>
+                  <th>Diagnosis Name</th>
+                  <th>Total OP</th>
+                  <th>Adult OP Male</th>
+                  <th>Adult OP Female</th>
+                  <th>Adult Op Transgender</th>
+                  <th>Total Adult OP</th>
+                  <th>Child OP Male</th>
+                  <th>Child OP Female</th>
+                  <th>Child Op Transgender</th>
+                  <th>Total Child OP</th>
+                  <th>Total Male</th>
+                  <th>Total Female</th>
+                  <th>Total Transgender</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let Com of diagnosislist">
+                  <td>{{Com.diagnosisName}}</td>
+                  <td>{{Com.totalop}}</td>
+                  <td>{{Com.adultopmale}}</td>
+                  <td>{{Com.adultopfemale}}</td>
+                  <td>{{Com.adultoptransgender}}</td>
+                  <td>{{Com.adulttotal}}</td>
+                  <td>{{Com.childopmale}}</td>
+                  <td>{{Com.childopfemale}}</td>
+                  <td>{{Com.childoptransgender}}</td>
+                  <td>{{Com.childtotal}}</td>
+                  <td>{{Com.totalopmale}}</td>
+                  <td>{{Com.totalopfemale}}</td>
+                  <td>{{Com.totaloptransgender}}</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>      
+    </div>
+  </div>
+</div>

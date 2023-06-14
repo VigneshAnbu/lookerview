@@ -1,0 +1,144 @@
+<div class="hed_sty1">Population Dashboard KPI<i class="bi bi-heart"></i></div>
+
+
+<div class="row pan_box_sec">
+  <div class="col-sm-4">
+    <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+      <div class="num">{{objpop.total_population}}</div>
+      <div class="txt">Total Population</div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+      <div class="num">{{objpop.verified_population}}</div>
+      <div class="txt">Population Verified</div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+      <div class="num">{{objpop.unverified_population}}</div>
+      <div class="txt">Population Not Verified </div>
+    </div>
+  </div>  
+</div>
+
+
+<div class="row pan_box_sec">
+  <div class="col-sm-3">
+    <div style="background-color: #80D3EA" class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+      <div class="num">{{objpop.resident_population}}</div>
+      <div class="txt">Resident Population</div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div style="background-color: #FFC300" class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+      <div class="num">{{objpop.migrated_population}}</div>
+      <div class="txt">Migrated</div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div style="background-color: #80D3EA" class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+      <div class="num">{{objpop.nontraceable}}</div>
+      <div class="txt">Non Traceable</div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div style="background-color: #80D3EA" class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+      <div class="num">{{objpop.duplicate}}</div>
+      <div class="txt">Duplicate</div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div style="background-color: #80D3EA" class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+      <div class="num">{{objpop.death}}</div>
+      <div class="txt">Death</div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+<div class="table_box">
+  <div class="hed">District Wise</div>
+  <table class="table hedbg">
+    <thead>
+      <tr>
+        <th>Community District</th>
+        <th>Community District Gid</th>
+        <th>Total Population</th>
+        <th>Verified Population</th>
+        <th>Population Non Verified</th>
+        <th>Population Given Consent</th>
+        <th>Population Mapped to Street</th>
+        <th>Resident Count</th>
+        <th>Non Traceable Count</th>
+        <th>Migrated Count</th>
+        <th>Duplicate Count</th>
+        <th>Death Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let Com of popdistrictwise">
+        <td>{{Com.district_name}}</td>
+        <td>{{Com.district_gid}}</td>
+        <td>{{Com.total_population}}</td>
+        <td>{{Com.verified_population}}</td>
+        <td>{{Com.unverified_population}}</td>
+        <td>{{Com.consent}}</td>
+        <td>{{Com.allocated_streets}}</td>
+        <td>{{Com.resident_population}}</td>
+        <td>{{Com.migrated_population}}</td>
+        <td>{{Com.nontraceable}}</td>
+        <td>{{Com.duplicate}}</td>
+        <td>{{Com.death}}</td>
+      </tr>   
+    </tbody>
+  </table>
+</div>
+
+
+
+<div class="table_box">
+  <div class="hed">HUD Wise</div>
+  <table class="table hedbg">
+    <thead>
+      <tr>
+        <th>Community District</th>
+        <th>Community District Gid</th>
+        <th>Community HUD</th>
+        <th>Community HUD Gid</th>
+        <th>Total Population</th>
+        <th>Verified Population</th>
+        <th>Population Non Verified</th>
+        <th>Population Given Consent</th>
+        <th>Population Mapped to Street</th>
+        <th>Resident Count</th>
+        <th>Non Traceable Count</th>
+        <th>Migrated Count</th>
+        <th>Duplicate Count</th>
+        <th>Death Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let Com of pophudwise">
+        <td>{{Com.district_name}}</td>
+        <td>{{Com.district_gid}}</td>
+        <td>{{Com.hud_name}}</td>
+        <td>{{Com.hud_id}}</td>
+        <td>{{Com.total_population}}</td>
+        <td>{{Com.verified_population}}</td>
+        <td>{{Com.unverified_population}}</td>
+        <td>{{Com.consent}}</td>
+        <td>{{Com.allocated_streets}}</td>
+        <td>{{Com.resident_population}}</td>
+        <td>{{Com.migrated_population}}</td>
+        <td>{{Com.nontraceable}}</td>
+        <td>{{Com.duplicate}}</td>
+        <td>{{Com.death}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

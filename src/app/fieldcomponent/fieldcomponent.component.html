@@ -1,0 +1,237 @@
+
+<div class="hed_sty1">Filed Verification <i class="bi bi-heart"></i></div>
+
+<app-filters #child></app-filters>
+
+<input type="button" value="Search" class="btn btn-success pul-right" (click)="SearchFilter()" />
+
+
+<div class="scroll_sec">
+  <div class="container">
+    <div class="row pan_box_sec">
+      <div class="col-sm-6 d_flex flex_wrap row_gap_30">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center">
+          <div class="num">{{objtotalVerified.verifiedPopulation | number}}</div>
+          <div class="txt">Total Verified Population</div>
+        </div>
+      </div>
+      <div class="col-sm-6 d_flex flex_wrap row_gap_30">
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center" style=" background-color: #f9ab00; color: black;">
+          <div class="num">{{objfamilymember.familiesAdded | number}}</div>
+          <div class="txt" style="color: black;">Families Added</div>
+        </div>
+        <div class="pan_box num_sec d_flex flex_d_c flex_justify_center" style=" background-color: #f9ab00; color: black;">
+          <div class="num">{{objfamilymember.membersAdded | number}}</div>
+          <div class="txt" style="color: black;">Members Added</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row pan_box_sec">
+
+      <div class="row pan_box_sec">
+        <div class="col-sm-6">
+          <div class="table_box">
+            <div class="hed">District Wise</div>
+            <div class="table-responsive">
+              <table class="table hedbg" *ngIf="districtwiselist">
+                <thead>
+                  <tr>
+                    <th>Sl No</th>
+                    <th>Community District</th>
+                    <th>Community District GID</th>
+                    <th>Total Population</th>
+                    <th>Verified Population</th>
+                    <th>Resident</th>
+                    <th>Death</th>
+                    <th>Non Treacable</th>
+                    <th>Migrated</th>
+                    <th>Duplicate</th>
+                    <th>Visitor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let Com of districtwiselist; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{Com.district_name}}</td>
+                    <td>{{Com.district_gid}}</td>
+                    <td>{{Com.total_population}}</td>
+                    <td>{{Com.verified_population}}</td>
+                    <td>{{Com.resident_population}}</td>
+                    <td>{{Com.death}}</td>
+                    <td>{{Com.nontraceable}}</td>
+                    <td>{{Com.migrated_population}}</td>
+                    <td>{{Com.duplicate}}</td>
+                    <td>{{Com.visitor}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-6">
+          <div class="table_box">
+            <div class="hed">HUD Wise</div>
+            <div class="table-responsive">
+              <table class="table hedbg" *ngIf="hudwiselist">
+                <thead>
+                  <tr>
+                    <th>Sl No</th>
+                    <th>Community District</th>
+                    <th>Community District GID</th>
+                    <th>Community HUD</th>
+                    <th>Community HUD GID</th>
+                    <th>Total Population</th>
+                    <th>Verified Population</th>
+                    <th>Resident</th>
+                    <th>Death</th>
+                    <th>Non Treacable</th>
+                    <th>Migrated</th>
+                    <th>Duplicate</th>
+                    <th>Visitor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let Com of hudwiselist; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{Com.district_name}}</td>
+                    <td>{{Com.district_gid}}</td>
+                    <td>{{Com.hud_name}}</td>
+                    <td>{{Com.hud_gid}}</td>
+                    <td>{{Com.total_population}}</td>
+                    <td>{{Com.verified_population}}</td>
+                    <td>{{Com.resident_population}}</td>
+                    <td>{{Com.death}}</td>
+                    <td>{{Com.nontraceable}}</td>
+                    <td>{{Com.migrated_population}}</td>
+                    <td>{{Com.duplicate}}</td>
+                    <td>{{Com.visitor}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-6">
+          <div class="table_box">
+            <div class="hed">Block Wise</div>
+            <div class="table-responsive">
+              <table class="table hedbg" *ngIf="blockwiselist">
+                <thead>
+                  <tr>
+                    <th>Sl No</th>
+                    <th>Community District</th>
+                    <th>Community District GID</th>
+                    <th>Community HUD</th>
+                    <th>Community HUD GID</th>
+                    <th>Community Block</th>
+                    <th>Community Block GID</th>
+                    <th>Total Population</th>
+                    <th>Verified Population</th>
+                    <th>Resident</th>
+                    <th>Death</th>
+                    <th>Non Treacable</th>
+                    <th>Migrated</th>
+                    <th>Duplicate</th>
+                    <th>Visitor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let Com of blockwiselist; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{Com.district_name}}</td>
+                    <td>{{Com.district_gid}}</td>
+                    <td>{{Com.hud_name}}</td>
+                    <td>{{Com.hud_gid}}</td>
+                    <td>{{Com.block_name}}</td>
+                    <td>{{Com.block_gid}}</td>
+                    <td>{{Com.total_population}}</td>
+                    <td>{{Com.verified_population}}</td>
+                    <td>{{Com.resident_population}}</td>
+                    <td>{{Com.death}}</td>
+                    <td>{{Com.nontraceable}}</td>
+                    <td>{{Com.migrated_population}}</td>
+                    <td>{{Com.duplicate}}</td>
+                    <td>{{Com.visitor}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-6">
+          <div class="table_box">
+            <div class="hed">Village Wise</div>
+            <div class="table-responsive">
+              <table class="table hedbg" *ngIf="villagewiselist">
+                <thead>
+                  <tr>
+                    <th>Sl No</th>
+                    <th>Community District</th>
+                    <th>Community District GID</th>
+                    <th>Community HUD</th>
+                    <th>Community HUD GID</th>
+                    <th>Community Block</th>
+                    <th>Community Block GID</th>
+                    <th>Community Village</th>
+                    <th>Community Village GID</th>
+                    <th>Total Population</th>
+                    <th>Verified Population</th>
+                    <th>Resident</th>
+                    <th>Death</th>
+                    <th>Non Treacable</th>
+                    <th>Migrated</th>
+                    <th>Duplicate</th>
+                    <th>Visitor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let Com of villagewiselist; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{Com.district_name}}</td>
+                    <td>{{Com.district_gid}}</td>
+                    <td>{{Com.hud_name}}</td>
+                    <td>{{Com.hud_gid}}</td>
+                    <td>{{Com.block_name}}</td>
+                    <td>{{Com.block_gid}}</td>
+                    <td>{{Com.village_name}}</td>
+                    <td>{{Com.village_gid}}</td>
+                    <td>{{Com.total_population}}</td>
+                    <td>{{Com.verified_population}}</td>
+                    <td>{{Com.resident_population}}</td>
+                    <td>{{Com.death}}</td>
+                    <td>{{Com.nontraceable}}</td>
+                    <td>{{Com.migrated_population}}</td>
+                    <td>{{Com.duplicate}}</td>
+                    <td>{{Com.visitor}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+    </div>
+
+
+    <div class="row pan_box_sec">
+      <div class="col-sm-12">
+        <div class="pan_box">
+          <canvas #barCanvasdrug></canvas>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
