@@ -11,60 +11,63 @@ import { FiltersComponent } from '../filters/filters.component';
   styleUrls: ['./dphdashboard.component.css'],
 })
 export class DphdashboardComponent {
+  populationTotal: number = 0;
+  screeningCount: number = 0;
+  confirmedCasesCount: number = 0;
   diabetesData = [
     {
       name: 'Confirmed',
-      value: 8940000,
+      value: 0,
     },
     {
       name: 'Controlled',
-      value: 5000000,
+      value: 0,
     },
     {
       name: 'Uncontrolled',
-      value: 7200000,
+      value: 0,
     },
   ];
   hypertensionData = [
     {
       name: 'Confirmed',
-      value: 8940000,
+      value: 0,
     },
     {
       name: 'Controlled',
-      value: 5000000,
+      value: 0,
     },
     {
       name: 'Uncontrolled',
-      value: 7200000,
+      value: 0,
     },
   ];
   bothData = [
     {
       name: 'Confirmed',
-      value: 8940000,
+      value: 0,
     },
     {
       name: 'Controlled',
-      value: 5000000,
+      value: 0,
     },
     {
       name: 'Uncontrolled',
-      value: 7200000,
+      value: 0,
     },
   ];
   diabVsHyp = [
     {
       name: 'Diabetes',
-      value: 8940000,
+      value: 0,
     },
     {
       name: 'Hypertension',
-      value: 5000000,
+      value: 0,
     },
     {
       name: 'Both',
-      value: 754,
+      value: 0,
     },
   ];
   view: [number, number] = [350, 250];
@@ -97,136 +100,27 @@ export class DphdashboardComponent {
     group: ScaleType.Linear,
     domain: ['#1a73e8', '#12b5cb', '#e52592'],
   };
-  districtWise = [
-    {
-      communityDistrict: 'Chennai',
-      districtGid: 2,
-      TotalPopulation: 4270471,
-      Population: 3825501,
-      Screenings: 523604,
-      confirmedDM: 27595,
-      controlledDM: 4037,
-      Diabetes: '15%',
-      confirmedHT: 34856,
-      controlledHT: 82,
-      Hypertension: '0%',
-      confirmedBoth: 3,
-      controlledBoth: 0,
-      Both: '0%',
-    },
-    {
-      communityDistrict: 'Chennai',
-      districtGid: 2,
-      TotalPopulation: 4270471,
-      Population: 3825501,
-      Screenings: 523604,
-      confirmedDM: 27595,
-      controlledDM: 4037,
-      Diabetes: '15%',
-      confirmedHT: 34856,
-      controlledHT: 82,
-      Hypertension: '0%',
-      confirmedBoth: 3,
-      controlledBoth: 0,
-      Both: '0%',
-    },
-    {
-      communityDistrict: 'Chennai',
-      districtGid: 2,
-      TotalPopulation: 4270471,
-      Population: 3825501,
-      Screenings: 523604,
-      confirmedDM: 27595,
-      controlledDM: 4037,
-      Diabetes: '15%',
-      confirmedHT: 34856,
-      controlledHT: 82,
-      Hypertension: '0%',
-      confirmedBoth: 3,
-      controlledBoth: 0,
-      Both: '0%',
-    },
-    {
-      communityDistrict: 'Chennai',
-      districtGid: 2,
-      TotalPopulation: 4270471,
-      Population: 3825501,
-      Screenings: 523604,
-      confirmedDM: 27595,
-      controlledDM: 4037,
-      Diabetes: '15%',
-      confirmedHT: 34856,
-      controlledHT: 82,
-      Hypertension: '0%',
-      confirmedBoth: 3,
-      controlledBoth: 0,
-      Both: '0%',
-    },
-    {
-      communityDistrict: 'Chennai',
-      districtGid: 2,
-      TotalPopulation: 4270471,
-      Population: 3825501,
-      Screenings: 523604,
-      confirmedDM: 27595,
-      controlledDM: 4037,
-      Diabetes: '15%',
-      confirmedHT: 34856,
-      controlledHT: 82,
-      Hypertension: '0%',
-      confirmedBoth: 3,
-      controlledBoth: 0,
-      Both: '0%',
-    },
-    {
-      communityDistrict: 'Chennai',
-      districtGid: 2,
-      TotalPopulation: 4270471,
-      Population: 3825501,
-      Screenings: 523604,
-      confirmedDM: 27595,
-      controlledDM: 4037,
-      Diabetes: '15%',
-      confirmedHT: 34856,
-      controlledHT: 82,
-      Hypertension: '0%',
-      confirmedBoth: 3,
-      controlledBoth: 0,
-      Both: '0%',
-    },
-    {
-      communityDistrict: 'Chennai',
-      districtGid: 2,
-      TotalPopulation: 4270471,
-      Population: 3825501,
-      Screenings: 523604,
-      confirmedDM: 27595,
-      controlledDM: 4037,
-      Diabetes: '15%',
-      confirmedHT: 34856,
-      controlledHT: 82,
-      Hypertension: '0%',
-      confirmedBoth: 3,
-      controlledBoth: 0,
-      Both: '0%',
-    },
-    {
-      communityDistrict: 'Chennai',
-      districtGid: 2,
-      TotalPopulation: 4270471,
-      Population: 3825501,
-      Screenings: 523604,
-      confirmedDM: 27595,
-      controlledDM: 4037,
-      Diabetes: '15%',
-      confirmedHT: 34856,
-      controlledHT: 82,
-      Hypertension: '0%',
-      confirmedBoth: 3,
-      controlledBoth: 0,
-      Both: '0%',
-    },
+  districtWise: any = [
+    // {
+    //   both_Percentage: "0",
+    //   confirmed_Both: "0",
+    //   confirmed_Diabetes_Mellitus: "1",
+    //   confirmed_Hypertension: "0",
+    //   controlled_Both: "0",
+    //   controlled_Diabetes_Mellitus: "0",
+    //   controlled_Hypertension: "0",
+    //   diabetes_Percentage: "0",
+    //   district_Gid: "17",
+    //   district_Name: "Ariyalur",
+    //   hypertension_Percentage: "0",
+    //   population_Age: "696924",
+    //   total_Population: "806527",
+    //   total_Screening: "23520",
+    // }
   ];
+  hudWise: any = [];
+  blockWise: any = [];
+  VillageWise: any = [];
   filterForm!: FormGroup;
 
   // Filter Settings
@@ -243,7 +137,7 @@ export class DphdashboardComponent {
   constructor(
     private CommunitService: CommunityServiceService,
     private fb: FormBuilder
-  ) {}
+  ) { }
 
   ngOnInit() {
     // this.filterForm = this.fb.group({
@@ -276,6 +170,7 @@ export class DphdashboardComponent {
     //     allowSearchFilter: true,
     //   };
     // });
+    this.LoadAll();
   }
 
   SearchFilter() {
@@ -285,5 +180,124 @@ export class DphdashboardComponent {
     this.LoadAll(Payl);
   }
 
-  LoadAll(payload: any) {}
+  LoadAll(payload?: any) {
+    this.getPopulation(payload);
+    this.getTotalScreeningCount(payload);
+    this.getConfirmedCasesCount(payload);
+    this.getDiabetesvsHypertensionvsBoth(payload);
+    this.getConfirmedControlledUncontrolledDiabetes(payload);
+    this.getConfirmedControlledUncontrolledHypertension(payload);
+    this.getConfirmedControlledUncontrolledBoth(payload);
+    this.getDistrictWisePopulation(payload);
+    this.getHudWisePopulation(payload);
+    this.getBlockWisePopulation(payload);
+    this.getVillageWisePopulation(payload);
+  }
+  getPopulation(filterPayload?: any) {
+    this.CommunitService.getPopulationCount(filterPayload).subscribe((res: any) => {
+      this.populationTotal = res.total_population;
+    })
+  }
+  getTotalScreeningCount(filterPayload?: any) {
+    this.CommunitService.getTotalScreeningCount(filterPayload).subscribe((res: any) => {
+      this.screeningCount = res.total_Screening;
+    })
+  }
+  getConfirmedCasesCount(filterPayload?: any) {
+    this.CommunitService.getConfirmedCasesCount(filterPayload).subscribe((res: any) => {
+      this.confirmedCasesCount = res.total_Confirmed_caeses;
+    })
+  }
+  getDiabetesvsHypertensionvsBoth(filterPayload?: any) {
+    this.CommunitService.getDiabetesvsHypertensionvsBoth(filterPayload).subscribe((res: any) => {
+      this.diabVsHyp = [
+        {
+          name: 'Diabetes',
+          value: parseInt(res.diabetes_Mellitus),
+        },
+        {
+          name: 'Hypertension',
+          value: parseInt(res.hypertension),
+        },
+        {
+          name: 'Both',
+          value: parseInt(res.both),
+        },
+      ];
+    })
+  }
+  getConfirmedControlledUncontrolledDiabetes(filterPayload?: any) {
+    this.CommunitService.getConfirmedControlledUncontrolledDiabetes(filterPayload).subscribe((res: any) => {
+      this.diabetesData = [
+        {
+          name: 'Confirmed',
+          value: res.confirmed_Diabetes_Mellitus,
+        },
+        {
+          name: 'Controlled',
+          value: res.controlled_Diabetes_Mellitus,
+        },
+        {
+          name: 'Uncontrolled',
+          value: res.uncontrolled_Diabetes,
+        },
+      ];
+    })
+  }
+  getConfirmedControlledUncontrolledHypertension(filterPayload?: any) {
+    this.CommunitService.getConfirmedControlledUncontrolledHypertension(filterPayload).subscribe((res: any) => {
+      this.hypertensionData = [
+        {
+          name: 'Confirmed',
+          value: res.confirmed_Hypertension,
+        },
+        {
+          name: 'Controlled',
+          value: res.controlled_Hypertension,
+        },
+        {
+          name: 'Uncontrolled',
+          value: res.uncontrolled_Hypertension,
+        },
+      ];
+    })
+  }
+  getConfirmedControlledUncontrolledBoth(filterPayload?: any) {
+    this.CommunitService.getConfirmedControlledUncontrolledBoth(filterPayload).subscribe((res: any) => {
+      this.bothData = [
+        {
+          name: 'Confirmed',
+          value: res.confirmed_Both,
+        },
+        {
+          name: 'Controlled',
+          value: res.controlled_Both,
+        },
+        {
+          name: 'Uncontrolled',
+          value: res.uncontrolled_Both,
+        },
+      ];
+    })
+  }
+  getDistrictWisePopulation(filterPayload?: any) {
+    this.CommunitService.getDistrictWisePopulation(filterPayload).subscribe((res: any) => {
+      this.districtWise = res;
+    })
+  }
+  getHudWisePopulation(filterPayload?: any) {
+    this.CommunitService.getHudWisePopulation(filterPayload).subscribe((res: any) => {
+      this.hudWise = res;
+    })
+  }
+  getBlockWisePopulation(filterPayload?: any) {
+    this.CommunitService.getBlockWisePopulation(filterPayload).subscribe((res: any) => {
+      this.blockWise = res;
+    })
+  }
+  getVillageWisePopulation(filterPayload?: any) {
+    this.CommunitService.getVillageWisePopulation(filterPayload).subscribe((res: any) => {
+      this.VillageWise = res;
+    })
+  }
 }

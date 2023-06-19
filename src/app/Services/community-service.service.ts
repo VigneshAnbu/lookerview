@@ -8,7 +8,7 @@ import { DistrictWise } from '../Models/Models.DistrictWise';
 })
 export class CommunityServiceService {
 
-  /*BaseURL: string = "https://localhost:7177/";*/
+  // BaseURL: string = "https://localhost:7177/";
 
   /*BaseURL: string = "https://localhost:44347/";*/
 
@@ -571,5 +571,39 @@ export class CommunityServiceService {
 
   getvillagemasterlooker(querystring: any): Observable<any> {
     return this.http.get<any>(this.BaseURL + 'getvillagemasterlooker?village_name=' + querystring +'');
+  }
+
+  getPopulationCount(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetPopulationCount', { params: payload });
+  }
+  getTotalScreeningCount(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetTotalScreeningCount', { params: payload });
+  }
+  getConfirmedCasesCount(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetConfirmedCasesCount', { params: payload });
+  }
+  getDiabetesvsHypertensionvsBoth(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetDiabetesvsHypertensionvsBoth', { params: payload });
+  }
+  getConfirmedControlledUncontrolledDiabetes(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetConfirmedControlledUncontrolledDiabetes', { params: payload });
+  }
+  getConfirmedControlledUncontrolledHypertension(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetConfirmedControlledUncontrolledHypertension', { params: payload });
+  }
+  getConfirmedControlledUncontrolledBoth(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetConfirmedControlledUncontrolledBoth', { params: payload });
+  }
+  getDistrictWisePopulation(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetDistrictWisePopulation', { params: payload });
+  }
+  getHudWisePopulation(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetHudWisePopulation', { params: payload });
+  }
+  getBlockWisePopulation(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetBlockWisePopulation', { params: payload });
+  }
+  getVillageWisePopulation(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetVillageWisePopulation', { params: payload });
   }
 }

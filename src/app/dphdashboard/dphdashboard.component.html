@@ -5,19 +5,19 @@
         <div class="row pan_box_sec">
             <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
                 <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
-                    <div class="num">{{12343534 | number}}</div>
+                    <div class="num">{{populationTotal | number}}</div>
                     <div class="txt">Population(Age >=18)</div>
                 </div>
             </div>
             <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
                 <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
-                    <div class="num">{{12343534 | number}}</div>
+                    <div class="num">{{screeningCount | number}}</div>
                     <div class="txt">Screening(Age >18)</div>
                 </div>
             </div>
             <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
                 <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
-                    <div class="num">{{12343534 | number}}</div>
+                    <div class="num">{{confirmedCasesCount | number}}</div>
                     <div class="txt">Confirmed</div>
                 </div>
             </div>
@@ -98,20 +98,20 @@
                             </thead>
                             <tbody>
                                 <tr *ngFor="let Com of districtWise">
-                                    <td>{{Com.communityDistrict}}</td>
-                                    <td>{{Com.districtGid}}</td>
-                                    <td>{{Com.TotalPopulation | number}} </td>
-                                    <td>{{Com.Population | number}}</td>
-                                    <td>{{Com.Screenings | number }}</td>
-                                    <td>{{Com.confirmedDM | number}}</td>
-                                    <td>{{Com.controlledDM | number}}</td>
-                                    <td>{{Com.Diabetes}}</td>
-                                    <td>{{Com.confirmedHT | number}}</td>
-                                    <td>{{Com.controlledHT | number}}</td>
-                                    <td>{{Com.Hypertension}}</td>
-                                    <td>{{Com.confirmedBoth | number}}</td>
-                                    <td>{{Com.controlledBoth | number}}</td>
-                                    <td>{{Com.Both}}</td>
+                                    <td>{{Com.district_Name}}</td>
+                                    <td>{{Com.district_Gid}}</td>
+                                    <td>{{Com.total_Population | number}} </td>
+                                    <td>{{Com.population_Age | number}}</td>
+                                    <td>{{Com.total_Screening | number }}</td>
+                                    <td>{{Com.confirmed_Diabetes_Mellitus | number}}</td>
+                                    <td>{{Com.controlled_Diabetes_Mellitus | number}}</td>
+                                    <td>{{Com.diabetes_Percentage}}</td>
+                                    <td>{{Com.confirmed_Hypertension | number}}</td>
+                                    <td>{{Com.controlled_Hypertension | number}}</td>
+                                    <td>{{Com.hypertension_Percentage}}</td>
+                                    <td>{{Com.confirmed_Both | number}}</td>
+                                    <td>{{Com.controlled_Both | number}}</td>
+                                    <td>{{Com.both_Percentage}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -124,11 +124,13 @@
             <div class="table_box max_h_200">
                 <div class="hed py-1">Hud Wise</div>
                 <div class="table-responsive wrapper">
-                    <table class="table hedbg" *ngIf="districtWise">
+                    <table class="table hedbg" *ngIf="hudWise">
                         <thead>
                             <tr>
                                 <th>Community District</th>
                                 <th>Community District GID</th>
+                                <th>Community HUD</th>
+                                <th>Community HUD GID</th>
                                 <th>Total Population</th>
                                 <th>Population >=18</th>
                                 <th>Total Screenings</th>
@@ -144,21 +146,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let Com of districtWise">
-                                <td>{{Com.communityDistrict}}</td>
-                                <td>{{Com.districtGid}}</td>
-                                <td>{{Com.TotalPopulation | number}} </td>
-                                <td>{{Com.Population | number}}</td>
-                                <td>{{Com.Screenings | number }}</td>
-                                <td>{{Com.confirmedDM | number}}</td>
-                                <td>{{Com.controlledDM | number}}</td>
-                                <td>{{Com.Diabetes}}</td>
-                                <td>{{Com.confirmedHT | number}}</td>
-                                <td>{{Com.controlledHT | number}}</td>
-                                <td>{{Com.Hypertension}}</td>
-                                <td>{{Com.confirmedBoth | number}}</td>
-                                <td>{{Com.controlledBoth | number}}</td>
-                                <td>{{Com.Both}}</td>
+                            <tr *ngFor="let Com of hudWise">
+                                <td>{{Com.district_Name}}</td>
+                                <td>{{Com.district_Gid}}</td>
+                                <td>{{Com.hud_Name}}</td>
+                                <td>{{Com.hud_Gid}}</td>
+                                <td>{{Com.total_Population | number}} </td>
+                                <td>{{Com.population_Age | number}}</td>
+                                <td>{{Com.total_Screening | number }}</td>
+                                <td>{{Com.confirmed_Diabetes_Mellitus | number}}</td>
+                                <td>{{Com.controlled_Diabetes_Mellitus | number}}</td>
+                                <td>{{Com.diabetes_Percentage}}</td>
+                                <td>{{Com.confirmed_Hypertension | number}}</td>
+                                <td>{{Com.controlled_Hypertension | number}}</td>
+                                <td>{{Com.hypertension_Percentage}}</td>
+                                <td>{{Com.confirmed_Both | number}}</td>
+                                <td>{{Com.controlled_Both | number}}</td>
+                                <td>{{Com.both_Percentage}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -170,11 +174,15 @@
             <div class="table_box max_h_200">
                 <div class="hed py-1">Block Wise</div>
                 <div class="table-responsive wrapper">
-                    <table class="table hedbg" *ngIf="districtWise">
+                    <table class="table hedbg" *ngIf="blockWise">
                         <thead>
                             <tr>
                                 <th>Community District</th>
                                 <th>Community District GID</th>
+                                <th>Community HUD</th>
+                                <th>Community HUD GID</th>
+                                <th>Community Block</th>
+                                <th>Community Block GID</th>
                                 <th>Total Population</th>
                                 <th>Population >=18</th>
                                 <th>Total Screenings</th>
@@ -190,21 +198,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let Com of districtWise">
-                                <td>{{Com.communityDistrict}}</td>
-                                <td>{{Com.districtGid}}</td>
-                                <td>{{Com.TotalPopulation | number}} </td>
-                                <td>{{Com.Population | number}}</td>
-                                <td>{{Com.Screenings | number }}</td>
-                                <td>{{Com.confirmedDM | number}}</td>
-                                <td>{{Com.controlledDM | number}}</td>
-                                <td>{{Com.Diabetes}}</td>
-                                <td>{{Com.confirmedHT | number}}</td>
-                                <td>{{Com.controlledHT | number}}</td>
-                                <td>{{Com.Hypertension}}</td>
-                                <td>{{Com.confirmedBoth | number}}</td>
-                                <td>{{Com.controlledBoth | number}}</td>
-                                <td>{{Com.Both}}</td>
+                            <tr *ngFor="let Com of blockWise">
+                                <td>{{Com.district_Name}}</td>
+                                <td>{{Com.district_Gid}}</td>
+                                <td>{{Com.hud_Name}}</td>
+                                <td>{{Com.hud_Gid}}</td>
+                                <td>{{Com.block_Name}}</td>
+                                <td>{{Com.block_Gid}}</td>
+                                <td>{{Com.total_Population | number}} </td>
+                                <td>{{Com.population_Age | number}}</td>
+                                <td>{{Com.total_Screening | number }}</td>
+                                <td>{{Com.confirmed_Diabetes_Mellitus | number}}</td>
+                                <td>{{Com.controlled_Diabetes_Mellitus | number}}</td>
+                                <td>{{Com.diabetes_Percentage}}</td>
+                                <td>{{Com.confirmed_Hypertension | number}}</td>
+                                <td>{{Com.controlled_Hypertension | number}}</td>
+                                <td>{{Com.hypertension_Percentage}}</td>
+                                <td>{{Com.confirmed_Both | number}}</td>
+                                <td>{{Com.controlled_Both | number}}</td>
+                                <td>{{Com.both_Percentage}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -216,11 +228,17 @@
             <div class="table_box max_h_200">
                 <div class="hed py-1">Village Wise</div>
                 <div class="table-responsive wrapper">
-                    <table class="table hedbg" *ngIf="districtWise">
+                    <table class="table hedbg" *ngIf="VillageWise">
                         <thead>
                             <tr>
                                 <th>Community District</th>
                                 <th>Community District GID</th>
+                                <th>Community HUD</th>
+                                <th>Community HUD GID</th>
+                                <th>Community Block</th>
+                                <th>Community Block GID</th>
+                                <th>Community Village</th>
+                                <th>Community Village GID</th>
                                 <th>Total Population</th>
                                 <th>Population >=18</th>
                                 <th>Total Screenings</th>
@@ -236,21 +254,27 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let Com of districtWise">
-                                <td>{{Com.communityDistrict}}</td>
-                                <td>{{Com.districtGid}}</td>
-                                <td>{{Com.TotalPopulation | number}} </td>
-                                <td>{{Com.Population | number}}</td>
-                                <td>{{Com.Screenings | number }}</td>
-                                <td>{{Com.confirmedDM | number}}</td>
-                                <td>{{Com.controlledDM | number}}</td>
-                                <td>{{Com.Diabetes}}</td>
-                                <td>{{Com.confirmedHT | number}}</td>
-                                <td>{{Com.controlledHT | number}}</td>
-                                <td>{{Com.Hypertension}}</td>
-                                <td>{{Com.confirmedBoth | number}}</td>
-                                <td>{{Com.controlledBoth | number}}</td>
-                                <td>{{Com.Both}}</td>
+                            <tr *ngFor="let Com of VillageWise">
+                                <td>{{Com.district_Name}}</td>
+                                <td>{{Com.district_Gid}}</td>
+                                <td>{{Com.hud_Name}}</td>
+                                <td>{{Com.hud_Gid}}</td>
+                                <td>{{Com.block_Name}}</td>
+                                <td>{{Com.block_Gid}}</td>
+                                <td>{{Com.village_Name}}</td>
+                                <td>{{Com.village_Gid}}</td>
+                                <td>{{Com.total_Population | number}} </td>
+                                <td>{{Com.population_Age | number}}</td>
+                                <td>{{Com.total_Screening | number }}</td>
+                                <td>{{Com.confirmed_Diabetes_Mellitus | number}}</td>
+                                <td>{{Com.controlled_Diabetes_Mellitus | number}}</td>
+                                <td>{{Com.diabetes_Percentage}}</td>
+                                <td>{{Com.confirmed_Hypertension | number}}</td>
+                                <td>{{Com.controlled_Hypertension | number}}</td>
+                                <td>{{Com.hypertension_Percentage}}</td>
+                                <td>{{Com.confirmed_Both | number}}</td>
+                                <td>{{Com.controlled_Both | number}}</td>
+                                <td>{{Com.both_Percentage}}</td>
                             </tr>
                         </tbody>
                     </table>
