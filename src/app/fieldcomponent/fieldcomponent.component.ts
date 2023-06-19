@@ -109,21 +109,7 @@ export class FieldcomponentComponent implements AfterViewInit {
 
   ngOnInit(): void {
 
-    const payload =
-
-    {
-      "district_id": "",
-      "hud_id": "",
-      "block_id": "",
-      "facility_id": "",
-      "indistrict_id": "",
-      "inhud_id": "",
-      "inblock_id": "",
-      "village_id": "",
-      "directorate_id": "",
-      "role": "",
-      "infacility_id": ""
-    }
+    const payload = {}
 
 
     this.LoadAll(payload);

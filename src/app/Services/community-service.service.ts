@@ -12,7 +12,7 @@ export class CommunityServiceService {
 
   /*BaseURL: string = "https://localhost:44347/";*/
 
- /* BaseURL: string = "http://142.132.206.93:9025/";*/
+  BaseURL: string = "http://142.132.206.93:9025/";
 
 
 
@@ -20,7 +20,7 @@ export class CommunityServiceService {
 
   /*BaseURL: string = "http://newanalytics.tnmtm.in/api/tnphrAnalytics/";*/
 
-  BaseURL: string = "http://localhost:6093/";
+  // BaseURL: string = "http://localhost:6093/";
 
 
 
@@ -453,37 +453,37 @@ export class CommunityServiceService {
 
   getGetfieldverificationTotalVerified(payload: any) {
 
-    return this.http.post(this.BaseURL + 'GetfieldverificationTotalVerified', payload);
+    return this.http.get(this.BaseURL + 'GetfieldverificationTotalVerified', { params: payload });
   }
 
   getGetfieldverificationFamilyMember(payload: any) {
 
-    return this.http.post(this.BaseURL + 'GetfieldverificationFamilyMember', payload);
+    return this.http.get(this.BaseURL + 'GetfieldverificationFamilyMember', { params: payload });
   }
 
   getGetfieldverificationDistrictWise(payload: any) {
 
-    return this.http.post(this.BaseURL + 'GetfieldverificationDistrictWise', payload);
+    return this.http.get(this.BaseURL + 'GetfieldverificationDistrictWise', { params: payload });
   }
 
   getGetfieldverificationHUDWise(payload: any) {
 
-    return this.http.post(this.BaseURL + 'GetfieldverificationHUDWise', payload);
+    return this.http.get(this.BaseURL + 'GetfieldverificationHUDWise', { params: payload });
   }
 
   getGetfieldverificationblockWise(payload: any) {
 
-    return this.http.post(this.BaseURL + 'GetfieldverificationblockWise', payload);
+    return this.http.get(this.BaseURL + 'GetfieldverificationblockWise', { params: payload });
   }
 
   getGetfieldverificationvillageWise(payload: any) {
 
-    return this.http.post(this.BaseURL + 'GetfieldverificationvillageWise', payload);
+    return this.http.get(this.BaseURL + 'GetfieldverificationvillageWise', { params: payload });
   }
 
   getGetfieldverificationresidentwise(payload: any) {
 
-    return this.http.post(this.BaseURL + 'Getfieldverificationresidentwise', payload);
+    return this.http.get(this.BaseURL + 'Getfieldverificationresidentwise', { params: payload });
   }
 
 
