@@ -1,0 +1,262 @@
+<div class="hed_sty1">DPH Dashboard <i class="bi bi-heart"></i></div>
+<app-filters [dphDashboard]="true" (searchFilter)="SearchFilter()" #child></app-filters>
+<div class="scroll_sec">
+    <div class="container">
+        <div class="row pan_box_sec">
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+                <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+                    <div class="num">{{12343534 | number}}</div>
+                    <div class="txt">Population(Age >=18)</div>
+                </div>
+            </div>
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+                <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+                    <div class="num">{{12343534 | number}}</div>
+                    <div class="txt">Screening(Age >18)</div>
+                </div>
+            </div>
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+                <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+                    <div class="num">{{12343534 | number}}</div>
+                    <div class="txt">Confirmed</div>
+                </div>
+            </div>
+        </div>
+        <div class="row pan_box_sec">
+            <div class="col-sm-4 ">
+                <div class="pan_box min_h_600">
+                    <div class="chart-center">
+                        <h5 class="m-0">Diabetes</h5>
+                        <ngx-charts-pie-chart class="chart-style" [view]="view" [scheme]="colorScheme"
+                            [results]="diabetesData" [gradient]="gradient" [legend]="showLegend"
+                            [legendPosition]="legendPosition" [arcWidth]="arcWidth" [labels]="showLabels"
+                            [doughnut]="isDoughnut">
+                        </ngx-charts-pie-chart>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 ">
+                <div class="pan_box min_h_600">
+                    <div class="chart-center">
+                        <h5 class="m-0">Hypertension</h5>
+                        <ngx-charts-pie-chart class="chart-style" [view]="view" [scheme]="colorScheme"
+                            [results]="hypertensionData" [gradient]="gradient" [legend]="showLegend"
+                            [legendPosition]="legendPosition" [arcWidth]="arcWidth" [labels]="showLabels"
+                            [doughnut]="isDoughnut">
+                        </ngx-charts-pie-chart>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 ">
+                <div class="pan_box min_h_600">
+                    <div class="chart-center">
+                        <h5 class="m-0">Both</h5>
+                        <ngx-charts-pie-chart class="chart-style" [view]="view" [scheme]="colorScheme"
+                            [results]="bothData" [gradient]="gradient" [legend]="showLegend"
+                            [legendPosition]="legendPosition" [arcWidth]="arcWidth" [labels]="showLabels"
+                            [doughnut]="isDoughnut">
+                        </ngx-charts-pie-chart>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row pan_box_sec">
+            <div class="col-sm-4 ">
+                <div class="pan_box min_h_600">
+                    <div class="chart-center">
+                        <h5 class="m-0">Diabetes vs Hypertension</h5>
+                        <ngx-charts-bar-vertical [view]="barview" [scheme]="barColorScheme" [results]="diabVsHyp"
+                            [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend"
+                            [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [showDataLabel]="true"
+                            [legendPosition]="legendPosition" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel">
+                        </ngx-charts-bar-vertical>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="table_box max_h_200">
+                    <div class="hed py-1">District Wise</div>
+                    <div class="table-responsive wrapper">
+                        <table class="table hedbg m-0" *ngIf="districtWise">
+                            <thead>
+                                <tr>
+                                    <th>Community District</th>
+                                    <th>Community District GID</th>
+                                    <th>Total Population</th>
+                                    <th>Population >=18</th>
+                                    <th>Total Screenings</th>
+                                    <th>Confirmed Diabetes Mellitus</th>
+                                    <th>Controlled Diabetes Mellitus</th>
+                                    <th>Diabetes %</th>
+                                    <th>Confirmed Hypertension</th>
+                                    <th>Controlled Hypertension</th>
+                                    <th>Hypertension %</th>
+                                    <th>Confirmed Both</th>
+                                    <th>Controlled Both</th>
+                                    <th>Both %</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let Com of districtWise">
+                                    <td>{{Com.communityDistrict}}</td>
+                                    <td>{{Com.districtGid}}</td>
+                                    <td>{{Com.TotalPopulation | number}} </td>
+                                    <td>{{Com.Population | number}}</td>
+                                    <td>{{Com.Screenings | number }}</td>
+                                    <td>{{Com.confirmedDM | number}}</td>
+                                    <td>{{Com.controlledDM | number}}</td>
+                                    <td>{{Com.Diabetes}}</td>
+                                    <td>{{Com.confirmedHT | number}}</td>
+                                    <td>{{Com.controlledHT | number}}</td>
+                                    <td>{{Com.Hypertension}}</td>
+                                    <td>{{Com.confirmedBoth | number}}</td>
+                                    <td>{{Com.controlledBoth | number}}</td>
+                                    <td>{{Com.Both}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row pan_box_sec">
+            <div class="table_box max_h_200">
+                <div class="hed py-1">Hud Wise</div>
+                <div class="table-responsive wrapper">
+                    <table class="table hedbg" *ngIf="districtWise">
+                        <thead>
+                            <tr>
+                                <th>Community District</th>
+                                <th>Community District GID</th>
+                                <th>Total Population</th>
+                                <th>Population >=18</th>
+                                <th>Total Screenings</th>
+                                <th>Confirmed Diabetes Mellitus</th>
+                                <th>Controlled Diabetes Mellitus</th>
+                                <th>Diabetes %</th>
+                                <th>Confirmed Hypertension</th>
+                                <th>Controlled Hypertension</th>
+                                <th>Hypertension %</th>
+                                <th>Confirmed Both</th>
+                                <th>Controlled Both</th>
+                                <th>Both %</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let Com of districtWise">
+                                <td>{{Com.communityDistrict}}</td>
+                                <td>{{Com.districtGid}}</td>
+                                <td>{{Com.TotalPopulation | number}} </td>
+                                <td>{{Com.Population | number}}</td>
+                                <td>{{Com.Screenings | number }}</td>
+                                <td>{{Com.confirmedDM | number}}</td>
+                                <td>{{Com.controlledDM | number}}</td>
+                                <td>{{Com.Diabetes}}</td>
+                                <td>{{Com.confirmedHT | number}}</td>
+                                <td>{{Com.controlledHT | number}}</td>
+                                <td>{{Com.Hypertension}}</td>
+                                <td>{{Com.confirmedBoth | number}}</td>
+                                <td>{{Com.controlledBoth | number}}</td>
+                                <td>{{Com.Both}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        <div class="row pan_box_sec">
+            <div class="table_box max_h_200">
+                <div class="hed py-1">Block Wise</div>
+                <div class="table-responsive wrapper">
+                    <table class="table hedbg" *ngIf="districtWise">
+                        <thead>
+                            <tr>
+                                <th>Community District</th>
+                                <th>Community District GID</th>
+                                <th>Total Population</th>
+                                <th>Population >=18</th>
+                                <th>Total Screenings</th>
+                                <th>Confirmed Diabetes Mellitus</th>
+                                <th>Controlled Diabetes Mellitus</th>
+                                <th>Diabetes %</th>
+                                <th>Confirmed Hypertension</th>
+                                <th>Controlled Hypertension</th>
+                                <th>Hypertension %</th>
+                                <th>Confirmed Both</th>
+                                <th>Controlled Both</th>
+                                <th>Both %</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let Com of districtWise">
+                                <td>{{Com.communityDistrict}}</td>
+                                <td>{{Com.districtGid}}</td>
+                                <td>{{Com.TotalPopulation | number}} </td>
+                                <td>{{Com.Population | number}}</td>
+                                <td>{{Com.Screenings | number }}</td>
+                                <td>{{Com.confirmedDM | number}}</td>
+                                <td>{{Com.controlledDM | number}}</td>
+                                <td>{{Com.Diabetes}}</td>
+                                <td>{{Com.confirmedHT | number}}</td>
+                                <td>{{Com.controlledHT | number}}</td>
+                                <td>{{Com.Hypertension}}</td>
+                                <td>{{Com.confirmedBoth | number}}</td>
+                                <td>{{Com.controlledBoth | number}}</td>
+                                <td>{{Com.Both}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        <div class="row pan_box_sec">
+            <div class="table_box max_h_200">
+                <div class="hed py-1">Village Wise</div>
+                <div class="table-responsive wrapper">
+                    <table class="table hedbg" *ngIf="districtWise">
+                        <thead>
+                            <tr>
+                                <th>Community District</th>
+                                <th>Community District GID</th>
+                                <th>Total Population</th>
+                                <th>Population >=18</th>
+                                <th>Total Screenings</th>
+                                <th>Confirmed Diabetes Mellitus</th>
+                                <th>Controlled Diabetes Mellitus</th>
+                                <th>Diabetes %</th>
+                                <th>Confirmed Hypertension</th>
+                                <th>Controlled Hypertension</th>
+                                <th>Hypertension %</th>
+                                <th>Confirmed Both</th>
+                                <th>Controlled Both</th>
+                                <th>Both %</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let Com of districtWise">
+                                <td>{{Com.communityDistrict}}</td>
+                                <td>{{Com.districtGid}}</td>
+                                <td>{{Com.TotalPopulation | number}} </td>
+                                <td>{{Com.Population | number}}</td>
+                                <td>{{Com.Screenings | number }}</td>
+                                <td>{{Com.confirmedDM | number}}</td>
+                                <td>{{Com.controlledDM | number}}</td>
+                                <td>{{Com.Diabetes}}</td>
+                                <td>{{Com.confirmedHT | number}}</td>
+                                <td>{{Com.controlledHT | number}}</td>
+                                <td>{{Com.Hypertension}}</td>
+                                <td>{{Com.confirmedBoth | number}}</td>
+                                <td>{{Com.controlledBoth | number}}</td>
+                                <td>{{Com.Both}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

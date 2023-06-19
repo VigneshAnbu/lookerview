@@ -1,0 +1,57 @@
+.chart-center {
+	width: 100%;
+	height: calc(100% - 30px);
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+}
+
+:host ::ng-deep .chart-legend {
+                    display: block !important;
+                    width: auto !important;
+                    max-width: 200px !important;
+}
+
+:host ::ng-deep .chart-legend > div {
+    max-width: 350px !important;
+}
+
+.wrapper {
+    overflow-x: auto;
+    height: 310px;
+}
+
+thead {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 5px;
+}
+
+/* table {
+    border-collapse: collapse;
+    width: 300px;
+    overflow-x: scroll;
+    display: block;
+}
+thead {
+    background-color: #EFEFEF;
+}
+thead, tbody {
+    display: block;
+}
+tbody {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 220px;
+}
+td, th {
+    min-width: 100px;
+    height: 25px;
+    border:  1px lightblue;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+} */

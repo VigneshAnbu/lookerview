@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgChartsModule } from 'ng2-charts';
 
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommunityComponent } from './Community/community/community.component';
@@ -23,63 +21,63 @@ import { DataqualityComponent } from './dataquality/dataquality.component';
 import { UserperformanceComponent } from './userperformance/userperformance.component';
 import { LoginComponent } from './login/login.component';
 import { ServicemonitoringComponent } from './servicemonitoring/servicemonitoring.component';
-
-
+import { DphdashboardComponent } from './dphdashboard/dphdashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'Mtmperformance',
-    component: MtmperformanceComponent
+    component: MtmperformanceComponent,
   },
   {
     path: 'Community',
-    component: CommunityComponent
+    component: CommunityComponent,
   },
   {
     path: 'Populationdashboard',
-    component: PopulationdashboardComponent
+    component: PopulationdashboardComponent,
   },
   {
     path: 'Mtmbeneficiaries',
-    component: MtmbeneficiariesComponent
+    component: MtmbeneficiariesComponent,
   },
   {
     path: 'Facilityperformance',
-    component: FacilityperformanceComponent
+    component: FacilityperformanceComponent,
   },
   {
     path: 'Populationdashboardkpi',
-    component: PopulationdashboardkpiComponent
-  }
-  ,
+    component: PopulationdashboardkpiComponent,
+  },
   {
     path: 'FieldVerification',
-    component: FieldcomponentComponent
-  }
-  ,
+    component: FieldcomponentComponent,
+  },
   {
     path: 'Pbsscreening',
-    component: PbsscreeningComponent
-  }
-  ,
+    component: PbsscreeningComponent,
+  },
   {
     path: 'DataQuality',
-    component: DataqualityComponent
-  }
-  ,
+    component: DataqualityComponent,
+  },
   {
     path: 'UserPeroformance',
-    component: UserperformanceComponent
-  }
-  ,
+    component: UserperformanceComponent,
+  },
   {
     path: 'Servicemonitoring',
-    component: ServicemonitoringComponent
-  }
+    component: ServicemonitoringComponent,
+  },
+  {
+    path: 'dphdashboard',
+    component: DphdashboardComponent,
+  },
 ];
 
 @NgModule({
@@ -97,7 +95,8 @@ const routes: Routes = [
     DataqualityComponent,
     UserperformanceComponent,
     LoginComponent,
-    ServicemonitoringComponent
+    ServicemonitoringComponent,
+    DphdashboardComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -105,10 +104,13 @@ const routes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     NgChartsModule,
-    FormsModule,ReactiveFormsModule,
-    NgMultiSelectDropDownModule.forRoot()
+    FormsModule,
+    ReactiveFormsModule,
+    NgMultiSelectDropDownModule.forRoot(),
+    NgxChartsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
