@@ -195,7 +195,7 @@ body {
 .left_pan {
   width: 250px;
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
   transition: all 0.3s;
 }
 

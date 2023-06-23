@@ -1,15 +1,15 @@
-<div class="hed_sty1">DPH Dashboard <i class="bi bi-heart"></i></div>
-<app-filters [dphDashboard]="true" (searchFilter)="SearchFilter()" #child></app-filters>
+<div class="hed_sty1"> PHR Performance Dashboard <i class="bi bi-heart"></i></div>
+<app-filters [showSearch]="true" (searchFilter)="SearchFilter()" #child></app-filters>
 <div class="scroll_sec">
     <div class="container">
         <div class="row pan_box_sec">
-            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 pb-3">
                 <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
                     <div class="num">{{populationTotal | number}}</div>
                     <div class="txt">Total Population</div>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 pb-3">
                 <div class="pan_box min_h_600">
                     <div class="chart-center">
                         <h5 class="m-0">Individual screened gender wise</h5>
@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 pb-3">
                 <div class="pan_box min_h_600">
                     <div class="chart-center">
                         <h5 class="m-0">MTM Target unique Screened</h5>
@@ -34,37 +34,37 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 pb-3">
                 <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
                     <div class="num">{{familyResidentialStatus | number}}</div>
                     <div class="txt">Family residential status</div>
                 </div>
             </div>
-            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 pb-3">
                 <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
                     <div class="num">{{membersAdded | number}}</div>
                     <div class="txt">Members added</div>
                 </div>
             </div>
-            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 pb-3">
                 <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
                     <div class="num">{{familyAdded | number}}</div>
                     <div class="txt">Family added</div>
                 </div>
             </div>
-            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 pb-3">
                 <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
                     <div class="num">{{familiesUpdated | number}}</div>
                     <div class="txt">Families updated</div>
                 </div>
             </div>
-            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 pb-3">
                 <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
                     <div class="num">{{populationGivenConsent | number}}</div>
                     <div class="txt">Population given consent</div>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 pb-3">
                 <div class="pan_box min_h_600">
                     <div class="chart-center">
                         <h5 class="m-0">NCD Target unique Screened</h5>
@@ -77,7 +77,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-8 pb-3">
                 <div class="pan_box min_h_600">
                     <div class="chart-center">
                         <h5 class="m-0">First time screening vs Repeated time screening</h5>
@@ -91,25 +91,25 @@
                 </div>
             </div>
 
-            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 pb-3">
                 <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
                     <div class="num">{{populationMappedWithStreets | number}}</div>
                     <div class="txt">Population mapped with streets</div>
                 </div>
             </div>
-            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 pb-3">
                 <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
                     <div class="num">{{cmchisBeneficiary | number}}</div>
                     <div class="txt">CMCHIS beneficiary</div>
                 </div>
             </div>
-            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 pb-3">
                 <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
                     <div class="num">{{congenitalAnomaly | number}}</div>
                     <div class="txt">Congenital Anomaly</div>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 pb-3">
                 <div class="pan_box min_h_600">
                     <div class="chart-center">
                         <h5 class="m-0">Individual screened for last 7 days</h5>
@@ -122,7 +122,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 pb-3">
                 <div class="pan_box min_h_600">
                     <div class="chart-center">
                         <h5 class="m-0">School Target unique Screened</h5>
@@ -134,43 +134,43 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 pb-3">
                 <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
                     <div class="num">{{aadhaarLinkedNumbers | number}}</div>
                     <div class="txt">Aadhaar linked members</div>
                 </div>
             </div>
-            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 pb-3">
                 <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
                     <div class="num">{{udidLinkedMembers | number}}</div>
                     <div class="txt">UDID Linked Members</div>
                 </div>
             </div>
-            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 pb-3">
                 <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
                     <div class="num">{{disabilityBeneficiaries | number}}</div>
                     <div class="txt">Disability beneficiaries</div>
                 </div>
             </div>
-            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 pb-3">
                 <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
                     <div class="num">{{individualScreenings | number}}</div>
                     <div class="txt">Individual Screenings</div>
                 </div>
             </div>
-            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 pb-3">
                 <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
                     <div class="num">{{totalIndividualsConfirmedMTMBeneficiary | number}}</div>
                     <div class="txt">Total Individuals Confirmed MTM Beneficiary</div>
                 </div>
             </div>
-            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 pb-3">
                 <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
                     <div class="num">{{totalIndividualRecievedDrugs | number}}</div>
                     <div class="txt">Total Individuals received Drugs</div>
                 </div>
             </div>
-            <div class="col-sm-8 ">
+            <div class="col-sm-8 pb-3">
                 <div class="pan_box min_h_600">
                     <div class="chart-center">
                         <h5 class="m-0">Facility Wise Screening</h5>
@@ -183,7 +183,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4 ">
+            <div class="col-sm-4 pb-3">
                 <div class="pan_box min_h_600">
                     <div class="chart-center">
                         <h5 class="m-0">Population RDMND Status</h5>
@@ -196,7 +196,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4 ">
+            <div class="col-sm-4 pb-3">
                 <div class="pan_box min_h_600">
                     <div class="chart-center">
                         <h5 class="m-0">MTM beneficiaries</h5>
@@ -209,7 +209,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 pb-3">
                 <div class="pan_box min_h_600">
                     <div class="chart-center">
                         <h5 class="m-0">PBS 10 conditions screening</h5>
@@ -222,20 +222,19 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
-                <div class="pan_box min_h_600">
+            <div class="col-sm-4 pb-3">
+                <div class="pan_box min_h_600 h-100">
                     <div class="chart-center">
-                        <h5 class="m-0">Individual screened village type wise</h5>
-                        <ngx-charts-bar-horizontal [view]="view" [scheme]="colorScheme"
-                            [results]="individualScreenedVillageTypeWise" [gradient]="gradient" [xAxis]="showXAxis"
+                        <h5 class="m-0">Population Verified VS Non-population Verified</h5>
+                        <ngx-charts-bar-vertical-2d [view]="[350, 480]" [scheme]="colorScheme"
+                            [results]="verifiedVsNonVerfiedPopulations" [gradient]="gradient" [xAxis]="showXAxis"
                             [yAxis]="showYAxis" [legend]="false" [showXAxisLabel]="showXAxisLabel"
-                            [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="'Unique Screening'"
-                            [yAxisLabel]="'Community village type'">
-                        </ngx-charts-bar-horizontal>
+                            [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="''" [yAxisLabel]="''">
+                        </ngx-charts-bar-vertical-2d>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-8 ">
+            <div class="col-sm-8 pb-3">
                 <div class="pan_box min_h_600">
                     <div class="chart-center">
                         <h5 class="m-0">Individual Screened Age wise</h5>
@@ -248,19 +247,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
-                <div class="pan_box min_h_600">
-                    <div class="chart-center">
-                        <h5 class="m-0">Population Verified VS Non-population Verified</h5>
-                        <ngx-charts-bar-vertical-2d [view]="[350, 350]" [scheme]="colorScheme"
-                            [results]="verifiedVsNonVerfiedPopulations" [gradient]="gradient" [xAxis]="showXAxis"
-                            [yAxis]="showYAxis" [legend]="false" [showXAxisLabel]="showXAxisLabel"
-                            [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="''" [yAxisLabel]="''">
-                        </ngx-charts-bar-vertical-2d>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 pb-3">
                 <div class="table_box">
                     <div class="hed">Name of Lab test</div>
                     <div class="table-responsive wrapper">
@@ -287,7 +274,20 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 pb-3">
+                <div class="pan_box min_h_600">
+                    <div class="chart-center">
+                        <h5 class="m-0">Individual screened village type wise</h5>
+                        <ngx-charts-bar-horizontal [view]="[350, 430]" [scheme]="colorScheme"
+                            [results]="individualScreenedVillageTypeWise" [gradient]="gradient" [xAxis]="showXAxis"
+                            [yAxis]="showYAxis" [legend]="false" [showXAxisLabel]="showXAxisLabel"
+                            [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="'Unique Screening'"
+                            [yAxisLabel]="'Community village type'">
+                        </ngx-charts-bar-horizontal>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 pb-3">
                 <div class="table_box">
                     <div class="hed">No. of Individuals Referred split up</div>
                     <div class="table-responsive wrapper">
@@ -303,11 +303,350 @@
                                     <td>{{test.catagoryName}}</td>
                                     <td>
                                         <div style="width:80%;float:left">
-                                            <div style="background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); height: 22px;"
+                                            <div style="background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);height: 22px;"
                                                 [style.width.%]="test.percentage"></div>
                                         </div>
                                         <div style="width: 20%; float: left">{{test.referralCount}}</div>
                                     </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 pb-3">
+                <div class="table_box">
+                    <div class="hed">UHC 16 condition screening </div>
+                    <div class="table-responsive wrapper">
+                        <table class="table hedbg">
+                            <thead>
+                                <tr>
+                                    <th>Citizen Service Name</th>
+                                    <th>Total Screenings</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let test of uhc16ConditionScreening; let i = index">
+                                    <td>{{test.serviceName}}</td>
+                                    <td>
+                                        <div style="width:80%;float:left">
+                                            <div style="background-image: linear-gradient(to right top, #1a73e8, #1a73e8, #aa53cc, #cd3db2, #e52592); height: 22px;"
+                                                [style.width.%]="test.percentage"></div>
+                                        </div>
+                                        <div style="width: 20%; float: left">{{test.serviceCount}}</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 pb-3">
+                <div class="table_box">
+                    <div class="hed">Name of drugs issued</div>
+                    <div class="table-responsive wrapper">
+                        <table class="table hedbg">
+                            <thead>
+                                <tr>
+                                    <th>Drug Name</th>
+                                    <th>Total drugs issue</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let test of drugIssued; let i = index">
+                                    <td>{{test.drugName}}</td>
+                                    <td>
+                                        <div style="width:80%;float:left">
+                                            <div style="background-image: linear-gradient(to right top, #1a73e8, #1a73e8, #aa53cc, #cd3db2, #e52592); height: 22px;"
+                                                [style.width.%]="test.percentage"></div>
+                                        </div>
+                                        <div style="width: 20%; float: left">{{test.issuedCount}}</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 pb-3">
+                <div class="table_box">
+                    <div class="hed">Role based screening</div>
+                    <div class="table-responsive wrapper">
+                        <table class="table hedbg">
+                            <thead>
+                                <tr>
+                                    <th>Role Name</th>
+                                    <th>Total Screenings</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let test of roleScreeningCount; let i = index">
+                                    <td>{{test.roleName}}</td>
+                                    <td>
+                                        <div style="width:80%;float:left">
+                                            <div style="background-image:linear-gradient(to right top, #1a73e8, #1a73e8, #aa53cc, #cd3db2, #e52592); height: 22px;"
+                                                [style.width.%]="test.percentage"></div>
+                                        </div>
+                                        <div style="width: 20%; float: left">{{test.roleCount}}</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 pb-3">
+                <div class="table_box">
+                    <div class="hed">PHR [Health]</div>
+                    <div class="table-responsive wrapper">
+                        <table class="table hedbg">
+                            <thead>
+                                <tr>
+                                    <th>Community District</th>
+                                    <th>Community District GID</th>
+                                    <th>Community HUD</th>
+                                    <th>Community HUD Gid</th>
+                                    <th>Community Block</th>
+                                    <th>Community Block Gid</th>
+                                    <th>Community Village</th>
+                                    <th>Community Village Gid</th>
+                                    <th>PHC</th>
+                                    <th>HSC</th>
+                                    <th>Unique Screenings</th>
+                                    <th>Total Screenings</th>
+                                    <th>Uniques Screening Above 18</th>
+                                    <th>Population>=18</th>
+                                    <th>Verified Population</th>
+                                    <th>Death Count</th>
+                                    <th>Resident Count</th>
+                                    <th>% Resident Verified</th>
+                                    <th>% of Screened(18+)</th>
+                                    <th>Confirmed Diabetes Mellitus</th>
+                                    <th>Controlled Diabetes Mellitus</th>
+                                    <th>Diabetes %</th>
+                                    <th>Confirmed Hypertension</th>
+                                    <th>Controlled Hypertension</th>
+                                    <th>Hypertension %</th>
+                                    <th>Confirmed Both</th>
+                                    <th>Controlled Both</th>
+                                    <th>Both %</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let Com of phrHealthData">
+                                    <td>{{Com.district_Name}}</td>
+                                    <td>{{Com.district_Gid}}</td>
+                                    <td>{{Com.hud_Name }} </td>
+                                    <td>{{Com.hud_Gid }}</td>
+                                    <td>{{Com.block_Name }}</td>
+                                    <td>{{Com.block_Gid }}</td>
+                                    <td>{{Com.village_Name}}</td>
+                                    <td>{{Com.village_Gid}}</td>
+                                    <td>{{Com.phc}}</td>
+                                    <td>{{Com.hsc}}</td>
+                                    <td>{{Com.unique_Screening | number}}</td>
+                                    <td>{{Com.unique_Screening_Count}}</td>
+                                    <td>{{Com.verified_Population | number}}</td>
+                                    <td>{{Com.death_Count | number}}</td>
+                                    <td>{{Com.resident_Count}}</td>
+                                    <td>{{Com.resident_Verified_Percentage}}</td>
+                                    <td>{{Com.percentage_Screening}}</td>
+                                    <td>{{Com.confirmed_Diabetes_Mellitus}}</td>
+                                    <td>{{Com.controlled_Diabetes_Mellitus}}</td>
+                                    <td>{{Com.diabetes_Percentage}}</td>
+                                    <td>{{Com.confirmed_Hypertension}}</td>
+                                    <td>{{Com.controlled_Hypertension}}</td>
+                                    <td>{{Com.hypertension_Percentage}}</td>
+                                    <td>{{Com.confirmed_Both}}</td>
+                                    <td>{{Com.bontrolled_Both}}</td>
+                                    <td>{{Com.both_Percentage}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 pb-3">
+                <div class="table_box">
+                    <div class="hed">PHR [MTM]</div>
+                    <div class="table-responsive wrapper">
+                        <table class="table hedbg">
+                            <thead>
+                                <tr>
+                                    <th>Community District</th>
+                                    <th>Community District GID</th>
+                                    <th>Community HUD</th>
+                                    <th>Community HUD Gid</th>
+                                    <th>Community Block</th>
+                                    <th>Community Block Gid</th>
+                                    <th>Community Village</th>
+                                    <th>Community Village Gid</th>
+                                    <th>User Facility Type</th>
+                                    <th>PHC</th>
+                                    <th>HSC</th>
+                                    <th>[Palliative Care]MTM Beneficiaries updated</th>
+                                    <th>[Physiotherapy Care]MTM Beneficiaries updated</th>
+                                    <th>[CAPD Bags Beneficiaries]MTM Beneficiaries updated</th>
+                                    <th>[Both]MTM Beneficiaries updated</th>
+                                    <th>Confirmed Diabetes Mellitus</th>
+                                    <th>Confirmed Both</th>
+                                    <th>Confirmed Hypertension</th>
+                                    <th>Controlled Both</th>
+                                    <th>Controlled Diabetes Mellitus</th>
+                                    <th>Controlled Hypertension</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let Com of phrMtmData">
+                                    <td>{{Com.district_Name}}</td>
+                                    <td>{{Com.district_Gid}}</td>
+                                    <td>{{Com.hud_Name }}</td>
+                                    <td>{{Com.hud_Gid }}</td>
+                                    <td>{{Com.block_Name }}</td>
+                                    <td>{{Com.block_Gid }}</td>
+                                    <td>{{Com.village_Name}}</td>
+                                    <td>{{Com.village_Gid}}</td>
+                                    <td>{{Com.user_Facility_Type}}</td>
+                                    <td>{{Com.phc}}</td>
+                                    <td>{{Com.hsc}}</td>
+                                    <td>{{Com.palliative_Care_Mtm_Updated}}</td>
+                                    <td>{{Com.physiotherapy_Mtm_Updated}}</td>
+                                    <td>{{Com.capd_Mtm_Updated }}</td>
+                                    <td>{{Com.both_Mtm_Updated }}</td>
+                                    <td>{{Com.confirmed_Diabetes_Mellitus}}</td>
+                                    <td>{{Com.confirmed_Both}}</td>
+                                    <td>{{Com.confirmed_Hypertension}}</td>
+                                    <td>{{Com.controlled_Both}}</td>
+                                    <td>{{Com.controlled_Diabetes_Mellitus}}</td>
+                                    <td>{{Com.controlled_Hypertension}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 pb-3">
+                <div class="table_box">
+                    <div class="hed">By Staff [Health]</div>
+                    <div class="table-responsive wrapper">
+                        <table class="table hedbg">
+                            <thead>
+                                <tr>
+                                    <th>Community District</th>
+                                    <th>Community District GID</th>
+                                    <th>Community HUD</th>
+                                    <th>Community HUD Gid</th>
+                                    <th>Community Block</th>
+                                    <th>Community Block Gid</th>
+                                    <th>Community Village</th>
+                                    <th>Community Village Gid</th>
+                                    <th>PHC</th>
+                                    <th>HSC</th>
+                                    <th>[Mid Level Health Provider]Individuals screened</th>
+                                    <th>[Mid Level Health Provider]Total Screenings</th>
+                                    <th>[Mid Level Health Provider]No of individuals issued drugs</th>
+                                    <th>[Mid Level Health Provider]Population Verified</th>
+                                    <th>[Women Health Volunteer]Population Verified</th>
+                                    <th>[Women Health Volunteer]Total Screenings</th>
+                                    <th>[Women Health Volunteer]Individuals screened</th>
+                                    <th>[Women Health Volunteer]No of individuals issued drugs</th>
+                                    <th>[DPH MTM Staff Nurse]Population Verified</th>
+                                    <th>[DPH MTM Staff Nurse]Total Screenings</th>
+                                    <th>[DPH MTM Staff Nurse]Individuals screened</th>
+                                    <th>[DPH MTM Staff Nurse]No of individuals issued drugs</th>
+                                    <th>[DMS MTM Staff Nurse]Population Verified</th>
+                                    <th>[DMS MTM Staff Nurse]Total Screenings</th>
+                                    <th>[DMS MTM Staff Nurse]No of individuals issued drugs</th>
+                                    <th>[DMS MTM Staff Nurse]Individuals screened</th>
+                                    <th>[DME MTM Staff Nurse]Total Screenings</th>
+                                    <th>[DME MTM Staff Nurse]No of individuals issued drugs</th>
+                                    <th>[DME MTM Staff Nurse]Individuals screened</th>
+                                    <th>[DME MTM Staff Nurse]Population Verified</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let Com of byStaffHealthData">
+                                    <td>{{Com.district_Name}}</td>
+                                    <td>{{Com.district_Gid}}</td>
+                                    <td>{{Com.hud_Name }}</td>
+                                    <td>{{Com.hud_Gid }}</td>
+                                    <td>{{Com.block_Name }}</td>
+                                    <td>{{Com.block_Gid }}</td>
+                                    <td>{{Com.village_Name}}</td>
+                                    <td>{{Com.village_Gid}}</td>
+                                    <td>{{Com.phc}}</td>
+                                    <td>{{Com.hsc}}</td>
+                                    <td>{{Com.mlhp_Individual_Screening}}</td>
+                                    <td>{{Com.mlhp_Total_Screening}}</td>
+                                    <td>{{Com.mlhp_Individual_Drugs }}</td>
+                                    <td>{{Com.mlhp_Population_Verified }}</td>
+                                    <td>{{Com.whv_Population_Verified}}</td>
+                                    <td>{{Com.whv_Total_Screening}}</td>
+                                    <td>{{Com.whv_Individual_Screened}}</td>
+                                    <td>{{Com.whv_Individual_Drugs}}</td>
+                                    <td>{{Com.dph_Population_Verified}}</td>
+                                    <td>{{Com.dph_Total_Screening}}</td>
+                                    <td>{{Com.dph_Individual_Screening}}</td>
+                                    <td>{{Com.dph_Individual_Drugs}}</td>
+                                    <td>{{Com.dms_Population_Verified}}</td>
+                                    <td>{{Com.dms_Total_Screening}}</td>
+                                    <td>{{Com.dms_Individual_Drugs }}</td>
+                                    <td>{{Com.dms_Individual_Screening }}</td>
+                                    <td>{{Com.dme_Total_Screening}}</td>
+                                    <td>{{Com.dme_Individual_Drugs}}</td>
+                                    <td>{{Com.dme_Individual_Screening}}</td>
+                                    <td>{{Com.dme_Population_Verified}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 pb-3">
+                <div class="table_box">
+                    <div class="hed">By Staff [MTM]</div>
+                    <div class="table-responsive wrapper">
+                        <table class="table hedbg">
+                            <thead>
+                                <tr>
+                                    <th>Community District</th>
+                                    <th>Community District GID</th>
+                                    <th>Community HUD</th>
+                                    <th>Community HUD Gid</th>
+                                    <th>Community Block</th>
+                                    <th>Community Block Gid</th>
+                                    <th>Community Village</th>
+                                    <th>Community Village Gid</th>
+                                    <th>User Facility Type</th>
+                                    <th>PHC</th>
+                                    <th>HSC</th>
+                                    <th>[DPH MTM Staff Nurse]MTM Beneficiaries update</th>
+                                    <th>[DMS MTM Staff Nurse]MTM Beneficiaries update</th>
+                                    <th>[DME MTM Staff Nurse]MTM Beneficiaries update</th>
+                                    <th>[Palliative Care]MTM Beneficiaries update</th>
+                                    <th>[Women Health Volunteer]MTM Beneficiaries update</th>
+                                    <th>[Mid Level Health Provider]MTM Beneficiaries update</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let Com of byStaffMtmData">
+                                    <td>{{Com.district_Name}}</td>
+                                    <td>{{Com.district_Gid}}</td>
+                                    <td>{{Com.hud_Name }}</td>
+                                    <td>{{Com.hud_Gid }}</td>
+                                    <td>{{Com.block_Name }}</td>
+                                    <td>{{Com.block_Gid }}</td>
+                                    <td>{{Com.village_Name}}</td>
+                                    <td>{{Com.village_Gid}}</td>
+                                    <td>{{Com.user_Facility_Type}}</td>
+                                    <td>{{Com.phc}}</td>
+                                    <td>{{Com.hsc}}</td>
+                                    <td>{{Com.dph_Mtm_Updated}}</td>
+                                    <td>{{Com.dms_Mtm_Updated}}</td>
+                                    <td>{{Com.dme_Mtm_Updated }}</td>
+                                    <td>{{Com.palliative_Mtm_Updated }}</td>
+                                    <td>{{Com.whv_Mtm_Updated}}</td>
+                                    <td>{{Com.mlhp_Mtm_Updated}}</td>
                                 </tr>
                             </tbody>
                         </table>

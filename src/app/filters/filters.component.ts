@@ -51,6 +51,7 @@ export class FiltersComponent {
   facilityselectedItems: any[] = [];
   institutionfacilityselectedItems: any[] = [];
   @Input() dphDashboard: boolean = false;
+  @Input() showSearch: boolean = false;
   @Output() searchFilter: EventEmitter<any> = new EventEmitter<any>();
 
   ngOnInit() {

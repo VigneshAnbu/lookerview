@@ -6,7 +6,7 @@ import { Color, LegendPosition, ScaleType } from '@swimlane/ngx-charts';
 @Component({
   selector: 'app-phrperformance',
   templateUrl: './phrperformance.component.html',
-  styleUrls: ['./phrperformance.component.css']
+  styleUrls: ['./phrperformance.component.css'],
 })
 export class PhrperformanceComponent {
   @ViewChild(FiltersComponent) child!: FiltersComponent;
@@ -57,7 +57,7 @@ export class PhrperformanceComponent {
       name: '60 above',
       value: 3807124,
     },
-  ]
+  ];
   ncdTargeUniqueScreened = [
     {
       name: 'Below 18',
@@ -71,71 +71,71 @@ export class PhrperformanceComponent {
       name: '30 above',
       value: 4507124,
     },
-  ]
+  ];
   firstTimeVsRepeatedTimeScreening = [
     {
-      "name": "screened only once",
-      "series": [
+      name: 'screened only once',
+      series: [
         {
-          "name": "2016",
-          "value": "15000"
+          name: '2016',
+          value: '15000',
         },
         {
-          "name": "2017",
-          "value": "20000"
+          name: '2017',
+          value: '20000',
         },
         {
-          "name": "2018",
-          "value": "25000"
+          name: '2018',
+          value: '25000',
         },
         {
-          "name": "2019",
-          "value": "30000"
-        }
+          name: '2019',
+          value: '30000',
+        },
       ],
     },
     {
-      "name": "Multiple Time screened",
-      "series": [
+      name: 'Multiple Time screened',
+      series: [
         {
-          "name": "2016",
-          "value": "4000"
+          name: '2016',
+          value: '4000',
         },
         {
-          "name": "2017",
-          "value": "4500"
+          name: '2017',
+          value: '4500',
         },
         {
-          "name": "2018",
-          "value": "10000"
+          name: '2018',
+          value: '10000',
         },
         {
-          "name": "2019",
-          "value": "15000"
-        }
+          name: '2019',
+          value: '15000',
+        },
       ],
     },
-  ]
+  ];
   individualScreenLastSevenDays = [
     {
-      "name": "screened",
-      "series": [
+      name: 'screened',
+      series: [
         {
-          "name": "2016",
-          "value": "4000"
+          name: '2016',
+          value: '4000',
         },
         {
-          "name": "2017",
-          "value": "4500"
+          name: '2017',
+          value: '4500',
         },
         {
-          "name": "2018",
-          "value": "10000"
+          name: '2018',
+          value: '10000',
         },
         {
-          "name": "2019",
-          "value": "15000"
-        }
+          name: '2019',
+          value: '15000',
+        },
       ],
     },
   ];
@@ -194,69 +194,68 @@ export class PhrperformanceComponent {
       name: 'MCH5',
       value: 38124,
     },
-
-  ]
+  ];
   populationRDMNDStatus = [
     {
-      "name": "populationRDMNDStatus",
-      "series": [
+      name: 'populationRDMNDStatus',
+      series: [
         {
-          "name": "2010",
-          "value": 122875
+          name: '2010',
+          value: 122875,
         },
         {
-          "name": "2011",
-          "value": 226875
+          name: '2011',
+          value: 226875,
         },
         {
-          "name": "2012",
-          "value": 16875
-        }
-      ]
-    }
-  ]
+          name: '2012',
+          value: 16875,
+        },
+      ],
+    },
+  ];
   mtmBeneficiaries = [
     {
-      "name": "mtmBeneficiaries",
-      "series": [
+      name: 'mtmBeneficiaries',
+      series: [
         {
-          "name": "2010",
-          "value": 122275
+          name: '2010',
+          value: 122275,
         },
         {
-          "name": "2011",
-          "value": 12875
+          name: '2011',
+          value: 12875,
         },
         {
-          "name": "2012",
-          "value": 22265
+          name: '2012',
+          value: 22265,
         },
         {
-          "name": "2013",
-          "value": 2265
+          name: '2013',
+          value: 2265,
         },
         {
-          "name": "2014",
-          "value": 2265
+          name: '2014',
+          value: 2265,
         },
-      ]
-    }
+      ],
+    },
   ];
   verifiedVsNonVerfiedPopulations = [
     {
-      "name": "-",
-      "series": [
+      name: '-',
+      series: [
         {
-          "name": "Population Verified ",
-          "value": 122275
+          name: 'Population Verified ',
+          value: 122275,
         },
         {
-          "name": "Non-population Verified",
-          "value": 12875
+          name: 'Non-population Verified',
+          value: 12875,
         },
-      ]
-    }
-  ]
+      ],
+    },
+  ];
   pbsConditionScreenings = [
     {
       name: 'Hypertension',
@@ -346,9 +345,128 @@ export class PhrperformanceComponent {
       name: 'OT',
       value: 3824,
     },
-  ]
-  labTests: any[] = [...calculatePercentage(generateLists('test', 20, 'testName', 'testCount'), 'testCount')];
-  noOfIndividualsReferredSplitUp: any[] = [...calculatePercentage(generateLists('category', 20, 'catagoryName', 'referralCount'), 'referralCount')]
+  ];
+  labTests: any[] = [
+    ...calculatePercentage(
+      generateLists('test', 20, 'testName', 'testCount'),
+      'testCount'
+    ),
+  ];
+  noOfIndividualsReferredSplitUp: any[] = [
+    ...calculatePercentage(
+      generateLists('category', 20, 'catagoryName', 'referralCount'),
+      'referralCount'
+    ),
+  ];
+  uhc16ConditionScreening: any[] = [
+    ...calculatePercentage(
+      generateLists('service', 20, 'serviceName', 'serviceCount'),
+      'serviceCount'
+    ),
+  ];
+  drugIssued: any[] = [
+    ...calculatePercentage(
+      generateLists('drug', 20, 'drugName', 'issuedCount'),
+      'issuedCount'
+    ),
+  ];
+  roleScreeningCount: any[] = [
+    ...calculatePercentage(
+      generateLists('role', 20, 'roleName', 'roleCount'),
+      'issuedCount'
+    ),
+  ];
+  phrHealthData: any[] = [
+    {
+      district_Name: '',
+      district_Gid: '',
+      hud_Name: '',
+      hud_Gid: '',
+      block_Name: '',
+      block_Gid: '',
+      village_Name: '',
+      village_Gid: '',
+      phc: '',
+      hsc: '',
+      unique_Screening: '',
+      total_Screening: '',
+      unique_Screening_Count: '',
+      population_Age: '',
+      verified_Population: '',
+      death_Count: '',
+      resident_Count: '',
+      resident_Verified_Percentage: '',
+      percentage_Screening: '',
+      confirmed_Diabetes_Mellitus: '',
+      controlled_Diabetes_Mellitus: '',
+      diabetes_Percentage: '',
+      confirmed_Hypertension: '',
+      controlled_Hypertension: '',
+      hypertension_Percentage: '',
+      confirmed_Both: '',
+      controlled_Both: '',
+      both_Percentage: '',
+    },
+  ];
+  phrMtmData: any[] = [
+    {
+      district_Name: '',
+      district_Gid: '',
+      hud_Name: '',
+      hud_Gid: '',
+      block_Name: '',
+      village_Name: '',
+      village_Gid: '',
+      user_Facility_Type: '',
+      phc: '',
+      hsc: '',
+      palliative_Care_Mtm_Updated: '',
+      physiotherapy_Mtm_Updated: '',
+      capd_Mtm_Updated: '',
+      both_Mtm_Updated: '',
+      confirmed_Diabetes_Mellitus: '',
+      confirmed_Both: '',
+      confirmed_Hypertension: '',
+      controlled_Both: '',
+      controlled_Diabetes_Mellitus: '',
+      controlled_Hypertension: '',
+    },
+  ];
+  byStaffHealthData: any[] = [
+    {
+      district_Name: '',
+      district_Gid: '',
+      hud_Name: '',
+      hud_Gid: '',
+      block_Name: '',
+      block_Gid: '',
+      village_Name: '',
+      village_Gid: '',
+      phc: '',
+      hsc: '',
+      mlhp_Individual_Screening: '',
+      mlhp_Total_Screening: '',
+      mlhp_Individual_Drugs: '',
+      mlhp_Population_Verified: '',
+      whv_Population_Verified: '',
+      whv_Total_Screening: '',
+      whv_Individual_Screened: '',
+      whv_Individual_Drugs: '',
+      dph_Population_Verified: '',
+      dph_Total_Screening: '',
+      dph_Individual_Screening: '',
+      dph_Individual_Drugs: '',
+      dms_Population_Verified: '',
+      dms_Total_Screening: '',
+      dms_Individual_Drugs: '',
+      dms_Individual_Screening: '',
+      dme_Total_Screening: '',
+      dme_Individual_Drugs: '',
+      dme_Individual_Screening: '',
+      dme_Population_Verified: '',
+    },
+  ];
+  byStaffMtmData: any[] = [{}];
   view: [number, number] = [350, 250];
   barview: [number, number] = [600, 300];
   // options
@@ -377,11 +495,7 @@ export class PhrperformanceComponent {
     group: ScaleType.Linear,
     domain: ['#1a73e8', '#12b5cb', '#e52592'],
   };
-  constructor(
-    private CommunitService: CommunityServiceService,
-  ) {
-
-  }
+  constructor(private CommunitService: CommunityServiceService) {}
   ngOnInit(): void {
     this.LoadAll();
   }
@@ -392,25 +506,34 @@ export class PhrperformanceComponent {
     this.LoadAll(Payl);
   }
 
-  LoadAll(payload?: any) {
-
-  }
+  LoadAll(payload?: any) {}
 }
 
 // Function to generate a random number between min (inclusive) and max (inclusive)
 function getRandomNumber(min: number, max: number) {
   return Math.random() * (max - min) + min;
 }
-
-
-function generateLists(name: string, length: number, key1: string, key2: string) {
+// function generateListsFromModel(length: number, dynObj: Object) {
+//   var testArray = [];
+//   for (var i=0; i< length; i++) {
+//     var testObj= {};
+//     for (const key in dynObj) {
+//       testObj[`${key}`] = Math.floor(getRandomNumber(1, 100));
+//     }
+//   }
+// }
+function generateLists(
+  name: string,
+  length: number,
+  key1: string,
+  key2: string
+) {
   // Array to hold the objects
   var testArray = [];
-
   // Generate 10 objects with random values
   for (var i = 0; i < length; i++) {
     var testObject = {
-      [key1]: name + " " + (i + 1),
+      [key1]: name + ' ' + (i + 1),
       [key2]: Math.floor(getRandomNumber(1, 100)),
     };
 
@@ -431,7 +554,7 @@ function calculatePercentage(array: any[], keyToAdd: string) {
 
   // Calculate and store the percentage for each object
   for (var i = 0; i < array.length; i++) {
-    array[i].percentage = (array[i][keyToAdd] / total) * 100;;
+    array[i].percentage = (array[i][keyToAdd] / total) * 100;
   }
 
   // Return the updated array

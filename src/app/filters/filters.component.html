@@ -133,7 +133,7 @@
     </div>
 
   </form>
-  <div class="d-flex flex_justify_center pt-3" *ngIf="dphDashboard">
+  <div class="d-flex flex_justify_center pt-3" *ngIf="showSearch">
     <input type="button" value="Search" class="btn btn-success pul-right" (click)="searchFilter.emit($event)" />
   </div>
 
