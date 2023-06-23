@@ -63,7 +63,8 @@
               "browserTarget": "PHRLockerView:build:production"
             },
             "development": {
-              "browserTarget": "PHRLockerView:build:development"
+              "browserTarget": "PHRLockerView:build:development",
+              "port": 4205
             }
           },
           "defaultConfiguration": "development"

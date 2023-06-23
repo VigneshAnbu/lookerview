@@ -1,0 +1,319 @@
+<div class="hed_sty1">DPH Dashboard <i class="bi bi-heart"></i></div>
+<app-filters [dphDashboard]="true" (searchFilter)="SearchFilter()" #child></app-filters>
+<div class="scroll_sec">
+    <div class="container">
+        <div class="row pan_box_sec">
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+                <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+                    <div class="num">{{populationTotal | number}}</div>
+                    <div class="txt">Total Population</div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="pan_box min_h_600">
+                    <div class="chart-center">
+                        <h5 class="m-0">Individual screened gender wise</h5>
+                        <ngx-charts-pie-chart class="chart-style" [view]="view" [scheme]="colorScheme"
+                            [results]="individualScreenedGenderWise" [gradient]="gradient" [legend]="false"
+                            [legendPosition]="legendPosition" [arcWidth]="arcWidth" [labels]="showLabels"
+                            [doughnut]="isDoughnut">
+                        </ngx-charts-pie-chart>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="pan_box min_h_600">
+                    <div class="chart-center">
+                        <h5 class="m-0">MTM Target unique Screened</h5>
+                        <ngx-charts-bar-horizontal [view]="view" [scheme]="colorScheme"
+                            [results]="mtmTargeUniqueScreened" [gradient]="gradient" [xAxis]="showXAxis"
+                            [yAxis]="showYAxis" [legend]="false" [showXAxisLabel]="showXAxisLabel"
+                            [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="'Unique Screening'"
+                            [yAxisLabel]="'MTM target'">
+                        </ngx-charts-bar-horizontal>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+                <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+                    <div class="num">{{familyResidentialStatus | number}}</div>
+                    <div class="txt">Family residential status</div>
+                </div>
+            </div>
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+                <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+                    <div class="num">{{membersAdded | number}}</div>
+                    <div class="txt">Members added</div>
+                </div>
+            </div>
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+                <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+                    <div class="num">{{familyAdded | number}}</div>
+                    <div class="txt">Family added</div>
+                </div>
+            </div>
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+                <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+                    <div class="num">{{familiesUpdated | number}}</div>
+                    <div class="txt">Families updated</div>
+                </div>
+            </div>
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+                <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+                    <div class="num">{{populationGivenConsent | number}}</div>
+                    <div class="txt">Population given consent</div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="pan_box min_h_600">
+                    <div class="chart-center">
+                        <h5 class="m-0">NCD Target unique Screened</h5>
+                        <ngx-charts-bar-horizontal [view]="view" [scheme]="colorScheme"
+                            [results]="ncdTargeUniqueScreened" [gradient]="gradient" [xAxis]="showXAxis"
+                            [yAxis]="showYAxis" [legend]="false" [showXAxisLabel]="showXAxisLabel"
+                            [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="'Unique Screening'"
+                            [yAxisLabel]="'Age Interval'">
+                        </ngx-charts-bar-horizontal>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="pan_box min_h_600">
+                    <div class="chart-center">
+                        <h5 class="m-0">First time screening vs Repeated time screening</h5>
+                        <ngx-charts-line-chart [view]="[800,0]" [scheme]="colorScheme"
+                            [results]="firstTimeVsRepeatedTimeScreening" [gradient]="gradient" [xAxis]="showXAxis"
+                            [yAxis]="showYAxis" [legend]="false" [showXAxisLabel]="showXAxisLabel"
+                            [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="'screened date'"
+                            [yAxisLabel]="'screening number'">
+                        </ngx-charts-line-chart>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+                <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+                    <div class="num">{{populationMappedWithStreets | number}}</div>
+                    <div class="txt">Population mapped with streets</div>
+                </div>
+            </div>
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+                <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+                    <div class="num">{{cmchisBeneficiary | number}}</div>
+                    <div class="txt">CMCHIS beneficiary</div>
+                </div>
+            </div>
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+                <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+                    <div class="num">{{congenitalAnomaly | number}}</div>
+                    <div class="txt">Congenital Anomaly</div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="pan_box min_h_600">
+                    <div class="chart-center">
+                        <h5 class="m-0">Individual screened for last 7 days</h5>
+                        <ngx-charts-line-chart [view]="view" [scheme]="colorScheme"
+                            [results]="individualScreenLastSevenDays" [gradient]="gradient" [xAxis]="showXAxis"
+                            [yAxis]="showYAxis" [legend]="false" [showXAxisLabel]="showXAxisLabel"
+                            [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="'screened date'"
+                            [yAxisLabel]="'screening number'">
+                        </ngx-charts-line-chart>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="pan_box min_h_600">
+                    <div class="chart-center">
+                        <h5 class="m-0">School Target unique Screened</h5>
+                        <ngx-charts-bar-horizontal [view]="view" [scheme]="colorScheme"
+                            [results]="schoolTargeUniqueScreened" [gradient]="gradient" [xAxis]="showXAxis"
+                            [yAxis]="showYAxis" [legend]="false" [showXAxisLabel]="showXAxisLabel"
+                            [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="'Population'" [yAxisLabel]="'Age Interval'">
+                        </ngx-charts-bar-horizontal>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+                <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+                    <div class="num">{{aadhaarLinkedNumbers | number}}</div>
+                    <div class="txt">Aadhaar linked members</div>
+                </div>
+            </div>
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+                <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+                    <div class="num">{{udidLinkedMembers | number}}</div>
+                    <div class="txt">UDID Linked Members</div>
+                </div>
+            </div>
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+                <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+                    <div class="num">{{disabilityBeneficiaries | number}}</div>
+                    <div class="txt">Disability beneficiaries</div>
+                </div>
+            </div>
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+                <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+                    <div class="num">{{individualScreenings | number}}</div>
+                    <div class="txt">Individual Screenings</div>
+                </div>
+            </div>
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+                <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+                    <div class="num">{{totalIndividualsConfirmedMTMBeneficiary | number}}</div>
+                    <div class="txt">Total Individuals Confirmed MTM Beneficiary</div>
+                </div>
+            </div>
+            <div class="col-sm-4 d_flex flex_wrap row_gap_30 ">
+                <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">
+                    <div class="num">{{totalIndividualRecievedDrugs | number}}</div>
+                    <div class="txt">Total Individuals received Drugs</div>
+                </div>
+            </div>
+            <div class="col-sm-8 ">
+                <div class="pan_box min_h_600">
+                    <div class="chart-center">
+                        <h5 class="m-0">Facility Wise Screening</h5>
+                        <ngx-charts-bar-vertical [view]="[800, 0]" [scheme]="barColorScheme"
+                            [results]="facilityWiseScreening" [gradient]="gradient" [xAxis]="showXAxis"
+                            [yAxis]="showYAxis" [legend]="false" [showXAxisLabel]="showXAxisLabel"
+                            [showYAxisLabel]="showYAxisLabel" [showDataLabel]="true" [legendPosition]="legendPosition"
+                            [xAxisLabel]="'Facility'" [yAxisLabel]="'Total screening'">
+                        </ngx-charts-bar-vertical>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 ">
+                <div class="pan_box min_h_600">
+                    <div class="chart-center">
+                        <h5 class="m-0">Population RDMND Status</h5>
+                        <ngx-charts-bar-vertical-2d [view]="[350, 300]" [scheme]="barColorScheme"
+                            [results]="populationRDMNDStatus" [gradient]="gradient" [xAxis]="showXAxis"
+                            [yAxis]="showYAxis" [legend]="false" [showXAxisLabel]="showXAxisLabel"
+                            [showYAxisLabel]="showYAxisLabel" [showDataLabel]="true" [legendPosition]="legendPosition"
+                            [xAxisLabel]="''" [yAxisLabel]="''">
+                        </ngx-charts-bar-vertical-2d>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 ">
+                <div class="pan_box min_h_600">
+                    <div class="chart-center">
+                        <h5 class="m-0">MTM beneficiaries</h5>
+                        <ngx-charts-bar-vertical-2d [view]="[350, 300]" [scheme]="barColorScheme"
+                            [results]="mtmBeneficiaries" [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis"
+                            [legend]="false" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
+                            [showDataLabel]="true" [legendPosition]="legendPosition" [xAxisLabel]="''"
+                            [yAxisLabel]="''">
+                        </ngx-charts-bar-vertical-2d>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="pan_box min_h_600">
+                    <div class="chart-center">
+                        <h5 class="m-0">PBS 10 conditions screening</h5>
+                        <ngx-charts-bar-horizontal [view]="[350, 300]" [scheme]="colorScheme"
+                            [results]="pbsConditionScreenings" [gradient]="gradient" [xAxis]="showXAxis"
+                            [yAxis]="showYAxis" [legend]="false" [showXAxisLabel]="showXAxisLabel"
+                            [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="'Total Screening'"
+                            [yAxisLabel]="'Citizen diagnosis name'">
+                        </ngx-charts-bar-horizontal>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="pan_box min_h_600">
+                    <div class="chart-center">
+                        <h5 class="m-0">Individual screened village type wise</h5>
+                        <ngx-charts-bar-horizontal [view]="view" [scheme]="colorScheme"
+                            [results]="individualScreenedVillageTypeWise" [gradient]="gradient" [xAxis]="showXAxis"
+                            [yAxis]="showYAxis" [legend]="false" [showXAxisLabel]="showXAxisLabel"
+                            [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="'Unique Screening'"
+                            [yAxisLabel]="'Community village type'">
+                        </ngx-charts-bar-horizontal>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8 ">
+                <div class="pan_box min_h_600">
+                    <div class="chart-center">
+                        <h5 class="m-0">Individual Screened Age wise</h5>
+                        <ngx-charts-bar-vertical [view]="[800, 500]" [scheme]="barColorScheme"
+                            [results]="individualScreenedAgeWise" [gradient]="gradient" [xAxis]="showXAxis"
+                            [yAxis]="showYAxis" [legend]="false" [showXAxisLabel]="showXAxisLabel"
+                            [showYAxisLabel]="showYAxisLabel" [showDataLabel]="true" [legendPosition]="legendPosition"
+                            [xAxisLabel]="'Age interval 0 to 100'" [yAxisLabel]="'Unique screening'">
+                        </ngx-charts-bar-vertical>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="pan_box min_h_600">
+                    <div class="chart-center">
+                        <h5 class="m-0">Population Verified VS Non-population Verified</h5>
+                        <ngx-charts-bar-vertical-2d [view]="[350, 350]" [scheme]="colorScheme"
+                            [results]="verifiedVsNonVerfiedPopulations" [gradient]="gradient" [xAxis]="showXAxis"
+                            [yAxis]="showYAxis" [legend]="false" [showXAxisLabel]="showXAxisLabel"
+                            [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="''" [yAxisLabel]="''">
+                        </ngx-charts-bar-vertical-2d>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="table_box">
+                    <div class="hed">Name of Lab test</div>
+                    <div class="table-responsive wrapper">
+                        <table class="table hedbg">
+                            <thead>
+                                <tr>
+                                    <th>Lab Test Name</th>
+                                    <th>Lab test</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let test of labTests; let i = index">
+                                    <td>{{test.testName}}</td>
+                                    <td>
+                                        <div style="width:80%;float:left">
+                                            <div style="background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); height: 22px;"
+                                                [style.width.%]="test.percentage"></div>
+                                        </div>
+                                        <div style="width: 20%; float: left">{{test.testCount}}</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="table_box">
+                    <div class="hed">No. of Individuals Referred split up</div>
+                    <div class="table-responsive wrapper">
+                        <table class="table hedbg">
+                            <thead>
+                                <tr>
+                                    <th>User Facility Category Name</th>
+                                    <th>Referral Count</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let test of noOfIndividualsReferredSplitUp; let i = index">
+                                    <td>{{test.catagoryName}}</td>
+                                    <td>
+                                        <div style="width:80%;float:left">
+                                            <div style="background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); height: 22px;"
+                                                [style.width.%]="test.percentage"></div>
+                                        </div>
+                                        <div style="width: 20%; float: left">{{test.referralCount}}</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

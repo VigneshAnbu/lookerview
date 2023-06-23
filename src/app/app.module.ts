@@ -24,6 +24,7 @@ import { ServicemonitoringComponent } from './servicemonitoring/servicemonitorin
 import { DphdashboardComponent } from './dphdashboard/dphdashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { PhrperformanceComponent } from './phrperformance/phrperformance.component';
 
 const routes: Routes = [
   {
@@ -78,6 +79,10 @@ const routes: Routes = [
     path: 'dphdashboard',
     component: DphdashboardComponent,
   },
+  {
+    path: 'phrperformancedashboard',
+    component: PhrperformanceComponent,
+  }
 ];
 
 @NgModule({
@@ -97,6 +102,7 @@ const routes: Routes = [
     LoginComponent,
     ServicemonitoringComponent,
     DphdashboardComponent,
+    PhrperformanceComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),

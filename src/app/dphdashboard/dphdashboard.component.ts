@@ -210,20 +210,22 @@ export class DphdashboardComponent {
   }
   getDiabetesvsHypertensionvsBoth(filterPayload?: any) {
     this.CommunitService.getDiabetesvsHypertensionvsBoth(filterPayload).subscribe((res: any) => {
-      this.diabVsHyp = [
-        {
-          name: 'Diabetes',
-          value: parseInt(res.diabetes_Mellitus),
-        },
-        {
-          name: 'Hypertension',
-          value: parseInt(res.hypertension),
-        },
-        {
-          name: 'Both',
-          value: parseInt(res.both),
-        },
-      ];
+      if (res) {
+        this.diabVsHyp = [
+          {
+            name: 'Diabetes',
+            value: parseInt(res?.diabetes_Mellitus),
+          },
+          {
+            name: 'Hypertension',
+            value: parseInt(res?.hypertension),
+          },
+          {
+            name: 'Both',
+            value: parseInt(res?.both),
+          },
+        ];
+      }
     })
   }
   getConfirmedControlledUncontrolledDiabetes(filterPayload?: any) {

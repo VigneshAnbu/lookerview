@@ -1,0 +1,16 @@
+.table_box .table tbody {
+    max-height: 400px;
+    overflow: auto;
+}
+
+.wrapper {
+    overflow-x: auto;
+    height: 465px;
+}
+
+thead {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 5px;
+}
