@@ -40,7 +40,7 @@ export class PhrperformanceComponent {
       value: 0,
     },
   ];
-  mtmTargeUniqueScreened = [
+  mtmTargeUniqueScreened: any = [
     // {
     //   name: 'Below 18',
     //   value: 721632,
@@ -58,7 +58,7 @@ export class PhrperformanceComponent {
     //   value: 3807124,
     // },
   ];
-  ncdTargeUniqueScreened = [
+  ncdTargeUniqueScreened: any = [
     // {
     //   name: 'Below 18',
     //   value: 721632,
@@ -72,74 +72,23 @@ export class PhrperformanceComponent {
     //   value: 4507124,
     // },
   ];
-  firstTimeVsRepeatedTimeScreening = [
+  firstTimeVsRepeatedTimeScreening: any = [
     {
       name: 'screened only once',
-      series: [
-        {
-          name: '2016',
-          value: '15000',
-        },
-        {
-          name: '2017',
-          value: '20000',
-        },
-        {
-          name: '2018',
-          value: '25000',
-        },
-        {
-          name: '2019',
-          value: '30000',
-        },
-      ],
+      series: [],
     },
     {
       name: 'Multiple Time screened',
-      series: [
-        {
-          name: '2016',
-          value: '4000',
-        },
-        {
-          name: '2017',
-          value: '4500',
-        },
-        {
-          name: '2018',
-          value: '10000',
-        },
-        {
-          name: '2019',
-          value: '15000',
-        },
-      ],
+      series: [],
     },
   ];
   individualScreenLastSevenDays = [
     {
       name: 'screened',
-      series: [
-        {
-          name: '2016',
-          value: '4000',
-        },
-        {
-          name: '2017',
-          value: '4500',
-        },
-        {
-          name: '2018',
-          value: '10000',
-        },
-        {
-          name: '2019',
-          value: '15000',
-        },
-      ],
+      series: [],
     },
   ];
-  schoolTargeUniqueScreened = [
+  schoolTargeUniqueScreened: any = [
     // {
     //   name: 'Below 3',
     //   value: 211632,
@@ -157,7 +106,7 @@ export class PhrperformanceComponent {
     //   value: 3807124,
     // },
   ];
-  facilityWiseScreening = [
+  facilityWiseScreening: any = [
     // {
     //   name: 'mcc',
     //   value: 211632,
@@ -195,7 +144,7 @@ export class PhrperformanceComponent {
     //   value: 38124,
     // },
   ];
-  populationRDMNDStatus = [
+  populationRDMNDStatus: any = [
     {
       name: 'resident Count',
       value: 0,
@@ -217,7 +166,7 @@ export class PhrperformanceComponent {
       value: 0,
     },
   ];
-  mtmBeneficiaries = [
+  mtmBeneficiaries: any = [
     {
       name: 'confirmed Diabetes Mellitus',
       value: 0,
@@ -243,7 +192,7 @@ export class PhrperformanceComponent {
       value: 0,
     },
   ];
-  verifiedVsNonVerfiedPopulations = [
+  verifiedVsNonVerfiedPopulations: any = [
     {
       name: 'Population Verified ',
       value: 0,
@@ -253,7 +202,7 @@ export class PhrperformanceComponent {
       value: 0,
     },
   ];
-  pbsConditionScreenings = [
+  pbsConditionScreenings: any = [
     {
       name: "Shoulder Pain",
       value: 0,
@@ -279,7 +228,7 @@ export class PhrperformanceComponent {
       value: 0,
     }
   ]
-  individualScreenedAgeWise = [
+  individualScreenedAgeWise: any = [
     {
       name: 'Below 10',
       value: 0,
@@ -317,7 +266,7 @@ export class PhrperformanceComponent {
       value: 0,
     },
   ];
-  individualScreenedVillageTypeWise = [
+  individualScreenedVillageTypeWise: any = [
     {
       name: 'VP',
       value: 0,
@@ -610,9 +559,22 @@ export class PhrperformanceComponent {
     })
   }
   getScreenedOnlyOnceAndMultipleTimesPhrPer(payload: any) {
-    this.CommunitService.getScreenedOnlyOnceAndMultipleTimesPhrPer(payload).subscribe((res: any) => {
-      if (res && res.test && res.count && res.days) {
-        // this.firstTimeVsRepeatedTimeScreening
+    this.CommunitService.getScreenedOnlyOnceAndMultipleTimesPhrPer(payload).subscribe((lists: any) => {
+      if (lists?.length) {
+        const screenOnlyOnce = (lists || []).filter((list: any) => list.test === 'firstTime');
+        const multipleTimes = (lists || []).filter((list: any) => list.test === 'repeated');
+        const screenOnlyOnceSeries = (screenOnlyOnce || []).map((list: any) => ({ name: list.counts, value: list.dayss.split(' ')[0] }))
+        const multipleTimesSeries = (multipleTimes || []).map((list: any) => ({ name: list.counts, value: list.dayss.split(' ')[0] }))
+        this.firstTimeVsRepeatedTimeScreening = [
+          {
+            name: 'screened only once',
+            series: [...screenOnlyOnceSeries],
+          },
+          {
+            name: 'Multiple Time screened',
+            series: [...multipleTimesSeries],
+          },
+        ];
       }
     })
   }
@@ -646,8 +608,8 @@ export class PhrperformanceComponent {
   }
   getScreenedLastSevenDaysPhrPer(payload: any) {
     this.CommunitService.getScreenedLastSevenDaysPhrPer(payload).subscribe((res: any) => {
-      if (res && res.last_Seven_Days && res.count) {
-        // this.individualScreenLastSevenDays
+      if (res?.length) {
+        this.individualScreenLastSevenDays = (res || []).map((list: any) => ({ name: list.count, value: list.dayss.split(' ')[0] }))
       }
     })
   }
