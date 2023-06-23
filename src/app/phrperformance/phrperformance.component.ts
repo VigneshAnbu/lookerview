@@ -512,6 +512,33 @@ export class PhrperformanceComponent {
     this.getUHCConditionScreeningPhrPer(payload);
     this.getDrugsIssuedPhrPer(payload);
     this.getRoleBasedScreeningPhrPer(payload);
+    this.getStaffMtmPhrPer(payload);
+    this.getStaffHealthPhrPer(payload);
+    this.getPHRMTMPhrPer(payload);
+    this.getPHRHealthPhrPer(payload);
+  }
+  getStaffMtmPhrPer(payload?: any) {
+    this.CommunitService.getStaffMtmPhrPer(payload).subscribe((res: any) => {
+      this.byStaffMtmData = res;
+    })
+  }
+  getStaffHealthPhrPer(payload?: any) {
+    this.CommunitService.getStaffHealthPhrPer(payload).subscribe((res: any) => {
+      console.log('byStaffHealthData', res);
+      this.byStaffHealthData = res;
+    })
+  }
+  getPHRMTMPhrPer(payload?: any) {
+    this.CommunitService.getPHRMTMPhrPer(payload).subscribe((res: any) => {
+      console.log('phrMtmData', res);
+      this.phrMtmData = res;
+    })
+  }
+  getPHRHealthPhrPer(payload?: any) {
+    this.CommunitService.getPHRHealthPhrPer(payload).subscribe((res: any) => {
+      console.log('phrHealthData', res);
+      this.phrHealthData = res;
+    })
   }
   getTotalPopulationCountPhrPer(payload: any) {
     this.CommunitService.getTotalPopulationCountPhrPer(payload).subscribe((res: any) => {

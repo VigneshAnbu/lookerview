@@ -606,6 +606,19 @@ export class CommunityServiceService {
   getVillageWisePopulation(payload: any): Observable<any> {
     return this.http.get<any>(this.BaseURL + 'GetVillageWisePopulation', { params: payload });
   }
+  getStaffMtmPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetStaffMTMPhrPer', { params: payload });
+  }
+  getStaffHealthPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetStaffHealthPhrPer', { params: payload });
+  }
+  getPHRMTMPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetPHRMTMPhrPer', { params: payload });
+  }
+  getPHRHealthPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetPHRHealthPhrPer', { params: payload });
+  }
+  
   getTotalPopulationCountPhrPer(payload: any): Observable<any> {
     return this.http.get<any>(this.BaseURL + 'GetTotalPopulationCountPhrPer', { params: payload });
   }
