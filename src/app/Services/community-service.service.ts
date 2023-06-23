@@ -606,4 +606,103 @@ export class CommunityServiceService {
   getVillageWisePopulation(payload: any): Observable<any> {
     return this.http.get<any>(this.BaseURL + 'GetVillageWisePopulation', { params: payload });
   }
+  getTotalPopulationCountPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetTotalPopulationCountPhrPer', { params: payload });
+  }
+  getIndividualScreenedGenderWisePhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetIndividualScreenedGenderWisePhrPer', { params: payload });
+  }
+  getMTMTargetUniqueScreenedPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetMTMTargetUniqueScreenedPhrPer', { params: payload });
+  }
+  getFamilyResidentailStatusPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetFamilyResidentailStatusPhrPer', { params: payload });
+  }
+  getMembersAddedPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetMembersAddedPhrPer', { params: payload });
+  }
+  getFamiliesAddedPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetFamiliesAddedPhrPer', { params: payload });
+  }
+  getFamiliesUpdatedPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetFamiliesUpdatedPhrPer', { params: payload });
+  }
+  getPopulationGivenConsentPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetPopulationGivenConsentPhrPer', { params: payload });
+  }
+  getScreenedOnlyOnceAndMultipleTimesPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetScreenedOnlyOnceAndMultipleTimesPhrPer', { params: payload });
+  }
+  getNCDTargetUniqueScreenedPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetNCDTargetUniqueScreenedPhrPer', { params: payload });
+  }
+  getPopulationMappedStreetsPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetPopulationMappedStreetsPhrPer', { params: payload });
+  }
+  getCMCHISBeneficiariesPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetCMCHISBeneficiariesPhrPer', { params: payload });
+  }
+  getCongenitalAnomalyPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetCongenitalAnomalyPhrPer', { params: payload });
+  }
+  getScreenedLastSevenDaysPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetScreenedLastSevenDaysPhrPer', { params: payload });
+  }
+  getSchoolTargetUniqueScreenedPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetSchoolTargetUniqueScreenedPhrPer', { params: payload });
+  }
+  getAadhaarLinkedMembersPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetAadhaarLinkedMembersPhrPer', { params: payload });
+  }
+  getUDIDLinkedMembersPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetUDIDLinkedMembersPhrPer', { params: payload });
+  }
+  getDisabilityBeneficiariesPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetDisabilityBeneficiariesPhrPer', { params: payload });
+  }
+  getIndividualScreeningsPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetIndividualScreeningsPhrPer', { params: payload });
+  }
+  getIndividualReceivedDrugsPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetIndividualReceivedDrugsPhrPer', { params: payload });
+  }
+  getTotalConfirmedMTMBeneficiaryPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetTotalConfirmedMTMBeneficiaryPhrPer', { params: payload });
+  }
+  getFacilityWiseScreeningPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetFacilityWiseScreeningPhrPer', { params: payload });
+  }
+  getPopulationRDMNDStatusPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetPopulationRDMNDStatusPhrPer', { params: payload });
+  }
+  getMTMBeneficiariesPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetMTMBeneficiariesPhrPer', { params: payload });
+  }
+  getPBSConditionScreeningPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetPBSConditionScreeningPhrPer', { params: payload });
+  }
+  getPopulationVerifiedNonVerifiedStatusPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetPopulationVerifiedNonVerifiedStatusPhrPer', { params: payload });
+  }
+  getIndividualScreenedAgeWisePhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetIndividualScreenedAgeWisePhrPer', { params: payload });
+  }
+  getLabTestPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetLabTestPhrPer', { params: payload });
+  }
+  getScreenedVillageTypeWisePhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetScreenedVillageTypeWisePhrPer', { params: payload });
+  }
+  getReferredSplitUpPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetReferredSplitUpPhrPer', { params: payload });
+  }
+  getUHCConditionScreeningPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetUHCConditionScreeningPhrPer', { params: payload });
+  }
+  getDrugsIssuedPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetDrugsIssuedPhrPer', { params: payload });
+  }
+  getRoleBasedScreeningPhrPer(payload: any): Observable<any> {
+    return this.http.get<any>(this.BaseURL + 'GetRoleBasedScreeningPhrPer', { params: payload });
+  }
 }

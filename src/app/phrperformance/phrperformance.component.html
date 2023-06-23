@@ -187,12 +187,12 @@
                 <div class="pan_box min_h_600">
                     <div class="chart-center">
                         <h5 class="m-0">Population RDMND Status</h5>
-                        <ngx-charts-bar-vertical-2d [view]="[350, 300]" [scheme]="barColorScheme"
+                        <ngx-charts-bar-vertical [view]="[350, 300]" [scheme]="barColorScheme"
                             [results]="populationRDMNDStatus" [gradient]="gradient" [xAxis]="showXAxis"
                             [yAxis]="showYAxis" [legend]="false" [showXAxisLabel]="showXAxisLabel"
                             [showYAxisLabel]="showYAxisLabel" [showDataLabel]="true" [legendPosition]="legendPosition"
                             [xAxisLabel]="''" [yAxisLabel]="''">
-                        </ngx-charts-bar-vertical-2d>
+                        </ngx-charts-bar-vertical>
                     </div>
                 </div>
             </div>
@@ -200,12 +200,12 @@
                 <div class="pan_box min_h_600">
                     <div class="chart-center">
                         <h5 class="m-0">MTM beneficiaries</h5>
-                        <ngx-charts-bar-vertical-2d [view]="[350, 300]" [scheme]="barColorScheme"
+                        <ngx-charts-bar-vertical [view]="[350, 300]" [scheme]="barColorScheme"
                             [results]="mtmBeneficiaries" [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis"
                             [legend]="false" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
                             [showDataLabel]="true" [legendPosition]="legendPosition" [xAxisLabel]="''"
                             [yAxisLabel]="''">
-                        </ngx-charts-bar-vertical-2d>
+                        </ngx-charts-bar-vertical>
                     </div>
                 </div>
             </div>
@@ -226,11 +226,11 @@
                 <div class="pan_box min_h_600 h-100">
                     <div class="chart-center">
                         <h5 class="m-0">Population Verified VS Non-population Verified</h5>
-                        <ngx-charts-bar-vertical-2d [view]="[350, 480]" [scheme]="colorScheme"
+                        <ngx-charts-bar-vertical [view]="[350, 480]" [scheme]="colorScheme"
                             [results]="verifiedVsNonVerfiedPopulations" [gradient]="gradient" [xAxis]="showXAxis"
                             [yAxis]="showYAxis" [legend]="false" [showXAxisLabel]="showXAxisLabel"
                             [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="''" [yAxisLabel]="''">
-                        </ngx-charts-bar-vertical-2d>
+                        </ngx-charts-bar-vertical>
                     </div>
                 </div>
             </div>
@@ -260,13 +260,13 @@
                             </thead>
                             <tbody>
                                 <tr *ngFor="let test of labTests; let i = index">
-                                    <td>{{test.testName}}</td>
+                                    <td>{{test.lab_Test_Name}}</td>
                                     <td>
                                         <div style="width:80%;float:left">
                                             <div style="background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); height: 22px;"
                                                 [style.width.%]="test.percentage"></div>
                                         </div>
-                                        <div style="width: 20%; float: left">{{test.testCount}}</div>
+                                        <div style="width: 20%; float: left">{{test.lab_Test_Count}}</div>
                                     </td>
                                 </tr>
                             </tbody>
@@ -300,13 +300,13 @@
                             </thead>
                             <tbody>
                                 <tr *ngFor="let test of noOfIndividualsReferredSplitUp; let i = index">
-                                    <td>{{test.catagoryName}}</td>
+                                    <td>{{test.category_Name}}</td>
                                     <td>
                                         <div style="width:80%;float:left">
                                             <div style="background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);height: 22px;"
                                                 [style.width.%]="test.percentage"></div>
                                         </div>
-                                        <div style="width: 20%; float: left">{{test.referralCount}}</div>
+                                        <div style="width: 20%; float: left">{{test.referred_Count}}</div>
                                     </td>
                                 </tr>
                             </tbody>
@@ -327,13 +327,13 @@
                             </thead>
                             <tbody>
                                 <tr *ngFor="let test of uhc16ConditionScreening; let i = index">
-                                    <td>{{test.serviceName}}</td>
+                                    <td>{{test.service_Name}}</td>
                                     <td>
                                         <div style="width:80%;float:left">
                                             <div style="background-image: linear-gradient(to right top, #1a73e8, #1a73e8, #aa53cc, #cd3db2, #e52592); height: 22px;"
                                                 [style.width.%]="test.percentage"></div>
                                         </div>
-                                        <div style="width: 20%; float: left">{{test.serviceCount}}</div>
+                                        <div style="width: 20%; float: left">{{test.total_Screening_Count}}</div>
                                     </td>
                                 </tr>
                             </tbody>
@@ -354,13 +354,13 @@
                             </thead>
                             <tbody>
                                 <tr *ngFor="let test of drugIssued; let i = index">
-                                    <td>{{test.drugName}}</td>
+                                    <td>{{test.drug_Name}}</td>
                                     <td>
                                         <div style="width:80%;float:left">
                                             <div style="background-image: linear-gradient(to right top, #1a73e8, #1a73e8, #aa53cc, #cd3db2, #e52592); height: 22px;"
                                                 [style.width.%]="test.percentage"></div>
                                         </div>
-                                        <div style="width: 20%; float: left">{{test.issuedCount}}</div>
+                                        <div style="width: 20%; float: left">{{test.drug_Count}}</div>
                                     </td>
                                 </tr>
                             </tbody>
@@ -381,13 +381,13 @@
                             </thead>
                             <tbody>
                                 <tr *ngFor="let test of roleScreeningCount; let i = index">
-                                    <td>{{test.roleName}}</td>
+                                    <td>{{test.role_Name}}</td>
                                     <td>
                                         <div style="width:80%;float:left">
                                             <div style="background-image:linear-gradient(to right top, #1a73e8, #1a73e8, #aa53cc, #cd3db2, #e52592); height: 22px;"
                                                 [style.width.%]="test.percentage"></div>
                                         </div>
-                                        <div style="width: 20%; float: left">{{test.roleCount}}</div>
+                                        <div style="width: 20%; float: left">{{test.total_Screening_Count}}</div>
                                     </td>
                                 </tr>
                             </tbody>

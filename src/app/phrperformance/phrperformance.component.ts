@@ -10,67 +10,67 @@ import { Color, LegendPosition, ScaleType } from '@swimlane/ngx-charts';
 })
 export class PhrperformanceComponent {
   @ViewChild(FiltersComponent) child!: FiltersComponent;
-  populationTotal = 67830166;
-  familyResidentialStatus = 67830166;
-  membersAdded = 652689;
-  familyAdded = 32569854;
-  familiesUpdated = 569854;
-  population = 6452684;
-  populationMappedWithStreets = 5698326;
-  cmchisBeneficiary = 5698326;
-  congenitalAnomaly = 5698326;
-  populationGivenConsent = 5698326;
-  aadhaarLinkedNumbers = 562398;
-  udidLinkedMembers = 659832;
-  disabilityBeneficiaries = 569823;
-  individualScreenings = 549856;
-  totalIndividualsConfirmedMTMBeneficiary = 569832;
-  totalIndividualRecievedDrugs = 569832;
+  populationTotal = 0;
+  familyResidentialStatus = 0;
+  membersAdded = 0;
+  familyAdded = 0;
+  familiesUpdated = 0;
+  population = 0;
+  populationMappedWithStreets = 0;
+  cmchisBeneficiary = 0;
+  congenitalAnomaly = 0;
+  populationGivenConsent = 0;
+  aadhaarLinkedNumbers = 0;
+  udidLinkedMembers = 0;
+  disabilityBeneficiaries = 0;
+  individualScreenings = 0;
+  totalIndividualsConfirmedMTMBeneficiary = 0;
+  totalIndividualRecievedDrugs = 0;
   individualScreenedGenderWise = [
     {
       name: 'female',
-      value: 51.77,
+      value: 0,
     },
     {
       name: 'male',
-      value: 48.19,
+      value: 0,
     },
     {
       name: 'others',
-      value: 0.4,
+      value: 0,
     },
   ];
   mtmTargeUniqueScreened = [
-    {
-      name: 'Below 18',
-      value: 721632,
-    },
-    {
-      name: '18 to 45',
-      value: 8707124,
-    },
-    {
-      name: '46 to 59',
-      value: 4507124,
-    },
-    {
-      name: '60 above',
-      value: 3807124,
-    },
+    // {
+    //   name: 'Below 18',
+    //   value: 721632,
+    // },
+    // {
+    //   name: '18 to 45',
+    //   value: 8707124,
+    // },
+    // {
+    //   name: '46 to 59',
+    //   value: 4507124,
+    // },
+    // {
+    //   name: '60 above',
+    //   value: 3807124,
+    // },
   ];
   ncdTargeUniqueScreened = [
-    {
-      name: 'Below 18',
-      value: 721632,
-    },
-    {
-      name: '18 to 29',
-      value: 8707124,
-    },
-    {
-      name: '30 above',
-      value: 4507124,
-    },
+    // {
+    //   name: 'Below 18',
+    //   value: 721632,
+    // },
+    // {
+    //   name: '18 to 29',
+    //   value: 8707124,
+    // },
+    // {
+    //   name: '30 above',
+    //   value: 4507124,
+    // },
   ];
   firstTimeVsRepeatedTimeScreening = [
     {
@@ -140,242 +140,214 @@ export class PhrperformanceComponent {
     },
   ];
   schoolTargeUniqueScreened = [
-    {
-      name: 'Below 3',
-      value: 211632,
-    },
-    {
-      name: '3 to 6',
-      value: 8707124,
-    },
-    {
-      name: '7 to 9',
-      value: 4507124,
-    },
-    {
-      name: '10 to 19',
-      value: 3807124,
-    },
+    // {
+    //   name: 'Below 3',
+    //   value: 211632,
+    // },
+    // {
+    //   name: '3 to 6',
+    //   value: 8707124,
+    // },
+    // {
+    //   name: '7 to 9',
+    //   value: 4507124,
+    // },
+    // {
+    //   name: '10 to 19',
+    //   value: 3807124,
+    // },
   ];
   facilityWiseScreening = [
-    {
-      name: 'mcc',
-      value: 211632,
-    },
-    {
-      name: 'woman and child',
-      value: 807124,
-    },
-    {
-      name: 'rural HSC',
-      value: 4507124,
-    },
-    {
-      name: 'MCH',
-      value: 3807124,
-    },
-    {
-      name: 'MCH1',
-      value: 3824,
-    },
-    {
-      name: 'MCH2',
-      value: 407124,
-    },
-    {
-      name: 'MCH3',
-      value: 30124,
-    },
-    {
-      name: 'MCH4',
-      value: 47124,
-    },
-    {
-      name: 'MCH5',
-      value: 38124,
-    },
+    // {
+    //   name: 'mcc',
+    //   value: 211632,
+    // },
+    // {
+    //   name: 'woman and child',
+    //   value: 807124,
+    // },
+    // {
+    //   name: 'rural HSC',
+    //   value: 4507124,
+    // },
+    // {
+    //   name: 'MCH',
+    //   value: 3807124,
+    // },
+    // {
+    //   name: 'MCH1',
+    //   value: 3824,
+    // },
+    // {
+    //   name: 'MCH2',
+    //   value: 407124,
+    // },
+    // {
+    //   name: 'MCH3',
+    //   value: 30124,
+    // },
+    // {
+    //   name: 'MCH4',
+    //   value: 47124,
+    // },
+    // {
+    //   name: 'MCH5',
+    //   value: 38124,
+    // },
   ];
   populationRDMNDStatus = [
     {
-      name: 'populationRDMNDStatus',
-      series: [
-        {
-          name: '2010',
-          value: 122875,
-        },
-        {
-          name: '2011',
-          value: 226875,
-        },
-        {
-          name: '2012',
-          value: 16875,
-        },
-      ],
+      name: 'resident Count',
+      value: 0,
+    },
+    {
+      name: 'migrant Count',
+      value: 0,
+    },
+    {
+      name: 'death Count',
+      value: 0,
+    },
+    {
+      name: 'duplicate Count',
+      value: 0,
+    },
+    {
+      name: 'non Traceable Count',
+      value: 0,
     },
   ];
   mtmBeneficiaries = [
     {
-      name: 'mtmBeneficiaries',
-      series: [
-        {
-          name: '2010',
-          value: 122275,
-        },
-        {
-          name: '2011',
-          value: 12875,
-        },
-        {
-          name: '2012',
-          value: 22265,
-        },
-        {
-          name: '2013',
-          value: 2265,
-        },
-        {
-          name: '2014',
-          value: 2265,
-        },
-      ],
+      name: 'confirmed Diabetes Mellitus',
+      value: 0,
+    },
+    {
+      name: 'confirmed Hypertension',
+      value: 0,
+    },
+    {
+      name: 'confirmed Diabetes Mellitus Hypertension',
+      value: 0,
+    },
+    {
+      name: 'controlled Diabetes Mellitus',
+      value: 0,
+    },
+    {
+      name: 'controlled Hypertension',
+      value: 0,
+    },
+    {
+      name: 'both',
+      value: 0,
     },
   ];
   verifiedVsNonVerfiedPopulations = [
     {
-      name: '-',
-      series: [
-        {
-          name: 'Population Verified ',
-          value: 122275,
-        },
-        {
-          name: 'Non-population Verified',
-          value: 12875,
-        },
-      ],
+      name: 'Population Verified ',
+      value: 0,
+    },
+    {
+      name: 'Non-population Verified',
+      value: 0,
     },
   ];
   pbsConditionScreenings = [
     {
-      name: 'Hypertension',
-      value: 2632,
+      name: "Shoulder Pain",
+      value: 0,
     },
     {
-      name: 'Physiotherapy',
-      value: 87124,
+      name: "Leg Pain",
+      value: 0,
     },
     {
-      name: 'oral Cancer screening',
-      value: 4724,
+      name: "Headache",
+      value: 0,
     },
     {
-      name: 'Tuberculosis',
-      value: 37124,
+      name: "Myalgia",
+      value: 0,
     },
     {
-      name: 'Chronic kidney',
-      value: 3124,
+      name: "Low back pain",
+      value: 0,
     },
     {
-      name: 'CAPD',
-      value: 3124,
-    },
-  ];
+      name: "Physiotheraphy Care",
+      value: 0,
+    }
+  ]
   individualScreenedAgeWise = [
     {
       name: 'Below 10',
-      value: 211632,
+      value: 0,
     },
     {
       name: '10 to 19',
-      value: 807124,
+      value: 0,
     },
     {
       name: '20 to 29',
-      value: 4507124,
+      value: 0,
     },
     {
       name: '30 to 39',
-      value: 3807124,
+      value: 0,
     },
     {
       name: '40 to 49',
-      value: 3824,
+      value: 0,
     },
     {
       name: '50 to 59',
-      value: 407124,
+      value: 0,
     },
     {
       name: '60 to 69',
-      value: 30124,
+      value: 0,
     },
     {
       name: '70 to 79',
-      value: 47124,
+      value: 0,
     },
     {
       name: 'Above 80',
-      value: 38124,
+      value: 0,
     },
   ];
   individualScreenedVillageTypeWise = [
     {
       name: 'VP',
-      value: 211632,
+      value: 0,
     },
     {
       name: 'TP',
-      value: 807124,
+      value: 0,
     },
     {
       name: 'MP',
-      value: 4507124,
+      value: 0,
     },
     {
       name: 'CO',
-      value: 3807124,
+      value: 0,
     },
     {
       name: 'other',
-      value: 3824,
+      value: 0,
     },
     {
       name: 'OT',
-      value: 3824,
+      value: 0,
     },
   ];
-  labTests: any[] = [
-    ...calculatePercentage(
-      generateLists('test', 20, 'testName', 'testCount'),
-      'testCount'
-    ),
-  ];
-  noOfIndividualsReferredSplitUp: any[] = [
-    ...calculatePercentage(
-      generateLists('category', 20, 'catagoryName', 'referralCount'),
-      'referralCount'
-    ),
-  ];
-  uhc16ConditionScreening: any[] = [
-    ...calculatePercentage(
-      generateLists('service', 20, 'serviceName', 'serviceCount'),
-      'serviceCount'
-    ),
-  ];
-  drugIssued: any[] = [
-    ...calculatePercentage(
-      generateLists('drug', 20, 'drugName', 'issuedCount'),
-      'issuedCount'
-    ),
-  ];
-  roleScreeningCount: any[] = [
-    ...calculatePercentage(
-      generateLists('role', 20, 'roleName', 'roleCount'),
-      'issuedCount'
-    ),
-  ];
+  labTests: any[] = [ ];
+  noOfIndividualsReferredSplitUp: any[] = [];
+  uhc16ConditionScreening: any[] = [];
+  drugIssued: any[] = [];
+  roleScreeningCount: any[] = [];
   phrHealthData: any[] = [
     {
       district_Name: '',
@@ -495,7 +467,7 @@ export class PhrperformanceComponent {
     group: ScaleType.Linear,
     domain: ['#1a73e8', '#12b5cb', '#e52592'],
   };
-  constructor(private CommunitService: CommunityServiceService) {}
+  constructor(private CommunitService: CommunityServiceService) { }
   ngOnInit(): void {
     this.LoadAll();
   }
@@ -506,8 +478,343 @@ export class PhrperformanceComponent {
     this.LoadAll(Payl);
   }
 
-  LoadAll(payload?: any) {}
+  LoadAll(payload?: any) {
+    this.getTotalPopulationCountPhrPer(payload);
+    this.getIndividualScreenedGenderWisePhrPer(payload);
+    this.getMTMTargetUniqueScreenedPhrPer(payload);
+    this.getFamilyResidentailStatusPhrPer(payload);
+    this.getMembersAddedPhrPer(payload);
+    this.getFamiliesAddedPhrPer(payload);
+    this.getFamiliesUpdatedPhrPer(payload);
+    this.getPopulationGivenConsentPhrPer(payload);
+    this.getScreenedOnlyOnceAndMultipleTimesPhrPer(payload);
+    this.getNCDTargetUniqueScreenedPhrPer(payload);
+    this.getPopulationMappedStreetsPhrPer(payload);
+    this.getCMCHISBeneficiariesPhrPer(payload);
+    this.getCongenitalAnomalyPhrPer(payload);
+    this.getScreenedLastSevenDaysPhrPer(payload);
+    this.getSchoolTargetUniqueScreenedPhrPer(payload);
+    this.getAadhaarLinkedMembersPhrPer(payload);
+    this.getUDIDLinkedMembersPhrPer(payload);
+    this.getDisabilityBeneficiariesPhrPer(payload);
+    this.getIndividualScreeningsPhrPer(payload);
+    this.getIndividualReceivedDrugsPhrPer(payload);
+    this.getTotalConfirmedMTMBeneficiaryPhrPer(payload);
+    this.getFacilityWiseScreeningPhrPer(payload);
+    this.getPopulationRDMNDStatusPhrPer(payload);
+    this.getMTMBeneficiariesPhrPer(payload);
+    this.getPBSConditionScreeningPhrPer(payload);
+    this.getPopulationVerifiedNonVerifiedStatusPhrPer(payload);
+    this.getIndividualScreenedAgeWisePhrPer(payload);
+    this.getLabTestPhrPer(payload);
+    this.getScreenedVillageTypeWisePhrPer(payload);
+    this.getReferredSplitUpPhrPer(payload);
+    this.getUHCConditionScreeningPhrPer(payload);
+    this.getDrugsIssuedPhrPer(payload);
+    this.getRoleBasedScreeningPhrPer(payload);
+  }
+  getTotalPopulationCountPhrPer(payload: any) {
+    this.CommunitService.getTotalPopulationCountPhrPer(payload).subscribe((res: any) => {
+      if (res) {
+        this.populationTotal = res?.total_population;
+      }
+    })
+  }
+  getIndividualScreenedGenderWisePhrPer(payload: any) {
+    this.CommunitService.getIndividualScreenedGenderWisePhrPer(payload).subscribe((res: any) => {
+      if (res) {
+        this.individualScreenedGenderWise = [
+          {
+            name: 'female',
+            value: res.female_Count,
+          },
+          {
+            name: 'male',
+            value: res.male_Count,
+          },
+          {
+            name: 'others',
+            value: res.other_Count,
+          },
+        ];
+      }
+    })
+  }
+  getMTMTargetUniqueScreenedPhrPer(payload: any) {
+    this.CommunitService.getMTMTargetUniqueScreenedPhrPer(payload).subscribe((lists: any) => {
+      if (lists) {
+        this.mtmTargeUniqueScreened = lists.map((list: any) => ({ name: list.age_Group, value: list.age_Count }))
+      }
+    })
+  }
+  getFamilyResidentailStatusPhrPer(payload: any) {
+    this.CommunitService.getFamilyResidentailStatusPhrPer(payload).subscribe((res: any) => {
+      if (res) {
+        this.familyResidentialStatus = res.family_Residential_Status
+      }
+    })
+  }
+  getMembersAddedPhrPer(payload: any) {
+    this.CommunitService.getMembersAddedPhrPer(payload).subscribe((res: any) => {
+      if (res) {
+        this.membersAdded = res?.members_Added;
+      }
+    })
+  }
+  getFamiliesAddedPhrPer(payload: any) {
+    this.CommunitService.getFamiliesAddedPhrPer(payload).subscribe((res: any) => {
+      if (res) {
+        this.familyAdded = res.families_Added;
+      }
+    })
+  }
+  getFamiliesUpdatedPhrPer(payload: any) {
+    this.CommunitService.getFamiliesUpdatedPhrPer(payload).subscribe((res: any) => {
+      if (res) {
+        this.familiesUpdated = res.families_Updated;
+      }
+    })
+  }
+  getPopulationGivenConsentPhrPer(payload: any) {
+    this.CommunitService.getPopulationGivenConsentPhrPer(payload).subscribe((res: any) => {
+      if (res) {
+        this.populationGivenConsent = res.population_Given_Consent;
+      }
+    })
+  }
+  getScreenedOnlyOnceAndMultipleTimesPhrPer(payload: any) {
+    this.CommunitService.getScreenedOnlyOnceAndMultipleTimesPhrPer(payload).subscribe((res: any) => {
+      if (res && res.test && res.count && res.days) {
+        // this.firstTimeVsRepeatedTimeScreening
+      }
+    })
+  }
+  getNCDTargetUniqueScreenedPhrPer(payload: any) {
+    this.CommunitService.getNCDTargetUniqueScreenedPhrPer(payload).subscribe((lists: any) => {
+      if (lists) {
+        this.ncdTargeUniqueScreened = lists.map((list: any) => ({ name: list.age_Group, value: list.age_Count }))
+      }
+    })
+  }
+  getPopulationMappedStreetsPhrPer(payload: any) {
+    this.CommunitService.getPopulationMappedStreetsPhrPer(payload).subscribe((res: any) => {
+      if (res) {
+        this.populationMappedWithStreets = res.population_Mapped_Street;
+      }
+    })
+  }
+  getCMCHISBeneficiariesPhrPer(payload: any) {
+    this.CommunitService.getCMCHISBeneficiariesPhrPer(payload).subscribe((res: any) => {
+      if (res) {
+        this.cmchisBeneficiary = res.cmchiS_Count;
+      }
+    })
+  }
+  getCongenitalAnomalyPhrPer(payload: any) {
+    this.CommunitService.getCongenitalAnomalyPhrPer(payload).subscribe((res: any) => {
+      if (res) {
+        this.congenitalAnomaly = res.congenital_Anomaly;
+      }
+    })
+  }
+  getScreenedLastSevenDaysPhrPer(payload: any) {
+    this.CommunitService.getScreenedLastSevenDaysPhrPer(payload).subscribe((res: any) => {
+      if (res && res.last_Seven_Days && res.count) {
+        // this.individualScreenLastSevenDays
+      }
+    })
+  }
+  getSchoolTargetUniqueScreenedPhrPer(payload: any) {
+    this.CommunitService.getSchoolTargetUniqueScreenedPhrPer(payload).subscribe((lists: any) => {
+      if (lists) {
+        lists.splice(lists.findIndex((list: any) => !list.age_Group), 1)
+        this.schoolTargeUniqueScreened = lists.map((list: any) => ({ name: list.age_Group, value: list.age_Count }))
+      }
+    })
+  }
+  getAadhaarLinkedMembersPhrPer(payload: any) {
+    this.CommunitService.getAadhaarLinkedMembersPhrPer(payload).subscribe((res: any) => {
+      if (res) {
+        this.aadhaarLinkedNumbers = res.aadhaar_Linked_Member_Count;
+      }
+    })
+  }
+  getUDIDLinkedMembersPhrPer(payload: any) {
+    this.CommunitService.getUDIDLinkedMembersPhrPer(payload).subscribe((res: any) => {
+      if (res) {
+        this.udidLinkedMembers = res.udiD_Linked_Member_Count;
+      }
+    })
+  }
+  getDisabilityBeneficiariesPhrPer(payload: any) {
+    this.CommunitService.getDisabilityBeneficiariesPhrPer(payload).subscribe((res: any) => {
+      if (res) {
+        this.disabilityBeneficiaries = res.disability_Beneficiaries_Count;
+      }
+    })
+  }
+  getIndividualScreeningsPhrPer(payload: any) {
+    this.CommunitService.getIndividualScreeningsPhrPer(payload).subscribe((res: any) => {
+      if (res) {
+        this.individualScreenings = res.individual_Screening_Count;
+      }
+    })
+  }
+  getIndividualReceivedDrugsPhrPer(payload: any) {
+    this.CommunitService.getIndividualReceivedDrugsPhrPer(payload).subscribe((res: any) => {
+      if (res) {
+        this.totalIndividualRecievedDrugs = res.individual_Received_Drug_Count;
+      }
+    })
+  }
+  getTotalConfirmedMTMBeneficiaryPhrPer(payload: any) {
+    this.CommunitService.getTotalConfirmedMTMBeneficiaryPhrPer(payload).subscribe((res: any) => {
+      if (res) {
+        this.totalIndividualsConfirmedMTMBeneficiary = res.total_Confirmed_Beneficiary_Count;
+      }
+    })
+  }
+  getFacilityWiseScreeningPhrPer(payload: any) {
+    this.CommunitService.getFacilityWiseScreeningPhrPer(payload).subscribe((lists: any) => {
+      if (lists) {
+        this.facilityWiseScreening = lists.map((list: any) => ({ name: list.facility_Type_Name, value: list.facility_Wise_Screening_Count }))
+      }
+    })
+  }
+  getPopulationRDMNDStatusPhrPer(payload: any) {
+    this.CommunitService.getPopulationRDMNDStatusPhrPer(payload).subscribe((res: any) => {
+      if (res) {
+        this.populationRDMNDStatus = [
+          {
+            name: 'resident Count',
+            value: res[0].resident_Count,
+          },
+          {
+            name: 'migrant Count',
+            value: res[0].migrant_Count,
+          },
+          {
+            name: 'death Count',
+            value: res[0].death_Count,
+          },
+          {
+            name: 'duplicate Count',
+            value: res[0].duplicate_Count,
+          },
+          {
+            name: 'non Traceable Count',
+            value: res[0].non_Traceable_Count,
+          },
+        ];
+      }
+    })
+  }
+  getMTMBeneficiariesPhrPer(payload: any) {
+    this.CommunitService.getMTMBeneficiariesPhrPer(payload).subscribe((res: any) => {
+      if (res) {
+        this.mtmBeneficiaries = [
+          {
+            name: 'confirmed Diabetes Mellitus',
+            value: res.confirmed_Diabetes_Mellitus,
+          },
+          {
+            name: 'confirmed Hypertension',
+            value: res.confirmed_Hypertension,
+          },
+          {
+            name: 'confirmed Diabetes Mellitus Hypertension',
+            value: res.confirmed_Diabetes_Mellitus_Hypertension,
+          },
+          {
+            name: 'controlled Diabetes Mellitus',
+            value: res.controlled_Diabetes_Mellitus,
+          },
+          {
+            name: 'controlled Hypertension',
+            value: res.controlled_Hypertension,
+          },
+          {
+            name: 'both',
+            value: res.both,
+          },
+        ];
+      }
+    })
+  }
+  getPBSConditionScreeningPhrPer(payload: any) {
+    this.CommunitService.getPBSConditionScreeningPhrPer(payload).subscribe((lists: any) => {
+      if (lists) {
+        this.pbsConditionScreenings = lists.map((list: any) => ({ name: list.diagnosis_Name, value: list.disease_Count }))
+      }
+    })
+  }
+  getPopulationVerifiedNonVerifiedStatusPhrPer(payload: any) {
+    this.CommunitService.getPopulationVerifiedNonVerifiedStatusPhrPer(payload).subscribe((lists: any) => {
+      if (lists) {
+        this.verifiedVsNonVerfiedPopulations = [
+          {
+            name: 'Population Verified ',
+            value: lists[0].population_Verified_Count,
+          },
+          {
+            name: 'Non-population Verified',
+            value: lists[0].population_Non_Verified_Count,
+          },
+        ];
+      }
+    })
+  }
+  getIndividualScreenedAgeWisePhrPer(payload: any) {
+    this.CommunitService.getIndividualScreenedAgeWisePhrPer(payload).subscribe((lists: any) => {
+      if (lists) {
+        this.individualScreenedAgeWise = lists.map((list: any) => ({ name: list.age_Group, value: list.age_Count }))
+      }
+    })
+  }
+  getLabTestPhrPer(payload: any) {
+    this.CommunitService.getLabTestPhrPer(payload).subscribe((lists: any) => {
+      if (lists) {
+        this.labTests = [...calculatePercentage(lists,'lab_Test_Count')];
+      }
+    })
+  }
+  getScreenedVillageTypeWisePhrPer(payload: any) {
+    this.CommunitService.getScreenedVillageTypeWisePhrPer(payload).subscribe((lists: any) => {
+      if (lists) {
+        this.individualScreenedVillageTypeWise = lists.map((list: any) => ({ name: list.village_Type, value: list.village_Type_Count }))
+      }
+    })
+  }
+  getReferredSplitUpPhrPer(payload: any) {
+    this.CommunitService.getReferredSplitUpPhrPer(payload).subscribe((lists: any) => {
+      if (lists) {
+        this.noOfIndividualsReferredSplitUp = [...calculatePercentage(lists,'referred_Count')];
+      }
+    })
+  }
+  getUHCConditionScreeningPhrPer(payload: any) {
+    this.CommunitService.getUHCConditionScreeningPhrPer(payload).subscribe((lists: any) => {
+      if (lists) {
+        this.uhc16ConditionScreening = [...calculatePercentage(lists,'total_Screening_Count')];
+      }
+    })
+  }
+  getDrugsIssuedPhrPer(payload: any) {
+    this.CommunitService.getDrugsIssuedPhrPer(payload).subscribe((lists: any) => {
+      if (lists) {
+        this.drugIssued = [...calculatePercentage(lists,'drug_Count')];
+      }
+    })
+  }
+  getRoleBasedScreeningPhrPer(payload: any) {
+    this.CommunitService.getRoleBasedScreeningPhrPer(payload).subscribe((lists: any) => {
+      if (lists) {
+        this.roleScreeningCount = [...calculatePercentage(lists,'total_Screening_Count')];
+      }
+    })
+  }
 }
+
 
 // Function to generate a random number between min (inclusive) and max (inclusive)
 function getRandomNumber(min: number, max: number) {
@@ -549,12 +856,12 @@ function calculatePercentage(array: any[], keyToAdd: string) {
 
   // Calculate the total count
   for (var i = 0; i < array.length; i++) {
-    total += array[i][keyToAdd];
+    total += parseInt(array[i][keyToAdd]);
   }
 
   // Calculate and store the percentage for each object
   for (var i = 0; i < array.length; i++) {
-    array[i].percentage = (array[i][keyToAdd] / total) * 100;
+    array[i].percentage = (parseInt(array[i][keyToAdd]) / total) * 100;
   }
 
   // Return the updated array
