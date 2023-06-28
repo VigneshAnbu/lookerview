@@ -27,10 +27,6 @@ export class FiltersComponent {
   Institutionfacilitylist: any[] = [];
   communityBlockTypeList: any[] = [
     {
-      id: 'Block Type',
-      name: 'Block Type'
-    },
-    {
       id: 'Corporation',
       name: 'Corporation'
     },
