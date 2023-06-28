@@ -25,7 +25,44 @@ export class FiltersComponent {
   institutionhudlist: any[] = [];
   institutionblocklist: any[] = [];
   Institutionfacilitylist: any[] = [];
-
+  communityBlockTypeList: any[] = [
+    {
+      id: 'Block Type',
+      name: 'Block Type'
+    },
+    {
+      id: 'Corporation',
+      name: 'Corporation'
+    },
+    {
+      id: 'Municipality',
+      name: 'Municipality'
+    },
+    {
+      id: 'Rural Block',
+      name: 'Rural Block'
+    },
+    {
+      id: 'Others',
+      name: 'Others'
+    },
+  ];
+  communityAgeList = [
+    {
+      name: '1'
+    }
+  ];
+  communityGenderList = [
+    {
+      name: 'Male'
+    },
+    {
+      name: 'Female'
+    },
+    {
+      name: 'Other'
+    },
+  ];
   districtsettings: IDropdownSettings = {};
   institutiondistrictsettings: IDropdownSettings = {};
   hudsettings: IDropdownSettings = {};
@@ -37,7 +74,21 @@ export class FiltersComponent {
   villagesettings: IDropdownSettings = {};
   facilitysettings: IDropdownSettings = {};
   institutionfacilitysettings: IDropdownSettings = {};
-
+  communityBlockType: IDropdownSettings = {
+    idField: 'id',
+    textField: 'name',
+    allowSearchFilter: true,
+  };
+  communityAgeSetting: IDropdownSettings = {
+    idField: 'name',
+    textField: 'name',
+    allowSearchFilter: true,
+  }
+  communityGenderSetting: IDropdownSettings = {
+    idField: 'name',
+    textField: 'name',
+    allowSearchFilter: true,
+  }
   form!: FormGroup;
   districtselectedItems: any[] = [];
   institutiondistrictselectedItems: any[] = [];
@@ -51,6 +102,7 @@ export class FiltersComponent {
   facilityselectedItems: any[] = [];
   institutionfacilityselectedItems: any[] = [];
   @Input() dphDashboard: boolean = false;
+  @Input() phrPerformanceDashboard: boolean = false;
   @Input() showSearch: boolean = false;
   @Output() searchFilter: EventEmitter<any> = new EventEmitter<any>();
 
@@ -62,6 +114,9 @@ export class FiltersComponent {
       institutionhudmyItems: [],
       blockmyItems: [],
       institutionblockmyItems: [],
+      communityBlockTypeKey: [],
+      communityAgeKey: [],
+      communityGenderKey: [],
       rolemyItems: [],
       directoratemyItems: [],
       villagemyItems: [],
@@ -153,6 +208,9 @@ export class FiltersComponent {
     var InstitutiondistrictParam = '';
     var InstitutionhudParam = '';
     var InstitutionblockParam = '';
+    var communityBlockTyParam = '';
+    var communityAgeParam = '';
+    var communityGenderParam = '';
     var villageParam = '';
     var DirectorateParam = '';
     var RoleParam = '';
@@ -263,7 +321,54 @@ export class FiltersComponent {
         InstitutionblockParam.length - 1
       );
     }
+    if (
+      this.form.value.communityBlockTypeKey != '' &&
+      this.form.value.communityBlockTypeKey != null
+    ) {
+      for (var i = 0; this.form.value.communityBlockTypeKey.length > i; i++) {
+        communityBlockTyParam =
+          communityBlockTyParam +
+          this.form.value.communityBlockTypeKey[i].name +
+          ',';
+      }
 
+      payload['block_type'] = communityBlockTyParam.substring(
+        0,
+        communityBlockTyParam.length - 1
+      );
+    }
+    if (
+      this.form.value.communityAgeKey != '' &&
+      this.form.value.communityAgeKey != null
+    ) {
+      for (var i = 0; this.form.value.communityAgeKey.length > i; i++) {
+        communityAgeParam =
+          communityAgeParam +
+          this.form.value.communityAgeKey[i].name +
+          ',';
+      }
+
+      payload['age'] = communityAgeParam.substring(
+        0,
+        communityAgeParam.length - 1
+      );
+    }
+    if (
+      this.form.value.communityGenderKey != '' &&
+      this.form.value.communityGenderKey != null
+    ) {
+      for (var i = 0; this.form.value.communityGenderKey.length > i; i++) {
+        communityGenderParam =
+          communityGenderParam +
+          this.form.value.communityGenderKey[i].name +
+          ',';
+      }
+
+      payload['gender'] = communityGenderParam.substring(
+        0,
+        communityGenderParam.length - 1
+      );
+    }
     if (
       this.form.value.villagemyItems != '' &&
       this.form.value.villagemyItems != null

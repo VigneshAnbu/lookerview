@@ -573,6 +573,8 @@ export class CommunityServiceService {
     return this.http.get<any>(this.BaseURL + 'getvillagemasterlooker?village_name=' + querystring +'');
   }
 
+  // DPH Dashboard 
+  
   getPopulationCount(payload: any): Observable<any> {
     return this.http.get<any>(this.BaseURL + 'GetPopulationCount', { params: payload });
   }
@@ -619,6 +621,7 @@ export class CommunityServiceService {
     return this.http.get<any>(this.BaseURL + 'GetPHRHealthPhrPer', { params: payload });
   }
   
+  // PHR Performance Dashboard
   getTotalPopulationCountPhrPer(payload: any): Observable<any> {
     return this.http.get<any>(this.BaseURL + 'GetTotalPopulationCountPhrPer', { params: payload });
   }

@@ -70,7 +70,7 @@
       </div>
     </div>
 
-    <div class="inp_w_select" *ngIf="!dphDashboard">
+    <div class="inp_w_select" *ngIf="!dphDashboard && !phrPerformanceDashboard">
       <label>Community Facility</label>
       <div class="wrap">
         <input type="text" (keyup)="onSearchFacility($event)" formControlName="searchfacility"
@@ -80,7 +80,7 @@
       </div>
     </div>
 
-    <div *ngIf="!dphDashboard">
+    <div *ngIf="!dphDashboard && !phrPerformanceDashboard">
       <label>Institution Owner</label>
       <div class="inp_list_sty1">
         <label><input type="checkbox"><span>Both</span></label>
@@ -88,13 +88,13 @@
         <label><input type="checkbox"><span>Private</span></label>
       </div>
     </div>
-    <div *ngIf="!dphDashboard">
+    <div *ngIf="!dphDashboard && !phrPerformanceDashboard">
       <label>Institution Directorate</label>
       <ng-multiselect-dropdown [settings]="directoratesettings" [data]="directoratelist"
         formControlName="directoratemyItems">
       </ng-multiselect-dropdown>
     </div>
-    <div class="inp_w_select" *ngIf="!dphDashboard">
+    <div class="inp_w_select" *ngIf="!dphDashboard && !phrPerformanceDashboard">
       <label>Institution Facility</label>
       <div class="wrap">
         <input type="text" (keyup)="onSearchInstitutionFacility($event)" formControlName="searchinstitutionfacility"
@@ -104,34 +104,53 @@
         </ng-multiselect-dropdown>
       </div>
     </div>
-    <div *ngIf="!dphDashboard">
+    <div *ngIf="!dphDashboard && !phrPerformanceDashboard">
       <label>Institution Role</label>
       <ng-multiselect-dropdown [settings]="rolesettings" [data]="rolelist" formControlName="rolemyItems">
       </ng-multiselect-dropdown>
     </div>
-    <div *ngIf="!dphDashboard">
+    <div *ngIf="!dphDashboard && !phrPerformanceDashboard">
       <label>Institution District</label>
       <ng-multiselect-dropdown [settings]="institutiondistrictsettings" [data]="institutiondistrictlist"
         formControlName="institutiondistrictmyItems">
       </ng-multiselect-dropdown>
     </div>
-    <div *ngIf="!dphDashboard">
+    <div *ngIf="!dphDashboard && !phrPerformanceDashboard">
       <label>Institution HUD</label>
       <ng-multiselect-dropdown [settings]="institutionhudsettings" [data]="institutionhudlist"
         formControlName="institutionhudmyItems">
       </ng-multiselect-dropdown>
     </div>
-    <div *ngIf="!dphDashboard">
+    <div *ngIf="!dphDashboard && !phrPerformanceDashboard">
       <label>Institution Block</label>
       <ng-multiselect-dropdown [settings]="institutionblocksettings" [data]="institutionblocklist"
         formControlName="institutionblockmyItems">
       </ng-multiselect-dropdown>
     </div>
-    <div *ngIf="!dphDashboard">
+    <div *ngIf="!dphDashboard && !phrPerformanceDashboard">
       <label>Date</label>
       <input type="date" placeholder="is any value" class="form-control">
     </div>
 
+
+    <div *ngIf="phrPerformanceDashboard">
+      <label>Community Block Type</label>
+      <ng-multiselect-dropdown [settings]="communityBlockType" [data]="communityBlockTypeList"
+        formControlName="communityBlockTypeKey">
+      </ng-multiselect-dropdown>
+    </div>
+    <div *ngIf="false">
+      <label>Community Age</label>
+      <ng-multiselect-dropdown [settings]="communityAgeSetting" [data]="communityAgeList"
+        formControlName="communityAgeKey">
+      </ng-multiselect-dropdown>
+    </div>
+    <div *ngIf="phrPerformanceDashboard">
+      <label>Community Gender</label>
+      <ng-multiselect-dropdown [settings]="communityGenderSetting" [data]="communityGenderList"
+        formControlName="communityGenderKey">
+      </ng-multiselect-dropdown>
+    </div>
   </form>
   <div class="d-flex flex_justify_center pt-3" *ngIf="showSearch">
     <input type="button" value="Search" class="btn btn-success pul-right" (click)="searchFilter.emit($event)" />
