@@ -416,6 +416,23 @@ export class PhrperformanceComponent {
     group: ScaleType.Linear,
     domain: ['#1a73e8', '#12b5cb', '#e52592'],
   };
+  filterFields ={
+      district: true,
+      hud: true,
+      block: true,
+      village: true,
+      facility: false,
+      owner: false,
+      directorate: false,
+      insFacility: false,
+      insRole: false,
+      insDistrict: false,
+      insHud: false,
+      insBlock: false,
+      date: false,
+      comBlockType: true,
+      comGender: true
+  }
   constructor(private CommunitService: CommunityServiceService) { }
   ngOnInit(): void {
     this.LoadAll();

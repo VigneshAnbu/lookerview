@@ -284,16 +284,16 @@ export class CommunityServiceService {
     return this.http.get<any[]>(this.BaseURL + 'getuserperBlockwise');
   }
 
-  getpopulationkpi_dashboard(): Observable<any[]> {
-    return this.http.get<any[]>(this.BaseURL + 'Getpopulationkpidashboard');
+  getpopulationkpi_dashboard(payload?: any): Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURL + 'Getpopulationkpidashboard',{params: payload});
   }
 
-  getpopulationkpi_district(): Observable<any[]> {
-    return this.http.get<any[]>(this.BaseURL + 'GetKPIDistrictWise');
+  getpopulationkpi_district(payload?: any): Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURL + 'GetKPIDistrictWise',{params: payload});
   }
 
-  getpopulationkpi_hud(): Observable<any[]> {
-    return this.http.get<any[]>(this.BaseURL + 'GetKPIHUDWise');
+  getpopulationkpi_hud(payload?: any): Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURL + 'GetKPIHUDWise',{params: payload});
   }
 
 
@@ -344,82 +344,79 @@ export class CommunityServiceService {
 
   /*Data Quality Start*/
 
-  GetFamiliesstreetunallocated(): Observable<any[]> {
-    return this.http.get<any[]>(this.BaseURL + 'GetFamiliesstreetunallocated');
+  GetFamiliesstreetunallocated(payload?: any): Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURL + 'GetFamiliesstreetunallocated', { params: payload });
   }
 
-  GetFamiliesfacilityunallocated(): Observable<any[]> {
-    return this.http.get<any[]>(this.BaseURL + 'GetFamiliesfacilityunallocated');
+  GetFamiliesfacilityunallocated(payload?: any): Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURL + 'GetFamiliesfacilityunallocated', { params: payload });
   }
 
-  GetFamilieswithnull(): Observable<any[]> {
-    return this.http.get<any[]>(this.BaseURL + 'GetFamilieswithnull');
+  GetFamilieswithnull(payload?: any): Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURL + 'GetFamilieswithnull', { params: payload });
   }
 
-  GetFamilieswithmore(): Observable<any[]> {
-    return this.http.get<any[]>(this.BaseURL + 'GetFamilieswithmore');
+  GetFamilieswithmore(payload?: any): Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURL + 'GetFamilieswithmore', { params: payload });
   }
 
-  Getmemberswithstreetsunallocated(): Observable<any[]> {
-    return this.http.get<any[]>(this.BaseURL + 'Getmemberswithstreetsunallocated');
+  Getmemberswithstreetsunallocated(payload?: any): Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURL + 'Getmemberswithstreetsunallocated', { params: payload });
   }
 
-  Getmemberswithfacilityunallocated(): Observable<any[]> {
-    return this.http.get<any[]>(this.BaseURL + 'Getmemberswithfacilityunallocated');
+  Getmemberswithfacilityunallocated(payload?: any): Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURL + 'Getmemberswithfacilityunallocated', { params: payload });
   }
 
-  Getmemberswithaadhaar_number(): Observable<any[]> {
-    return this.http.get<any[]>(this.BaseURL + 'Getmemberswithaadhaar_number');
+  Getmemberswithaadhaar_number(payload?: any): Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURL + 'Getmemberswithaadhaar_number', { params: payload });
   }
 
-  Getverifiedmembers(): Observable<any[]> {
-    return this.http.get<any[]>(this.BaseURL + 'Getverifiedmembers');
+  Getverifiedmembers(payload?: any): Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURL + 'Getverifiedmembers', { params: payload });
   }
 
-  Getstreetswithfacilityunallocated(): Observable<any[]> {
-    return this.http.get<any[]>(this.BaseURL + 'Getstreetswithfacilityunallocated');
+  Getstreetswithfacilityunallocated(payload?: any): Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURL + 'Getstreetswithfacilityunallocated', { params: payload });
   }
 
-  Getshopswithnomappinfstreets(): Observable<any[]> {
-    return this.http.get<any[]>(this.BaseURL + 'Getshopswithnomappinfstreets');
+  Getshopswithnomappinfstreets(payload?: any): Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURL + 'Getshopswithnomappinfstreets', { params: payload });
   }
 
-  Getmembersinhistorynothavingscreening(): Observable<any[]> {
-    return this.http.get<any[]>(this.BaseURL + 'Getmembersinhistorynothavingscreening');
+  Getmembersinhistorynothavingscreening(payload?: any): Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURL + 'Getmembersinhistorynothavingscreening', { params: payload });
   }
 
-  Getmembershavingscreeningnothavinghistory(): Observable<any[]> {
-    return this.http.get<any[]>(this.BaseURL + 'Getmembershavingscreeningnothavinghistory');
+  Getmembershavingscreeningnothavinghistory(payload?: any): Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURL + 'Getmembershavingscreeningnothavinghistory', { params: payload });
   }
 
-  Getmobilenumbermorethan(): Observable<any[]> {
-    return this.http.get<any[]>(this.BaseURL + 'Getmobilenumbermorethan');
+  Getmobilenumbermorethan(payload?: any): Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURL + 'Getmobilenumbermorethan', { params: payload });
   }
 
-  Getmemberswithmobilenumber(): Observable<any[]> {
-    return this.http.get<any[]>(this.BaseURL + 'Getmemberswithmobilenumber');
+  Getmemberswithmobilenumber(payload?: any): Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURL + 'Getmemberswithmobilenumber', { params: payload });
   }
 
-  Getpopulationmappedwithstreet(): Observable<any[]> {
-    return this.http.get<any[]>(this.BaseURL + 'Getpopulationmappedwithstreet');
+  Getpopulationmappedwithstreet(payload?: any): Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURL + 'Getpopulationmappedwithstreet', { params: payload });
   }
 
-  GetMembersmappedtoUnallocatedfacility(): Observable<any[]> {
-    return this.http.get<any[]>(this.BaseURL + 'GetMembersmappedtoUnallocatedfacility');
+  GetMembersmappedtoUnallocatedfacility(payload?: any): Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURL + 'GetMembersmappedtoUnallocatedfacility', { params: payload });
   }
 
-  GetMemberswithstreetasUnAllocated(): Observable<any[]> {
-    return this.http.get<any[]>(this.BaseURL + 'GetMemberswithstreetasUnAllocated');
+  GetMemberswithstreetasUnAllocated(payload?: any): Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURL + 'GetMemberswithstreetasUnAllocated', { params: payload });
   }
 
+  /*Data Quality End*/
 
   getUserPerformanceDistrict(): Observable<any> {
     return this.http.get(this.BaseURL + 'getuserperstate');
   }
-
-
-
-  /*Data Quality End*/
 
 
   /*PBS Screening start*/

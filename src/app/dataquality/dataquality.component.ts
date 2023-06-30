@@ -1,5 +1,6 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { CommunityServiceService } from '../Services/community-service.service';
+import { FiltersComponent } from '../filters/filters.component';
 
 @Component({
   selector: 'app-dataquality',
@@ -10,24 +11,41 @@ export class DataqualityComponent implements AfterViewInit {
 
   secondheading: string = "Data Quality";
 
-  objFamiliesstreetunallocated: any = {};
-  objFamiliesfacilityunallocated: any = {};
-  objFamilieswithnull: any = {};
-  objFamilieswithmore: any = {};
-  objmemberswithstreetsunallocated: any = {};
-  objmemberswithfacilityunallocated: any = {};
-  objmemberswithaadhaar_number: any = {};
-  objverifiedmembers: any = {};
-  objstreetswithfacilityunallocated: any = {};
-  objshopswithnomappinfstreets: any = {};
-  objmembersinhistorynothavingscreening: any = {};
-  objmembershavingscreeningnothavinghistory: any = {};
-  objmobilenumbermorethan: any = {};
-  objmemberswithmobilenumber: any = {};
-  objpopulationmappedwithstreet: any = {};
-  objMembersmappedtoUnallocatedfacility: any = {};
-  objMemberswithstreetasUnAllocated: any = {};
-  
+  objFamiliesstreetunallocated: any = 0;
+  objFamiliesfacilityunallocated: any = 0;
+  objFamilieswithnull: any = 0;
+  objFamilieswithmore: any = 0;
+  objmemberswithstreetsunallocated: any = 0;
+  objmemberswithfacilityunallocated: any = 0;
+  objmemberswithaadhaar_number: any = 0;
+  objverifiedmembers: any = 0;
+  objstreetswithfacilityunallocated: any = 0;
+  objshopswithnomappinfstreets: any = 0;
+  objmembersinhistorynothavingscreening: any = 0;
+  objmembershavingscreeningnothavinghistory: any = 0;
+  objmobilenumbermorethan: any = 0;
+  objmemberswithmobilenumber: any = 0;
+  objpopulationmappedwithstreet: any = 0;
+  objMembersmappedtoUnallocatedfacility: any = 0;
+  objMemberswithstreetasUnAllocated: any = 0;
+  filterFields = {
+    district: true,
+    hud: true,
+    block: true,
+    village: false,
+    facility: false,
+    owner: false,
+    directorate: false,
+    insFacility: false,
+    insRole: false,
+    insDistrict: false,
+    insHud: false,
+    insBlock: false,
+    date: false,
+    comBlockType: true,
+    comGender: false
+  }
+  @ViewChild(FiltersComponent) child!: FiltersComponent;
 
   ngAfterViewInit(): void {
 
@@ -38,95 +56,101 @@ export class DataqualityComponent implements AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.CommunitService.GetFamiliesstreetunallocated()
-      .subscribe(item => {
-        this.objFamiliesstreetunallocated = item;
-      })
-
-    this.CommunitService.GetFamiliesfacilityunallocated()
-      .subscribe(item => {
-        this.objFamiliesfacilityunallocated = item;
-      })
-
-    this.CommunitService.GetFamilieswithnull()
-      .subscribe(item => {
-        this.objFamilieswithnull = item;
-      })
-
-    this.CommunitService.GetFamilieswithmore()
-      .subscribe(item => {
-        this.objFamilieswithmore = item;
-      })
-
-    this.CommunitService.Getmemberswithstreetsunallocated()
-      .subscribe(item => {
-        this.objmemberswithstreetsunallocated = item;
-      })
-
-    this.CommunitService.Getmemberswithfacilityunallocated()
-      .subscribe(item => {
-        this.objmemberswithfacilityunallocated = item;
-      })
-
-    this.CommunitService.Getmemberswithaadhaar_number()
-      .subscribe(item => {
-        this.objmemberswithaadhaar_number = item;
-      })
-
-    this.CommunitService.Getverifiedmembers()
-      .subscribe(item => {
-        this.objverifiedmembers = item;
-      })
-
-    this.CommunitService.Getstreetswithfacilityunallocated()
-      .subscribe(item => {
-        this.objstreetswithfacilityunallocated = item;
-      })
-
-    this.CommunitService.Getshopswithnomappinfstreets()
-      .subscribe(item => {
-        this.objshopswithnomappinfstreets = item;
-      })
-
-
-    this.CommunitService.Getmembersinhistorynothavingscreening()
-      .subscribe(item => {
-        this.objmembersinhistorynothavingscreening = item;
-      })
-
-    this.CommunitService.Getmembershavingscreeningnothavinghistory()
-      .subscribe(item => {
-        this.objmembershavingscreeningnothavinghistory = item;
-      })
-
-    this.CommunitService.Getmobilenumbermorethan()
-      .subscribe(item => {
-        this.objmobilenumbermorethan = item;
-      })
-
-
-    this.CommunitService.Getmemberswithmobilenumber()
-      .subscribe(item => {
-        this.objmemberswithmobilenumber = item;
-      })
-
-    this.CommunitService.Getpopulationmappedwithstreet()
-      .subscribe(item => {
-        this.objpopulationmappedwithstreet = item;
-      })
-
-    this.CommunitService.GetMembersmappedtoUnallocatedfacility()
-      .subscribe(item => {
-        this.objMembersmappedtoUnallocatedfacility = item;
-      })
-
-    this.CommunitService.GetMemberswithstreetasUnAllocated()
-      .subscribe(item => {
-        this.objMemberswithstreetasUnAllocated = item;
-      })
-
-
-
+    this.LoadAll();
   }
 
+  LoadAll(payload?: any) {
+    this.CommunitService.GetFamiliesstreetunallocated(payload)
+      .subscribe((item: any) => {
+        this.objFamiliesstreetunallocated = item[0].count;
+      })
+
+    this.CommunitService.GetFamiliesfacilityunallocated(payload)
+      .subscribe((item: any) => {
+        this.objFamiliesfacilityunallocated = item[0].count;
+      })
+
+    this.CommunitService.GetFamilieswithnull(payload)
+      .subscribe((item: any) => {
+        this.objFamilieswithnull = item[0].count;
+      })
+
+    this.CommunitService.GetFamilieswithmore(payload)
+      .subscribe((item: any) => {
+        this.objFamilieswithmore = item[0].count;
+      })
+
+    this.CommunitService.Getmemberswithstreetsunallocated(payload)
+      .subscribe((item: any) => {
+        this.objmemberswithstreetsunallocated = item[0].count;
+      })
+
+    this.CommunitService.Getmemberswithfacilityunallocated(payload)
+      .subscribe((item: any) => {
+        this.objmemberswithfacilityunallocated = item[0].count;
+      })
+
+    this.CommunitService.Getmemberswithaadhaar_number(payload)
+      .subscribe((item: any) => {
+        this.objmemberswithaadhaar_number = item[0].count;
+      })
+
+    this.CommunitService.Getverifiedmembers(payload)
+      .subscribe((item: any) => {
+        this.objverifiedmembers = item[0].count;
+      })
+
+    this.CommunitService.Getstreetswithfacilityunallocated(payload)
+      .subscribe((item: any) => {
+        this.objstreetswithfacilityunallocated = item[0].count;
+      })
+
+    this.CommunitService.Getshopswithnomappinfstreets(payload)
+      .subscribe((item: any) => {
+        this.objshopswithnomappinfstreets = item[0].count;
+      })
+
+
+    this.CommunitService.Getmembersinhistorynothavingscreening(payload)
+      .subscribe((item: any) => {
+        this.objmembersinhistorynothavingscreening = item[0].count;
+      })
+
+    this.CommunitService.Getmembershavingscreeningnothavinghistory(payload)
+      .subscribe((item: any) => {
+        this.objmembershavingscreeningnothavinghistory = item[0].count;
+      })
+
+    this.CommunitService.Getmobilenumbermorethan(payload)
+      .subscribe((item: any) => {
+        this.objmobilenumbermorethan = item[0].count;
+      })
+
+
+    this.CommunitService.Getmemberswithmobilenumber(payload)
+      .subscribe((item: any) => {
+        this.objmemberswithmobilenumber = item[0].count;
+      })
+
+    this.CommunitService.Getpopulationmappedwithstreet(payload)
+      .subscribe((item: any) => {
+        this.objpopulationmappedwithstreet = item[0].count;
+      })
+
+    this.CommunitService.GetMembersmappedtoUnallocatedfacility(payload)
+      .subscribe((item: any) => {
+        this.objMembersmappedtoUnallocatedfacility = item[0].count;
+      })
+
+    this.CommunitService.GetMemberswithstreetasUnAllocated(payload)
+      .subscribe((item: any) => {
+        this.objMemberswithstreetasUnAllocated = item[0].count;
+      })
+  }
+  SearchFilter() {
+    console.log('the search filter is trig');
+    const Payl = this.child.PayloadDetails();
+    console.log(this.child.PayloadDetails());
+    this.LoadAll(Payl);
+  }
 }

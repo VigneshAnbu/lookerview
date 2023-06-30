@@ -1,3 +1,5 @@
+<div class="hed_sty1"> Data Quality <i class="bi bi-heart"></i></div>
+<app-filters  [dropdownObj]="filterFields" [showSearch]="true" (searchFilter)="SearchFilter()" #child></app-filters>
 <div class="scroll_sec">
   <div class="container">
     <div class="hed_sty1 text-center m_tb_50">Family</div>
@@ -79,7 +81,6 @@
           <div class="num">{{objstreetswithfacilityunallocated}}</div>
           <div class="txt">
             streets with facility_id as UnAllocated
-
           </div>
         </div>
       </div>

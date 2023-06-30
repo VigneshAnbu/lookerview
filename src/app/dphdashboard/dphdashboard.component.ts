@@ -132,6 +132,23 @@ export class DphdashboardComponent {
   blocklist: any[] = [];
   villagesettings: IDropdownSettings = {};
   villagelist: any[] = [];
+  filterFields = {
+    district: true,
+    hud: true,
+    block: true,
+    village: true,
+    facility: false,
+    owner: false,
+    directorate: false,
+    insFacility: false,
+    insRole: false,
+    insDistrict: false,
+    insHud: false,
+    insBlock: false,
+    date: false,
+    comBlockType: false,
+    comGender: false
+  };
   @ViewChild(FiltersComponent) child!: FiltersComponent;
 
   constructor(

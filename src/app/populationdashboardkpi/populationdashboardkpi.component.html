@@ -1,6 +1,5 @@
-<div class="hed_sty1">Population Dashboard KPI<i class="bi bi-heart"></i></div>
-
-
+<div class="hed_sty1"> Population Dashboard KPI <i class="bi bi-heart"></i></div>
+<app-filters  [dropdownObj]="filterFields" [showSearch]="true" (searchFilter)="SearchFilter()" #child></app-filters>
 <div class="row pan_box_sec">
   <div class="col-sm-4">
     <div class="pan_box num_sec d_flex flex_d_c flex_justify_center min_h_230">

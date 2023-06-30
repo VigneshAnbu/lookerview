@@ -97,10 +97,25 @@ export class FiltersComponent {
   villageselectedItems: any[] = [];
   facilityselectedItems: any[] = [];
   institutionfacilityselectedItems: any[] = [];
-  @Input() dphDashboard: boolean = false;
-  @Input() phrPerformanceDashboard: boolean = false;
   @Input() showSearch: boolean = false;
   @Output() searchFilter: EventEmitter<any> = new EventEmitter<any>();
+  @Input() dropdownObj =  {
+    district: true,
+    hud: true,
+    block: true,
+    village: true,
+    facility: true,
+    owner: true,
+    directorate: true,
+    insFacility: true,
+    insRole: true,
+    insDistrict: true,
+    insHud: true,
+    insBlock: true,
+    date: true,
+    comBlockType: true,
+    comGender: true
+  };
 
   ngOnInit() {
     this.form = this.fb.group({
