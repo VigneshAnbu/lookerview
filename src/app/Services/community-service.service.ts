@@ -233,7 +233,7 @@ export class CommunityServiceService {
     return this.http.post(this.BaseURL + 'rolewisescreening', payload);
   }
 
-  getrolebasedFilter(payload: any) {
+  getrolebasedFilter(payload?: any) {
     return this.http.get(this.BaseURL + 'rolewisescreening', { params: payload });
   }
 
@@ -414,8 +414,8 @@ export class CommunityServiceService {
 
   /*Data Quality End*/
 
-  getUserPerformanceDistrict(): Observable<any> {
-    return this.http.get(this.BaseURL + 'getuserperstate');
+  getUserPerformanceDistrict(payload?: any): Observable<any> {
+    return this.http.get(this.BaseURL + 'getuserperstate', { params: payload });
   }
 
 

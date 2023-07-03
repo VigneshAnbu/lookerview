@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CommunityServiceService } from '../Services/community-service.service';
+import { FiltersComponent } from '../filters/filters.component';
 
 @Component({
   selector: 'app-userperformance',
@@ -7,6 +8,7 @@ import { CommunityServiceService } from '../Services/community-service.service';
   styleUrls: ['./userperformance.component.css']
 })
 export class UserperformanceComponent {
+  @ViewChild(FiltersComponent) child!: FiltersComponent;
 
   constructor(private apiservice: CommunityServiceService) {
 
@@ -23,25 +25,30 @@ export class UserperformanceComponent {
   districtId: string = "";
   hudId: string = "";
 
+  filterFields = {
+    district: true,
+    hud: true,
+    block: true,
+    village: true,
+    facility: false,
+    owner: false,
+    directorate: false,
+    insFacility: false,
+    insRole: false,
+    insDistrict: false,
+    insHud: false,
+    insBlock: false,
+    date: false,
+    comBlockType: false,
+    comGender: false
+  }
+
   ngOnInit(): void {
+    this.LoadAll();
+  }
 
-    const payload: any =
-      {
-      "district_id": "",
-      "hud_id": "",
-      "block_id": "",
-      "facility_id": "",
-      "indistrict_id": "",
-      "inhud_id": "",
-      "inblock_id": "",
-      "village_id": "",
-      "directorate_id": "",
-      "role": "",
-      "infacility_id": ""
-
-    }
-
-    this.apiservice.getUserPerformanceDistrict()
+  LoadAll(payload?: any) {
+    this.apiservice.getUserPerformanceDistrict(payload)
       .subscribe(item => {
         this.Districtwiseobj = item;
       });
@@ -55,9 +62,10 @@ export class UserperformanceComponent {
       .subscribe(item => {
         this.rolebaseddata = item;
       })
-
   }
-
-  
-
+  SearchFilter() {
+    console.log('the search filter is trig');
+    const Payl = this.child.PayloadDetails();
+    this.LoadAll(Payl);
+  }
 }
