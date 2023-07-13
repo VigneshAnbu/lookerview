@@ -19,69 +19,81 @@ import { FieldcomponentComponent } from './fieldcomponent/fieldcomponent.compone
 import { PbsscreeningComponent } from './pbsscreening/pbsscreening.component';
 import { DataqualityComponent } from './dataquality/dataquality.component';
 import { UserperformanceComponent } from './userperformance/userperformance.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './auth/login/login.component';
 import { ServicemonitoringComponent } from './servicemonitoring/servicemonitoring.component';
 import { DphdashboardComponent } from './dphdashboard/dphdashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { PhrperformanceComponent } from './phrperformance/phrperformance.component';
+import { IndexComponent } from './index/index.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent,
+    redirectTo: 'auth/login',
+    pathMatch: 'full'
   },
   {
-    path: 'Mtmperformance',
-    component: MtmperformanceComponent,
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   {
-    path: 'Community',
-    component: CommunityComponent,
-  },
-  {
-    path: 'Populationdashboard',
-    component: PopulationdashboardComponent,
-  },
-  {
-    path: 'Mtmbeneficiaries',
-    component: MtmbeneficiariesComponent,
-  },
-  {
-    path: 'Facilityperformance',
-    component: FacilityperformanceComponent,
-  },
-  {
-    path: 'Populationdashboardkpi',
-    component: PopulationdashboardkpiComponent,
-  },
-  {
-    path: 'FieldVerification',
-    component: FieldcomponentComponent,
-  },
-  {
-    path: 'Pbsscreening',
-    component: PbsscreeningComponent,
-  },
-  {
-    path: 'DataQuality',
-    component: DataqualityComponent,
-  },
-  {
-    path: 'UserPeroformance',
-    component: UserperformanceComponent,
-  },
-  {
-    path: 'Servicemonitoring',
-    component: ServicemonitoringComponent,
-  },
-  {
-    path: 'dphdashboard',
-    component: DphdashboardComponent,
-  },
-  {
-    path: 'phrperformancedashboard',
-    component: PhrperformanceComponent,
+    path: '',
+    component: IndexComponent,
+    children: [
+      {
+        path: 'Mtmperformance',
+        component: MtmperformanceComponent,
+      },
+      {
+        path: 'Community',
+        component: CommunityComponent,
+      },
+      {
+        path: 'Populationdashboard',
+        component: PopulationdashboardComponent,
+      },
+      {
+        path: 'Mtmbeneficiaries',
+        component: MtmbeneficiariesComponent,
+      },
+      {
+        path: 'Facilityperformance',
+        component: FacilityperformanceComponent,
+      },
+      {
+        path: 'Populationdashboardkpi',
+        component: PopulationdashboardkpiComponent,
+      },
+      {
+        path: 'FieldVerification',
+        component: FieldcomponentComponent,
+      },
+      {
+        path: 'Pbsscreening',
+        component: PbsscreeningComponent,
+      },
+      {
+        path: 'DataQuality',
+        component: DataqualityComponent,
+      },
+      {
+        path: 'UserPeroformance',
+        component: UserperformanceComponent,
+      },
+      {
+        path: 'Servicemonitoring',
+        component: ServicemonitoringComponent,
+      },
+      {
+        path: 'dphdashboard',
+        component: DphdashboardComponent,
+      },
+      {
+        path: 'phrperformancedashboard',
+        component: PhrperformanceComponent,
+      }
+    ]
   }
 ];
 
@@ -99,10 +111,10 @@ const routes: Routes = [
     PbsscreeningComponent,
     DataqualityComponent,
     UserperformanceComponent,
-    LoginComponent,
     ServicemonitoringComponent,
     DphdashboardComponent,
     PhrperformanceComponent,
+    IndexComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),

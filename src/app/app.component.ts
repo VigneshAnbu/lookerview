@@ -8,24 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   constructor() {
   }
-  title = 'PHRLockerView';
-
-  secondheading: string = "MTM Performance";
-
-
-  filterDiv: boolean = true;
-
-  ShowHideFilter() {
-    
-    if (this.filterDiv == true) {
-      this.filterDiv = false;
-    }
-    else if (this.filterDiv == false) {
-      this.filterDiv = true;
-    }
-  }
-
-
-
-
 }
