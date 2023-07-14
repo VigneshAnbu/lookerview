@@ -46,21 +46,35 @@
     <div *ngIf="dropdownObj.district">
       <label>Community District</label>
 
-      <ng-multiselect-dropdown [settings]="districtsettings" [data]="districtlist" formControlName="districtmyItems">
+      <ng-multiselect-dropdown [settings]="districtsettings" [data]="districtlist" formControlName="districtmyItems"
+      (onSelect)="onDistrictSelected()"
+      (onSelectAll)="onDistrictSelected()"
+      (onDeSelect)="onDistrictSelected()">
       </ng-multiselect-dropdown>
 
     </div>
     <div *ngIf="dropdownObj.hud">
       <label>Community HUD</label>
-      <ng-multiselect-dropdown [settings]="hudsettings" [data]="hudlist" formControlName="hudmyItems">
+      <ng-multiselect-dropdown [settings]="hudsettings" [data]="hudlist" formControlName="hudmyItems"
+      (onSelect)="onHudSelected()"
+      (onSelectAll)="onHudSelected()"
+      (onDeSelect)="onHudSelected()">
       </ng-multiselect-dropdown>
     </div>
     <div *ngIf="dropdownObj.block">
       <label>Community Block</label>
-      <ng-multiselect-dropdown [settings]="blocksettings" [data]="blocklist" formControlName="blockmyItems">
+      <ng-multiselect-dropdown [settings]="blocksettings" [data]="blocklist" formControlName="blockmyItems"
+      (onSelect)="onBlockSelected()"
+      (onSelectAll)="onBlockSelected()"
+      (onDeSelect)="onBlockSelected()">
       </ng-multiselect-dropdown>
     </div>
-    <div class="inp_w_select" *ngIf="dropdownObj.village">
+    <div *ngIf="dropdownObj.village">
+      <label>Community Village</label>
+      <ng-multiselect-dropdown [settings]="villagesettings" [data]="villagelist" formControlName="villagemyItems">
+      </ng-multiselect-dropdown>
+    </div>
+    <!-- <div class="inp_w_select" *ngIf="dropdownObj.village">
       <label>Community Village</label>
       <div class="wrap">
         <input type="text" (keyup)="onSearch($event)" formControlName="searchvillage" placeholder="Search Village Name"
@@ -68,7 +82,7 @@
         <ng-multiselect-dropdown [settings]="villagesettings" [data]="villagelist" formControlName="villagemyItems">
         </ng-multiselect-dropdown>
       </div>
-    </div>
+    </div> -->
 
     <div class="inp_w_select" *ngIf="dropdownObj.facility">
       <label>Community Facility</label>

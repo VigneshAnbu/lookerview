@@ -12,10 +12,13 @@ export class FiltersComponent {
   constructor(
     private CommunitService: CommunityServiceService,
     private fb: FormBuilder
-  ) {}
+  ) { }
 
   districtlist: any[] = [];
   hudlist: any[] = [];
+  originalHudList: any[] = [];
+  originalBlockList: any[] = [];
+  originalVillageList: any[] = [];
   blocklist: any[] = [];
   rolelist: any[] = [];
   directoratelist: any[] = [];
@@ -99,7 +102,7 @@ export class FiltersComponent {
   institutionfacilityselectedItems: any[] = [];
   @Input() showSearch: boolean = false;
   @Output() searchFilter: EventEmitter<any> = new EventEmitter<any>();
-  @Input() dropdownObj =  {
+  @Input() dropdownObj = {
     district: true,
     hud: true,
     block: true,
@@ -143,6 +146,7 @@ export class FiltersComponent {
       this.districtsettings = {
         idField: 'district_id',
         textField: 'district_name',
+        "enableCheckAll": false,
         allowSearchFilter: true,
       };
     });
@@ -158,11 +162,13 @@ export class FiltersComponent {
 
     this.CommunitService.gethudmasterlooker().subscribe((item) => {
       this.hudlist = item.hudWise;
+      this.originalHudList = JSON.parse(JSON.stringify(this.hudlist));
       this.hudsettings = {
         idField: 'hud_id',
         textField: 'hud_name',
         allowSearchFilter: true,
       };
+
     });
 
     this.CommunitService.gethudmasterlooker().subscribe((item) => {
@@ -176,6 +182,7 @@ export class FiltersComponent {
 
     this.CommunitService.getblockmasterlooker().subscribe((item) => {
       this.blocklist = item.blockWise;
+      this.originalBlockList = JSON.parse(JSON.stringify(this.blocklist));
       this.blocksettings = {
         idField: 'block_id',
         textField: 'block_name',
@@ -463,13 +470,13 @@ export class FiltersComponent {
 
   Search: any = '';
 
-  onSearch(evt: any) {
+  onSearch(querystring: any) {
     //console.log(evt.target.value);
     this.villagelist = [];
-    var querystring = evt.target.value;
     this.CommunitService.getvillagemasterlooker(querystring).subscribe(
       (item) => {
         this.villagelist = item;
+        // this.originalVillageList = JSON.parse(JSON.stringify(this.villagelist));
         //console.log(this.villagelist)
 
         this.villagesettings = {
@@ -523,5 +530,42 @@ export class FiltersComponent {
         };
       }
     );
+  }
+  onDistrictSelected() {
+    const data = this.form.get('districtmyItems')?.value;
+    if (data?.length) {
+      const filters = data.map((li: any) => li.district_id);
+      this.hudlist = this.originalHudList.filter((lis: any) => filters.includes(lis.district_id))
+    } else {
+      this.hudlist = JSON.parse(JSON.stringify(this.originalHudList))
+    }
+  }
+
+  onHudSelected() {
+    const data = this.form.get('hudmyItems')?.value;
+    if (data?.length) {
+      const filters = data.map((li: any) => li.hud_id);
+      this.blocklist = this.originalBlockList.filter((lis: any) => filters.includes(lis.hud_id))
+    } else {
+      this.blocklist = JSON.parse(JSON.stringify(this.originalBlockList))
+    }
+  }
+
+  onBlockSelected() {
+    const data = this.form.get('blockmyItems')?.value;
+    if (data?.length) {
+      let blockIdParams = '';
+      for (var i = 0; this.form.value.blockmyItems.length > i; i++) {
+        blockIdParams =
+          blockIdParams + this.form.value.blockmyItems[i].block_id + ',';
+      }
+      blockIdParams = blockIdParams.substring(
+        0,
+        blockIdParams.length - 1
+      );
+      this.onSearch(blockIdParams)
+    } else {
+      this.villagelist = [];
+    }
   }
 }

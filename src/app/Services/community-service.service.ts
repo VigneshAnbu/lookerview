@@ -8,11 +8,11 @@ import { DistrictWise } from '../Models/Models.DistrictWise';
 })
 export class CommunityServiceService {
 
-  // BaseURL: string = "https://localhost:7177/";
+  //BaseURL: string = "https://localhost:7177/";
 
   /*BaseURL: string = "https://localhost:44347/";*/
 
-  BaseURL: string = "http://142.132.206.93:9025/";
+   BaseURL: string = "http://142.132.206.93:9025/";
 
 
 
@@ -567,7 +567,7 @@ export class CommunityServiceService {
   }
 
   getvillagemasterlooker(querystring: any): Observable<any> {
-    return this.http.get<any>(this.BaseURL + 'getvillagemasterlooker?village_name=' + querystring +'');
+    return this.http.get<any>(this.BaseURL + 'getvillagemasterlooker?block_id=' + querystring +'');
   }
 
   // DPH Dashboard 

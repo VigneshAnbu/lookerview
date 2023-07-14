@@ -30,27 +30,23 @@ export class LoginComponent implements OnInit {
 
 
 
-  loginUser (){
+  loginUser() {
 
     this.showError = false;
 
     const payload =
-
     {
       "mobile": this.loginForm.value.username,
       "password": this.loginForm.value.password
     }
-
     this.CommunitService.getloginUser(payload)
-      .subscribe(item => {
-        var Result = item.toString();
-
-        if (Result !== "Invalid") {
-          localStorage.setItem("token", item.toString());
-          this.router.navigate([this.returnUrl]);
+      .subscribe((item: any) => {
+        const token = item.responseMessage;
+        if (token !== "Invalid") {
+          localStorage.setItem("token", token.toString());
+          this.router.navigate(['Mtmperformance']);
         }
-        else
-        {
+        else {
           this.errorMessage = "Invalid Credentials";
           this.showError = true;
         }
